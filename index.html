@@ -4,7 +4,7 @@
 
 <head>
   <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
-  <meta name="viewport" content="width=device-width" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Huynh Tan Ngoc - Senior Full Stack & Blockchain Developer</title>
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -539,6 +539,15 @@
         font-size: 0.7rem;
         padding: 0.4rem 0.8rem;
         margin: 0.25rem;
+        min-height: 32px;
+        display: inline-flex;
+        align-items: center;
+        justify-content: center;
+      }
+
+      /* Ensure skill tags wrap properly on mobile */
+      .skill-tag + .skill-tag {
+        margin-left: 0.25rem;
       }
 
       ul {
@@ -548,13 +557,49 @@
       li {
         font-size: 0.9rem;
         margin-bottom: 0.5rem;
+        line-height: 1.4;
+      }
+
+      /* Improve touch targets for mobile */
+      a, button, .summary-card, .stat-item {
+        min-height: 44px;
+        min-width: 44px;
+      }
+
+      /* Better mobile scrolling */
+      html {
+        scroll-behavior: smooth;
+        -webkit-overflow-scrolling: touch;
       }
 
       /* Mobile floating orbs optimization */
       div[style*="position: fixed"][style*="border-radius: 50%"] {
-        width: 200px !important;
-        height: 200px !important;
-        filter: blur(40px) !important;
+        width: 150px !important;
+        height: 150px !important;
+        filter: blur(30px) !important;
+      }
+
+      /* Reduce heavy effects on mobile for better performance */
+      .header::after,
+      .summary-card::before,
+      .stat-item::before {
+        display: none;
+      }
+
+      /* Optimize animations for mobile */
+      .header::before {
+        animation-duration: 6s;
+      }
+
+      .skill-tag::before {
+        transition-duration: 0.3s;
+      }
+
+      /* Better mobile text rendering */
+      body {
+        -webkit-font-smoothing: antialiased;
+        -moz-osx-font-smoothing: grayscale;
+        text-rendering: optimizeLegibility;
       }
 
       /* Touch-friendly interactions */
@@ -843,6 +888,57 @@
       li {
         font-size: 0.85rem;
         margin-bottom: 0.4rem;
+      }
+    }
+
+    /* Mobile landscape orientation */
+    @media (max-width: 768px) and (orientation: landscape) {
+      body {
+        padding: 0.75rem !important;
+      }
+
+      .header {
+        flex-direction: row;
+        text-align: left;
+        padding: 1rem;
+        gap: 1rem;
+        margin-bottom: 1.5rem;
+      }
+
+      .header__left {
+        flex: 0 0 auto;
+        width: auto;
+      }
+
+      .header__left img {
+        width: 80px;
+        height: 80px;
+        margin-bottom: 0;
+      }
+
+      .header__right__content {
+        flex: 1;
+        text-align: left;
+        align-items: flex-start;
+      }
+
+      .s1 {
+        font-size: 1.4rem;
+      }
+
+      .summary-grid {
+        grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+        gap: 0.75rem;
+      }
+
+      .stats-container {
+        flex-direction: row;
+        gap: 0.75rem;
+      }
+
+      .stat-item {
+        flex: 1;
+        min-width: 120px;
       }
     }
 
