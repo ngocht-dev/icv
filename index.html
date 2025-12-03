@@ -315,6 +315,75 @@
       }
     }
 
+    /* Skill Tags */
+    .skill-tag {
+      display: inline-block;
+      padding: 0.4rem 0.9rem;
+      background: linear-gradient(135deg, rgba(59, 130, 246, 0.15), rgba(139, 92, 246, 0.15));
+      border: 1px solid rgba(255, 255, 255, 0.1);
+      border-radius: 20px;
+      font-size: 0.85rem;
+      color: var(--text-main);
+      margin: 0.25rem;
+      transition: all 0.3s ease;
+      cursor: default;
+    }
+
+    .skill-tag:hover {
+      background: linear-gradient(135deg, rgba(59, 130, 246, 0.25), rgba(139, 92, 246, 0.25));
+      transform: translateY(-2px);
+      box-shadow: 0 4px 12px rgba(59, 130, 246, 0.3);
+    }
+
+    /* Spinning animation for avatar border */
+    @keyframes spin {
+      0% { transform: rotate(0deg); opacity: 0.6; }
+      50% { opacity: 1; }
+      100% { transform: rotate(360deg); opacity: 0.6; }
+    }
+
+    /* Pulse animation for badges */
+    @keyframes pulse {
+      0%, 100% { opacity: 1; }
+      50% { opacity: 0.7; }
+    }
+
+    /* Stats Counter */
+    .stats-container {
+      display: flex;
+      gap: 2rem;
+      margin-top: 2rem;
+      flex-wrap: wrap;
+    }
+
+    .stat-item {
+      flex: 1;
+      min-width: 150px;
+      padding: 1.5rem;
+      background: rgba(30, 41, 59, 0.3);
+      border: 1px solid rgba(255, 255, 255, 0.05);
+      border-radius: 16px;
+      text-align: center;
+      backdrop-filter: blur(10px);
+    }
+
+    .stat-number {
+      font-size: 2rem;
+      font-weight: 800;
+      background: linear-gradient(135deg, #60a5fa, #a78bfa);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+      display: block;
+    }
+
+    .stat-label {
+      color: var(--text-muted);
+      font-size: 0.85rem;
+      margin-top: 0.5rem;
+      text-transform: uppercase;
+      letter-spacing: 0.05em;
+    }
+
     @media print {
       body {
         background: white;
@@ -340,18 +409,34 @@
         box-shadow: none;
         border: 1px solid #ddd;
       }
+      .skill-tag {
+        background: #f0f0f0;
+        color: #000;
+      }
     }
   </style>
 </head>
 
-<body style="padding: 56px 40px; max-width: 1200px; margin: 0 auto; position: relative;">
+<body style="max-width: 1200px; margin: 0 auto; position: relative;">
+  <!-- Floating Background Elements -->
+  <div style="position: fixed; width: 400px; height: 400px; border-radius: 50%; background: radial-gradient(circle, rgba(59, 130, 246, 0.15), transparent); top: -100px; right: -100px; pointer-events: none; z-index: 0; filter: blur(60px);"></div>
+  <div style="position: fixed; width: 300px; height: 300px; border-radius: 50%; background: radial-gradient(circle, rgba(139, 92, 246, 0.15), transparent); bottom: -50px; left: -50px; pointer-events: none; z-index: 0; filter: blur(60px);"></div>
+  
+  <div style="position: relative; z-index: 1;">
   <div class="header">
     <div class="header__left">
-      <img width="120" height="120" style="border-radius: 100%" src="./public/images/avatar.jpg" />
+      <div style="position: relative;">
+        <img width="120" height="120" style="border-radius: 100%" src="./public/images/avatar.jpg" />
+        <div style="position: absolute; inset: -4px; border-radius: 100%; background: linear-gradient(45deg, #3b82f6, #8b5cf6, #3b82f6); opacity: 0; animation: spin 3s linear infinite; z-index: -1;"></div>
+      </div>
 
       <div class="header__left__content">
         <p class="s1" style="text-align: left">Huynh Tan Ngoc</p>
         <p class="s2">Senior Full Stack & Blockchain Engineer</p>
+        <div style="display: flex; gap: 0.5rem; margin-top: 0.5rem;">
+          <span style="background: linear-gradient(135deg, rgba(59, 130, 246, 0.2), rgba(139, 92, 246, 0.2)); padding: 0.25rem 0.75rem; border-radius: 20px; font-size: 0.75rem; color: #60a5fa; border: 1px solid rgba(59, 130, 246, 0.3);">10+ Years</span>
+          <span style="background: linear-gradient(135deg, rgba(139, 92, 246, 0.2), rgba(59, 130, 246, 0.2)); padding: 0.25rem 0.75rem; border-radius: 20px; font-size: 0.75rem; color: #a78bfa; border: 1px solid rgba(139, 92, 246, 0.3);">Blockchain Expert</span>
+        </div>
       </div>
     </div>
     <div class="header__right__content">
@@ -455,6 +540,26 @@
     </li>
   </ul>
 
+  <!-- Stats Section -->
+  <div class="stats-container">
+    <div class="stat-item">
+      <span class="stat-number">10+</span>
+      <span class="stat-label">Years Experience</span>
+    </div>
+    <div class="stat-item">
+      <span class="stat-number">50+</span>
+      <span class="stat-label">Projects Delivered</span>
+    </div>
+    <div class="stat-item">
+      <span class="stat-number">3</span>
+      <span class="stat-label">Blockchain Networks</span>
+    </div>
+    <div class="stat-item">
+      <span class="stat-number">15+</span>
+      <span class="stat-label">Technologies Mastered</span>
+    </div>
+  </div>
+
   <p class="s3" style="
         padding-left: 5pt;
         text-indent: 0pt;
@@ -538,14 +643,17 @@
             border-bottom-width: 1pt;
             border-bottom-color: #666666;
           ">
-        <p class="s6" style="
-              padding-top: 6pt;
-              padding-left: 3pt;
-              text-indent: 0pt;
-              text-align: left;
-            ">
-          Solidity, Rust, JavaScript, TypeScript, Haskell, Golang, PHP, HTML5, CSS3
-        </p>
+        <div style="padding-top: 6pt; padding-left: 3pt;">
+          <span class="skill-tag">Solidity</span>
+          <span class="skill-tag">Rust</span>
+          <span class="skill-tag">JavaScript</span>
+          <span class="skill-tag">TypeScript</span>
+          <span class="skill-tag">Haskell</span>
+          <span class="skill-tag">Golang</span>
+          <span class="skill-tag">PHP</span>
+          <span class="skill-tag">HTML5</span>
+          <span class="skill-tag">CSS3</span>
+        </div>
       </td>
     </tr>
     <tr style="height: 60pt">
@@ -634,14 +742,14 @@
             border-left-width: 1pt;
             border-left-color: #666666;
           ">
-        <p class="s6" style="
-              padding-top: 6pt;
-              padding-left: 3pt;
-              text-indent: 0pt;
-              text-align: left;
-            ">
-          React, React Native, Next.js, Vue, Nuxt, Angular
-        </p>
+        <div style="padding-top: 6pt; padding-left: 3pt;">
+          <span class="skill-tag">React</span>
+          <span class="skill-tag">React Native</span>
+          <span class="skill-tag">Next.js</span>
+          <span class="skill-tag">Vue</span>
+          <span class="skill-tag">Nuxt</span>
+          <span class="skill-tag">Angular</span>
+        </div>
       </td>
     </tr>
     <tr style="height: 30pt">
@@ -670,14 +778,11 @@
             border-left-width: 1pt;
             border-left-color: #666666;
           ">
-        <p class="s6" style="
-              padding-top: 6pt;
-              padding-left: 3pt;
-              text-indent: 0pt;
-              text-align: left;
-            ">
-          Node.js, NestJS, Express
-        </p>
+        <div style="padding-top: 6pt; padding-left: 3pt;">
+          <span class="skill-tag">Node.js</span>
+          <span class="skill-tag">NestJS</span>
+          <span class="skill-tag">Express</span>
+        </div>
       </td>
     </tr>
     <tr style="height: 30pt">
@@ -706,14 +811,13 @@
             border-left-width: 1pt;
             border-left-color: #666666;
           ">
-        <p class="s6" style="
-              padding-top: 6pt;
-              padding-left: 3pt;
-              text-indent: 0pt;
-              text-align: left;
-            ">
-          PostgreSQL, MySQL, MongoDB, Redis, LevelDB
-        </p>
+        <div style="padding-top: 6pt; padding-left: 3pt;">
+          <span class="skill-tag">PostgreSQL</span>
+          <span class="skill-tag">MySQL</span>
+          <span class="skill-tag">MongoDB</span>
+          <span class="skill-tag">Redis</span>
+          <span class="skill-tag">LevelDB</span>
+        </div>
       </td>
     </tr>
     <tr>
@@ -742,14 +846,12 @@
             border-left-width: 1pt;
             border-left-color: #666666;
           ">
-        <p class="s6" style="
-              padding-top: 6pt;
-              padding-left: 3pt;
-              text-indent: 0pt;
-              text-align: left;
-            ">
-          Jest, Mocha, Chai, Hardhat Testing
-        </p>
+        <div style="padding-top: 6pt; padding-left: 3pt;">
+          <span class="skill-tag">Jest</span>
+          <span class="skill-tag">Mocha</span>
+          <span class="skill-tag">Chai</span>
+          <span class="skill-tag">Hardhat Testing</span>
+        </div>
       </td>
     </tr>
   </table>
@@ -1890,6 +1992,8 @@
     <strong>Huynh Tan Ngoc</strong>
   </p>
   <p style="text-indent: 0pt; text-align: left"><br /></p>
+  
+  </div> <!-- End of z-index wrapper -->
 </body>
 
 </html>
