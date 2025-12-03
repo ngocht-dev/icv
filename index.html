@@ -382,48 +382,203 @@
     /* Mobile Responsiveness */
     @media (max-width: 768px) {
       body {
-        padding: 1.5rem !important;
+        padding: 1rem !important;
+        background-size: 30px 30px, 30px 30px, 100% 100%, 100% 100%, 100% 100%;
       }
 
       .header {
         flex-direction: column;
         text-align: center;
-        padding: 2rem 1.5rem;
-        gap: 2rem;
+        padding: 1.5rem 1rem;
+        gap: 1.5rem;
+        margin-bottom: 2rem;
       }
 
       .header__left {
         flex-direction: column;
+        width: 100%;
+      }
+
+      .header__left img {
+        width: 100px;
+        height: 100px;
+        margin-bottom: 1rem;
       }
 
       .header__right__content {
         text-align: center;
         align-items: center;
+        width: 100%;
       }
 
-      .s1 { font-size: 2rem; }
+      .s1 { 
+        font-size: 1.75rem;
+        line-height: 1.2;
+      }
+
+      .s2 {
+        font-size: 1rem;
+      }
+
+      .header__left__content div[style*="display: flex"] {
+        flex-wrap: wrap;
+        justify-content: center;
+        gap: 0.5rem;
+        margin-top: 0.75rem;
+      }
+
+      .header__left__content span {
+        font-size: 0.7rem;
+        padding: 0.4rem 0.8rem;
+        border-radius: 16px;
+      }
+
+      .header__right__content {
+        flex-direction: column;
+        gap: 0.75rem;
+        font-size: 0.85rem;
+        text-align: center;
+      }
+
+      .header__right__content p {
+        margin: 0;
+        padding: 0.25rem 0;
+      }
       
       table, tbody, tr, td {
         display: block;
         width: 100%;
       }
 
+      table {
+        border-radius: 12px;
+        margin-bottom: 1.5rem;
+      }
+
       table tr {
-        margin-bottom: 1rem;
-        border-bottom: 1px solid var(--border);
+        margin-bottom: 1.25rem;
+        border-bottom: 1px solid rgba(14, 165, 233, 0.15);
+        padding: 0.75rem;
       }
 
       table td:first-child {
         width: 100%;
         border-bottom: none !important;
-        padding-bottom: 0.5rem !important;
-        color: var(--primary);
+        padding: 0.75rem 0.75rem 0.5rem !important;
+        color: var(--neon-blue);
+        font-weight: 600;
+        font-size: 0.85rem;
+        text-transform: uppercase;
+        letter-spacing: 0.05em;
         background: transparent;
         border-right: none;
       }
       
       table td:last-child {
-        padding-top: 0.5rem !important;
+        padding: 0.5rem 0.75rem 0.75rem !important;
+        font-size: 0.9rem;
+      }
+
+      .s3 {
+        font-size: 1rem;
+        margin: 2.5rem 0 1.25rem;
+        gap: 1rem;
+      }
+
+      .s3::after {
+        width: 60px;
+      }
+
+      .summary-hero {
+        padding: 1.5rem;
+        font-size: 0.95rem;
+      }
+
+      .summary-grid {
+        gap: 1rem;
+      }
+
+      .summary-card {
+        padding: 1.25rem;
+      }
+
+      .summary-icon {
+        width: 48px;
+        height: 48px;
+        font-size: 1.5rem;
+        margin-bottom: 1rem;
+      }
+
+      .summary-title {
+        font-size: 1rem;
+      }
+
+      .summary-text {
+        font-size: 0.85rem;
+      }
+
+      .stats-container {
+        flex-direction: column;
+        gap: 1rem;
+      }
+
+      .stat-item {
+        min-width: 100%;
+        padding: 1.5rem 1rem;
+      }
+
+      .stat-number {
+        font-size: 2rem;
+      }
+
+      .stat-label {
+        font-size: 0.85rem;
+      }
+
+      .skill-tag {
+        font-size: 0.7rem;
+        padding: 0.4rem 0.8rem;
+        margin: 0.25rem;
+      }
+
+      ul {
+        padding-left: 1.25rem;
+      }
+
+      li {
+        font-size: 0.9rem;
+        margin-bottom: 0.5rem;
+      }
+
+      /* Mobile floating orbs optimization */
+      div[style*="position: fixed"][style*="border-radius: 50%"] {
+        width: 200px !important;
+        height: 200px !important;
+        filter: blur(40px) !important;
+      }
+
+      /* Touch-friendly interactions */
+      .summary-card,
+      .stat-item,
+      .skill-tag {
+        -webkit-tap-highlight-color: rgba(14, 165, 233, 0.1);
+        cursor: pointer;
+      }
+
+      /* Reduce motion for better mobile performance */
+      @media (prefers-reduced-motion: reduce) {
+        .header::before,
+        .header::after,
+        .summary-card::before,
+        .stat-item::before,
+        .skill-tag::before,
+        .summary-icon::after {
+          animation: none !important;
+        }
+        
+        * {
+          transition: none !important;
+        }
       }
     }
 
@@ -449,6 +604,7 @@
       text-transform: uppercase;
       letter-spacing: 0.05em;
       font-size: 0.75rem;
+      -webkit-tap-highlight-color: transparent;
     }
 
     .skill-tag::before {
@@ -503,6 +659,190 @@
     @media (max-width: 640px) {
       .summary-grid {
         grid-template-columns: 1fr;
+      }
+
+      /* Reduce animations for better mobile performance */
+      .header::after,
+      .stat-item::before {
+        display: none;
+      }
+
+      .header::before {
+        animation: slideRight 4s ease-in-out infinite;
+      }
+
+      * {
+        -webkit-tap-highlight-color: rgba(14, 165, 233, 0.1);
+      }
+
+      /* Extra small screen optimizations */
+      body {
+        padding: 0.75rem !important;
+      }
+
+      .header {
+        padding: 1.25rem 0.75rem;
+        gap: 1.25rem;
+      }
+
+      .header__left img {
+        width: 80px;
+        height: 80px;
+      }
+
+      .s1 {
+        font-size: 1.5rem;
+      }
+
+      .summary-hero {
+        padding: 1.25rem;
+        font-size: 0.9rem;
+      }
+
+      .summary-card {
+        padding: 1rem;
+      }
+
+      .summary-icon {
+        width: 40px;
+        height: 40px;
+        font-size: 1.25rem;
+      }
+
+      .stat-item {
+        padding: 1.25rem 0.75rem;
+      }
+
+      .stat-number {
+        font-size: 1.75rem;
+      }
+    }
+
+    /* Very small screens (phones < 480px) */
+    @media (max-width: 480px) {
+      body {
+        padding: 0.5rem !important;
+        font-size: 14px;
+      }
+
+      .header {
+        padding: 1rem 0.5rem;
+        gap: 1rem;
+        margin-bottom: 1.5rem;
+      }
+
+      .header__left img {
+        width: 70px;
+        height: 70px;
+        margin-bottom: 0.75rem;
+      }
+
+      .s1 {
+        font-size: 1.25rem;
+      }
+
+      .s2 {
+        font-size: 0.9rem;
+      }
+
+      .header__left__content span {
+        font-size: 0.65rem;
+        padding: 0.3rem 0.6rem;
+      }
+
+      .header__right__content {
+        font-size: 0.8rem;
+        gap: 0.5rem;
+      }
+
+      .s3 {
+        font-size: 0.9rem;
+        margin: 2rem 0 1rem;
+        gap: 0.75rem;
+      }
+
+      .s3::after {
+        width: 40px;
+      }
+
+      .summary-hero {
+        padding: 1rem;
+        font-size: 0.85rem;
+      }
+
+      .summary-grid {
+        gap: 0.75rem;
+      }
+
+      .summary-card {
+        padding: 0.875rem;
+        border-radius: 10px;
+      }
+
+      .summary-icon {
+        width: 36px;
+        height: 36px;
+        font-size: 1.1rem;
+        margin-bottom: 0.75rem;
+      }
+
+      .summary-title {
+        font-size: 0.9rem;
+      }
+
+      .summary-text {
+        font-size: 0.8rem;
+      }
+
+      .stats-container {
+        gap: 0.75rem;
+      }
+
+      .stat-item {
+        padding: 1rem 0.5rem;
+        border-radius: 12px;
+      }
+
+      .stat-number {
+        font-size: 1.5rem;
+      }
+
+      .stat-label {
+        font-size: 0.8rem;
+      }
+
+      .skill-tag {
+        font-size: 0.65rem;
+        padding: 0.35rem 0.7rem;
+        margin: 0.2rem;
+      }
+
+      table {
+        margin-bottom: 1.25rem;
+      }
+
+      table tr {
+        margin-bottom: 1rem;
+        padding: 0.5rem;
+      }
+
+      table td:first-child {
+        font-size: 0.8rem;
+        padding: 0.5rem 0.5rem 0.25rem !important;
+      }
+
+      table td:last-child {
+        padding: 0.25rem 0.5rem 0.5rem !important;
+        font-size: 0.85rem;
+      }
+
+      ul {
+        padding-left: 1rem;
+      }
+
+      li {
+        font-size: 0.85rem;
+        margin-bottom: 0.4rem;
       }
     }
 
