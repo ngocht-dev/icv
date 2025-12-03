@@ -680,6 +680,58 @@
       text-shadow: 0 0 10px rgba(14, 165, 233, 0.8);
     }
 
+    /* TECHNICAL SKILLS table helper styles (for screenshot/debug and mobile) */
+    .skills-table {
+      width: 100%;
+      box-sizing: border-box;
+      border-radius: 12px;
+      overflow: hidden;
+      border: 1px solid rgba(14,165,233,0.08);
+      background: linear-gradient(180deg, rgba(10,14,26,0.6), rgba(10,14,26,0.4));
+      margin-bottom: 1.25rem;
+      padding: 0.25rem;
+    }
+
+    /* Temporary highlight class to make screenshot area obvious */
+    .skills-table.highlight {
+      box-shadow: 0 0 0 4px rgba(14,165,233,0.14), 0 12px 36px rgba(14,165,233,0.08) inset;
+      outline: 4px solid rgba(14,165,233,0.06);
+      transform: translateY(-2px);
+    }
+
+    /* Make cells readable on small screens by default when stacked */
+    .skills-table td {
+      padding: 0.6rem 0.75rem;
+      color: var(--text-main);
+      line-height: 1.45;
+      font-size: 0.95rem;
+    }
+
+    @media (max-width: 768px) {
+      /* Stack table rows into blocks for mobile */
+      .skills-table,
+      .skills-table tbody,
+      .skills-table tr,
+      .skills-table td {
+        display: block;
+        width: 100%;
+      }
+
+      .skills-table td.label {
+        color: var(--neon-blue);
+        font-weight: 700;
+        text-transform: uppercase;
+        letter-spacing: 0.05em;
+        font-size: 0.85rem;
+        padding-top: 0.75rem;
+      }
+
+      .skills-table td.value {
+        padding-bottom: 0.75rem;
+        font-size: 0.95rem;
+      }
+    }
+
     /* Spinning animation for avatar border */
     @keyframes spin {
       0% { transform: rotate(0deg); opacity: 0.6; }
@@ -1332,7 +1384,7 @@
       ">
    TECHNICAL SKILLS & KNOWLEDGE
   </p>
-  <table style="border-collapse: collapse; margin-left: 5.50946pt; margin-top: 5pt" cellspacing="0">
+  <table id="skills-table" class="skills-table" style="border-collapse: collapse; margin-left: 5.50946pt; margin-top: 5pt" cellspacing="0">
     <tr style="height: 60pt">
       <td style="
             border-top-style: dashed;
