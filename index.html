@@ -32,15 +32,19 @@
     body {
       background-color: var(--bg-dark);
       background-image: 
-        radial-gradient(circle at 15% 50%, rgba(56, 189, 248, 0.08) 0%, transparent 25%),
-        radial-gradient(circle at 85% 30%, rgba(139, 92, 246, 0.08) 0%, transparent 25%);
+        radial-gradient(circle at 15% 50%, rgba(56, 189, 248, 0.1) 0%, transparent 40%),
+        radial-gradient(circle at 85% 30%, rgba(139, 92, 246, 0.1) 0%, transparent 40%),
+        radial-gradient(circle at 50% 80%, rgba(59, 130, 246, 0.05) 0%, transparent 30%);
       background-attachment: fixed;
       min-height: 100vh;
       font-family: 'Inter', "Segoe UI", sans-serif;
       color: var(--text-muted);
       line-height: 1.6;
       -webkit-font-smoothing: antialiased;
-      padding: 56px 40px;
+      -moz-osx-font-smoothing: grayscale;
+      padding: 3.5rem 2.5rem;
+      scroll-behavior: smooth;
+      position: relative;
     }
 
     /* Animations */
@@ -75,26 +79,32 @@
 
     .s3 {
       font-weight: 800;
-      font-size: 1.1rem;
+      font-size: 1.15rem;
       text-transform: uppercase;
-      letter-spacing: 0.1em;
-      margin: 3rem 0 1.5rem;
+      letter-spacing: 0.12em;
+      margin: 3.5rem 0 1.75rem;
       display: flex;
       align-items: center;
       gap: 1rem;
-      background: linear-gradient(to right, #60a5fa, #a78bfa);
+      background: linear-gradient(135deg, #60a5fa, #a78bfa, #60a5fa);
+      background-size: 200% auto;
       -webkit-background-clip: text;
       -webkit-text-fill-color: transparent;
       width: fit-content;
+      animation: shimmer 4s ease-in-out infinite;
+      position: relative;
     }
 
     .s3::after {
       content: '';
-      height: 2px;
-      width: 60px;
-      background: linear-gradient(90deg, var(--primary) 0%, var(--secondary) 100%);
-      border-radius: 2px;
+      height: 3px;
+      width: 80px;
+      background: linear-gradient(90deg, var(--primary) 0%, var(--secondary) 50%, var(--primary) 100%);
+      background-size: 200% auto;
+      border-radius: 3px;
       display: block;
+      animation: shimmer 4s ease-in-out infinite;
+      box-shadow: 0 0 10px rgba(59, 130, 246, 0.5);
     }
 
     h1 {
@@ -160,15 +170,26 @@
       display: flex;
       justify-content: space-between;
       align-items: center;
-      background: linear-gradient(135deg, rgba(30, 41, 59, 0.6) 0%, rgba(30, 41, 59, 0.3) 100%);
-      border-radius: 24px;
+      background: linear-gradient(135deg, rgba(30, 41, 59, 0.7) 0%, rgba(30, 41, 59, 0.4) 100%);
+      border-radius: 28px;
       padding: 3rem;
-      border: 1px solid rgba(255, 255, 255, 0.05);
-      backdrop-filter: blur(12px);
+      border: 1px solid rgba(255, 255, 255, 0.08);
+      backdrop-filter: blur(20px);
       margin-bottom: 3rem;
-      box-shadow: 0 20px 40px -10px rgba(0, 0, 0, 0.3);
+      box-shadow: 
+        0 20px 60px -15px rgba(0, 0, 0, 0.4),
+        0 0 0 1px rgba(59, 130, 246, 0.1),
+        inset 0 1px 0 rgba(255, 255, 255, 0.05);
       position: relative;
       overflow: hidden;
+      transition: all 0.3s ease;
+    }
+
+    .header:hover {
+      box-shadow: 
+        0 25px 70px -15px rgba(0, 0, 0, 0.5),
+        0 0 0 1px rgba(59, 130, 246, 0.2),
+        inset 0 1px 0 rgba(255, 255, 255, 0.08);
     }
 
     .header::before {
@@ -177,8 +198,8 @@
       top: 0;
       left: 0;
       right: 0;
-      height: 1px;
-      background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.1), transparent);
+      height: 2px;
+      background: linear-gradient(90deg, transparent, rgba(59, 130, 246, 0.5), rgba(139, 92, 246, 0.5), transparent);
     }
 
     .header__left {
@@ -191,14 +212,24 @@
       width: 120px;
       height: 120px;
       border-radius: 50%;
-      border: 2px solid rgba(59, 130, 246, 0.8);
-      box-shadow: 0 0 30px var(--glow);
+      border: 3px solid transparent;
+      background: linear-gradient(var(--bg-dark), var(--bg-dark)) padding-box,
+                  linear-gradient(135deg, #3b82f6, #8b5cf6, #3b82f6) border-box;
+      box-shadow: 
+        0 0 40px rgba(59, 130, 246, 0.4),
+        0 0 80px rgba(139, 92, 246, 0.2),
+        inset 0 0 20px rgba(59, 130, 246, 0.1);
       object-fit: cover;
-      transition: transform 0.3s ease;
+      transition: all 0.4s ease;
+      position: relative;
     }
 
     .header__left img:hover {
-      transform: scale(1.05);
+      transform: scale(1.08) rotate(2deg);
+      box-shadow: 
+        0 0 50px rgba(59, 130, 246, 0.6),
+        0 0 100px rgba(139, 92, 246, 0.3),
+        inset 0 0 30px rgba(59, 130, 246, 0.2);
     }
 
     .header__right__content {
@@ -214,13 +245,24 @@
       width: 100%;
       border-collapse: separate;
       border-spacing: 0;
-      background: rgba(30, 41, 59, 0.3);
-      border-radius: 16px;
-      border: 1px solid var(--border);
+      background: rgba(30, 41, 59, 0.4);
+      border-radius: 20px;
+      border: 1px solid rgba(255, 255, 255, 0.06);
       overflow: hidden;
       margin-bottom: 2rem;
-      backdrop-filter: blur(10px);
-      box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1), 0 2px 4px -1px rgba(0, 0, 0, 0.06);
+      backdrop-filter: blur(12px);
+      box-shadow: 
+        0 8px 16px -4px rgba(0, 0, 0, 0.2),
+        0 0 0 1px rgba(59, 130, 246, 0.05),
+        inset 0 1px 0 rgba(255, 255, 255, 0.03);
+      transition: all 0.3s ease;
+    }
+
+    table:hover {
+      box-shadow: 
+        0 12px 24px -4px rgba(0, 0, 0, 0.3),
+        0 0 0 1px rgba(59, 130, 246, 0.1),
+        inset 0 1px 0 rgba(255, 255, 255, 0.05);
     }
 
     /* Override inline styles */
@@ -236,15 +278,16 @@
     }
 
     table tr:hover td {
-      background: rgba(255, 255, 255, 0.02);
+      background: linear-gradient(90deg, rgba(59, 130, 246, 0.05) 0%, rgba(139, 92, 246, 0.05) 100%);
     }
 
     /* Specific column widths for skills table */
     table tr td:first-child {
       width: 30%;
-      background: rgba(15, 23, 42, 0.3);
-      border-right: 1px solid var(--border);
+      background: linear-gradient(135deg, rgba(15, 23, 42, 0.5) 0%, rgba(15, 23, 42, 0.3) 100%);
+      border-right: 1px solid rgba(59, 130, 246, 0.1);
       color: var(--primary-hover);
+      font-weight: 600;
     }
 
     ul {
@@ -270,13 +313,13 @@
     /* Mobile Responsiveness */
     @media (max-width: 768px) {
       body {
-        padding: 1rem !important;
+        padding: 1.5rem !important;
       }
 
       .header {
         flex-direction: column;
         text-align: center;
-        padding: 2rem;
+        padding: 2rem 1.5rem;
         gap: 2rem;
       }
 
@@ -318,21 +361,27 @@
     /* Skill Tags */
     .skill-tag {
       display: inline-block;
-      padding: 0.4rem 0.9rem;
-      background: linear-gradient(135deg, rgba(59, 130, 246, 0.15), rgba(139, 92, 246, 0.15));
-      border: 1px solid rgba(255, 255, 255, 0.1);
-      border-radius: 20px;
+      padding: 0.5rem 1rem;
+      background: linear-gradient(135deg, rgba(59, 130, 246, 0.12), rgba(139, 92, 246, 0.12));
+      border: 1px solid rgba(59, 130, 246, 0.2);
+      border-radius: 24px;
       font-size: 0.85rem;
       color: var(--text-main);
-      margin: 0.25rem;
-      transition: all 0.3s ease;
+      margin: 0.3rem;
+      transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
       cursor: default;
+      font-weight: 500;
+      box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
     }
 
     .skill-tag:hover {
-      background: linear-gradient(135deg, rgba(59, 130, 246, 0.25), rgba(139, 92, 246, 0.25));
-      transform: translateY(-2px);
-      box-shadow: 0 4px 12px rgba(59, 130, 246, 0.3);
+      background: linear-gradient(135deg, rgba(59, 130, 246, 0.3), rgba(139, 92, 246, 0.3));
+      transform: translateY(-3px) scale(1.05);
+      box-shadow: 
+        0 8px 20px rgba(59, 130, 246, 0.4),
+        0 0 0 1px rgba(59, 130, 246, 0.3),
+        inset 0 1px 0 rgba(255, 255, 255, 0.1);
+      border-color: rgba(59, 130, 246, 0.5);
     }
 
     /* Spinning animation for avatar border */
@@ -351,21 +400,38 @@
     /* Summary Cards */
     .summary-grid {
       display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+      grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
       gap: 1.5rem;
       margin-top: 1.5rem;
     }
 
+    @media (max-width: 640px) {
+      .summary-grid {
+        grid-template-columns: 1fr;
+      }
+    }
+
     .summary-card {
-      background: rgba(30, 41, 59, 0.4);
-      border: 1px solid rgba(255, 255, 255, 0.05);
-      border-radius: 16px;
-      padding: 1.5rem;
-      backdrop-filter: blur(10px);
-      transition: all 0.3s ease;
+      background: linear-gradient(135deg, rgba(30, 41, 59, 0.5) 0%, rgba(30, 41, 59, 0.3) 100%);
+      border: 1px solid rgba(255, 255, 255, 0.08);
+      border-radius: 20px;
+      padding: 1.75rem;
+      backdrop-filter: blur(12px);
+      transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
       position: relative;
       overflow: hidden;
+      animation: fadeIn 0.6s ease-out forwards;
+      box-shadow: 
+        0 4px 12px rgba(0, 0, 0, 0.15),
+        inset 0 1px 0 rgba(255, 255, 255, 0.03);
     }
+
+    .summary-card:nth-child(1) { animation-delay: 0.1s; }
+    .summary-card:nth-child(2) { animation-delay: 0.2s; }
+    .summary-card:nth-child(3) { animation-delay: 0.3s; }
+    .summary-card:nth-child(4) { animation-delay: 0.4s; }
+    .summary-card:nth-child(5) { animation-delay: 0.5s; }
+    .summary-card:nth-child(6) { animation-delay: 0.6s; }
 
     .summary-card::before {
       content: '';
@@ -380,9 +446,13 @@
     }
 
     .summary-card:hover {
-      transform: translateY(-4px);
-      border-color: rgba(59, 130, 246, 0.3);
-      box-shadow: 0 8px 24px rgba(0, 0, 0, 0.2);
+      transform: translateY(-6px) scale(1.02);
+      border-color: rgba(59, 130, 246, 0.4);
+      box-shadow: 
+        0 16px 40px rgba(0, 0, 0, 0.3),
+        0 0 0 1px rgba(59, 130, 246, 0.2),
+        inset 0 1px 0 rgba(255, 255, 255, 0.08);
+      background: linear-gradient(135deg, rgba(30, 41, 59, 0.6) 0%, rgba(30, 41, 59, 0.4) 100%);
     }
 
     .summary-card:hover::before {
@@ -390,16 +460,27 @@
     }
 
     .summary-icon {
-      width: 48px;
-      height: 48px;
-      background: linear-gradient(135deg, rgba(59, 130, 246, 0.2), rgba(139, 92, 246, 0.2));
-      border-radius: 12px;
+      width: 56px;
+      height: 56px;
+      background: linear-gradient(135deg, rgba(59, 130, 246, 0.25), rgba(139, 92, 246, 0.25));
+      border-radius: 16px;
       display: flex;
       align-items: center;
       justify-content: center;
-      font-size: 1.5rem;
-      margin-bottom: 1rem;
-      border: 1px solid rgba(255, 255, 255, 0.1);
+      font-size: 1.75rem;
+      margin-bottom: 1.25rem;
+      border: 1px solid rgba(59, 130, 246, 0.3);
+      box-shadow: 
+        0 4px 12px rgba(59, 130, 246, 0.2),
+        inset 0 1px 0 rgba(255, 255, 255, 0.1);
+      transition: all 0.3s ease;
+    }
+
+    .summary-card:hover .summary-icon {
+      transform: scale(1.1) rotate(5deg);
+      box-shadow: 
+        0 8px 20px rgba(59, 130, 246, 0.4),
+        inset 0 1px 0 rgba(255, 255, 255, 0.15);
     }
 
     .summary-title {
@@ -426,21 +507,42 @@
     .stat-item {
       flex: 1;
       min-width: 150px;
-      padding: 1.5rem;
-      background: rgba(30, 41, 59, 0.3);
-      border: 1px solid rgba(255, 255, 255, 0.05);
-      border-radius: 16px;
+      padding: 2rem 1.5rem;
+      background: linear-gradient(135deg, rgba(30, 41, 59, 0.5) 0%, rgba(30, 41, 59, 0.3) 100%);
+      border: 1px solid rgba(255, 255, 255, 0.08);
+      border-radius: 20px;
       text-align: center;
-      backdrop-filter: blur(10px);
+      backdrop-filter: blur(12px);
+      box-shadow: 
+        0 4px 12px rgba(0, 0, 0, 0.15),
+        inset 0 1px 0 rgba(255, 255, 255, 0.03);
+      transition: all 0.3s ease;
+      cursor: default;
+    }
+
+    .stat-item:hover {
+      transform: translateY(-4px);
+      border-color: rgba(59, 130, 246, 0.3);
+      box-shadow: 
+        0 12px 28px rgba(0, 0, 0, 0.25),
+        0 0 0 1px rgba(59, 130, 246, 0.2),
+        inset 0 1px 0 rgba(255, 255, 255, 0.06);
     }
 
     .stat-number {
-      font-size: 2rem;
+      font-size: 2.5rem;
       font-weight: 800;
-      background: linear-gradient(135deg, #60a5fa, #a78bfa);
+      background: linear-gradient(135deg, #60a5fa, #a78bfa, #60a5fa);
+      background-size: 200% auto;
       -webkit-background-clip: text;
       -webkit-text-fill-color: transparent;
       display: block;
+      animation: shimmer 3s ease-in-out infinite;
+    }
+
+    @keyframes shimmer {
+      0%, 100% { background-position: 0% center; }
+      50% { background-position: 100% center; }
     }
 
     .stat-label {
