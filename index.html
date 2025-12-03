@@ -481,12 +481,17 @@
 
       .s3 {
         font-size: 1rem;
-        margin: 2.5rem 0 1.25rem;
+        margin: 2.5rem 0 1.5rem;
         gap: 1rem;
       }
 
       .s3::after {
-        width: 60px;
+        width: 80px;
+      }
+
+      h1 {
+        font-size: 1.25rem;
+        margin: 1.5rem 0 1rem;
       }
 
       .summary-hero {
@@ -1098,6 +1103,224 @@
         color: #000;
       }
     }
+    /* Flex-based responsive skills grid (new) */
+    .skills-grid {
+      display: flex;
+      flex-direction: column;
+      gap: 0.75rem;
+      width: 100%;
+      margin-bottom: 1.25rem;
+      border-radius: 16px;
+      padding: 0.5rem;
+      background: linear-gradient(135deg, rgba(10, 14, 26, 0.9), rgba(30, 41, 59, 0.6));
+      border: 1px solid rgba(14,165,233,0.15);
+      box-sizing: border-box;
+      backdrop-filter: blur(12px);
+      box-shadow: 
+        0 8px 24px -4px rgba(0, 0, 0, 0.3),
+        0 0 20px rgba(14, 165, 233, 0.08),
+        inset 0 1px 0 rgba(14, 165, 233, 0.08);
+      transition: all 0.3s ease;
+    }
+
+    .skills-grid:hover {
+      border-color: rgba(14, 165, 233, 0.25);
+      box-shadow: 
+        0 12px 32px -4px rgba(0, 0, 0, 0.4),
+        0 0 30px rgba(14, 165, 233, 0.12),
+        inset 0 1px 0 rgba(14, 165, 233, 0.12);
+    }
+
+    .skill-row {
+      display: flex;
+      gap: 1rem;
+      align-items: flex-start;
+      padding: 1rem;
+      border-top: 1px dashed rgba(148, 163, 184, 0.12);
+      border-radius: 8px;
+      transition: all 0.25s ease;
+    }
+
+    .skill-row:first-child { border-top: none; }
+
+    .skill-row:hover {
+      background: linear-gradient(90deg, rgba(59, 130, 246, 0.05), rgba(139, 92, 246, 0.03));
+      border-color: rgba(14, 165, 233, 0.2);
+    }
+
+    .skill-label {
+      flex: 0 0 220px;
+      max-width: 260px;
+      color: var(--text-main);
+      font-weight: 700;
+      text-transform: uppercase;
+      font-size: 0.85rem;
+      letter-spacing: 0.05em;
+    }
+
+    .skill-value {
+      flex: 1 1 auto;
+      color: var(--text-muted);
+      font-size: 0.95rem;
+      line-height: 1.5;
+    }
+
+    .skill-value .tag-list {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 0.4rem 0.6rem;
+      align-items: center;
+    }
+
+    .skill-value .onchain-list {
+      padding-left: 1rem;
+      margin: 0;
+    }
+
+    /* Stack rows on very small screens */
+    @media (max-width: 420px) {
+      .skill-row {
+        flex-direction: column;
+        gap: 0.5rem;
+        padding: 0.75rem;
+      }
+
+      .skill-label {
+        flex: none;
+        width: 100%;
+        padding-bottom: 0.25rem;
+        border-bottom: 1px solid rgba(14, 165, 233, 0.1);
+      }
+
+      .skill-value {
+        width: 100%;
+      }
+
+      .skills-grid,
+      .work-entry {
+        border-radius: 10px;
+        padding: 0.35rem;
+      }
+
+      .skill-row,
+      .work-row {
+        padding: 0.65rem 0.5rem;
+      }
+    }
+
+    /* Flex-based work entry styles */
+    .work-entry {
+      margin-bottom: 1.5rem;
+      border-radius: 16px;
+      background: linear-gradient(135deg, rgba(10, 14, 26, 0.9), rgba(30, 41, 59, 0.6));
+      border: 1px solid rgba(14,165,233,0.15);
+      padding: 0.5rem;
+      box-sizing: border-box;
+      backdrop-filter: blur(12px);
+      box-shadow: 
+        0 8px 24px -4px rgba(0, 0, 0, 0.3),
+        0 0 20px rgba(14, 165, 233, 0.08),
+        inset 0 1px 0 rgba(14, 165, 233, 0.08);
+      transition: all 0.3s ease;
+    }
+
+    .work-entry:hover {
+      border-color: rgba(14, 165, 233, 0.25);
+      box-shadow: 
+        0 12px 32px -4px rgba(0, 0, 0, 0.4),
+        0 0 30px rgba(14, 165, 233, 0.12),
+        inset 0 1px 0 rgba(14, 165, 233, 0.12);
+    }
+
+    .work-grid {
+      display: flex;
+      flex-direction: column;
+      gap: 0.5rem;
+      padding: 0.5rem 0.75rem;
+    }
+
+    .work-row {
+      display: flex;
+      gap: 1rem;
+      align-items: flex-start;
+      padding: 1rem;
+      border-top: 1px dashed rgba(148, 163, 184, 0.12);
+      border-radius: 8px;
+      transition: all 0.25s ease;
+    }
+
+    .work-row:first-child { border-top: none; }
+
+    .work-row:hover {
+      background: linear-gradient(90deg, rgba(59, 130, 246, 0.05), rgba(139, 92, 246, 0.03));
+      border-color: rgba(14, 165, 233, 0.2);
+    }
+
+    .work-label {
+      flex: 0 0 160px;
+      max-width: 220px;
+      color: var(--text-main);
+      font-weight: 700;
+      text-transform: uppercase;
+      font-size: 0.85rem;
+      letter-spacing: 0.04em;
+    }
+
+    .work-value {
+      flex: 1 1 auto;
+      color: var(--text-muted);
+      font-size: 0.95rem;
+      line-height: 1.6;
+    }
+
+    .work-value ul { 
+      margin: 0.5rem 0 0 0; 
+      padding-left: 1.25rem; 
+    }
+
+    .work-value li,
+    .skill-value li {
+      margin-bottom: 0.6rem;
+      line-height: 1.5;
+    }
+
+    .work-value li:last-child,
+    .skill-value li:last-child {
+      margin-bottom: 0;
+    }
+
+    @media (max-width: 480px) {
+      .work-row {
+        flex-direction: column;
+        gap: 0.5rem;
+        padding: 0.75rem;
+      }
+
+      .work-label {
+        width: 100%;
+        flex: none;
+        font-size: 0.8rem;
+        padding-bottom: 0.25rem;
+        border-bottom: 1px solid rgba(14, 165, 233, 0.1);
+      }
+
+      .work-value {
+        width: 100%;
+        font-size: 0.9rem;
+      }
+
+      .skills-grid,
+      .work-entry {
+        border-radius: 12px;
+        padding: 0.5rem;
+        margin-bottom: 1rem;
+      }
+
+      .skill-row,
+      .work-row {
+        padding: 0.75rem 0.5rem;
+      }
+    }
   </style>
 </head>
 
@@ -1236,293 +1459,48 @@
       ">
    TECHNICAL SKILLS & KNOWLEDGE
   </p>
-  <table style="border-collapse: collapse; margin-left: 5.50946pt; margin-top: 5pt" cellspacing="0">
-    <tr style="height: 60pt">
-      <td style="
-            border-top-style: dashed;
-            border-top-width: 1pt;
-            border-top-color: #666666;
-            border-bottom-style: dashed;
-            border-bottom-width: 1pt;
-            border-bottom-color: #666666;
-            border-right-style: dashed;
-            border-right-width: 1pt;
-            border-right-color: #666666;
-          ">
-        <p class="s5" style="
-              padding-top: 6pt;
-              padding-left: 3pt;
-              text-indent: 0pt;
-              text-align: left;
-            ">
-          Knowledge
-        </p>
-      </td>
-      <td style="
-            border-top-style: dashed;
-            border-top-width: 1pt;
-            border-top-color: #666666;
-            border-left-style: dashed;
-            border-left-width: 1pt;
-            border-left-color: #666666;
-            border-bottom-style: dashed;
-            border-bottom-width: 1pt;
-            border-bottom-color: #666666;
-          ">
-        <p class="s6" style="
-              padding-top: 6pt;
-              padding-left: 3pt;
-              text-indent: 0pt;
-              text-align: left;
-            ">
-          Deep expertise in consensus algorithms, cryptography, and decentralized finance (DeFi). Hands-on experience integrating with major protocols (Pancake, Uniswap, Aave) and developing smart contract interactions for frontend and backend systems.
-        </p>
-      </td>
-    </tr>
-    <tr style="height: 30pt">
-      <td style="
-            border-top-style: dashed;
-            border-top-width: 1pt;
-            border-top-color: #666666;
-            border-bottom-style: dashed;
-            border-bottom-width: 1pt;
-            border-bottom-color: #666666;
-            border-right-style: dashed;
-            border-right-width: 1pt;
-            border-right-color: #666666;
-          ">
-        <p class="s5" style="
-              padding-top: 6pt;
-              padding-left: 3pt;
-              text-indent: 0pt;
-              text-align: left;
-            ">
-          Programming Language
-        </p>
-      </td>
-      <td style="
-            border-top-style: dashed;
-            border-top-width: 1pt;
-            border-top-color: #666666;
-            border-left-style: dashed;
-            border-left-width: 1pt;
-            border-left-color: #666666;
-            border-bottom-style: dashed;
-            border-bottom-width: 1pt;
-            border-bottom-color: #666666;
-          ">
-        <div style="padding-top: 6pt; padding-left: 3pt;">
-          <span class="skill-tag">Solidity</span>
-          <span class="skill-tag">Rust</span>
-          <span class="skill-tag">JavaScript</span>
-          <span class="skill-tag">TypeScript</span>
-          <span class="skill-tag">Haskell</span>
-          <span class="skill-tag">Golang</span>
-          <span class="skill-tag">PHP</span>
-          <span class="skill-tag">HTML5</span>
-          <span class="skill-tag">CSS3</span>
-        </div>
-      </td>
-    </tr>
-    <tr style="height: 60pt">
-      <td style="
-            border-top-style: dashed;
-            border-top-width: 1pt;
-            border-top-color: #666666;
-            border-right-style: dashed;
-            border-right-width: 1pt;
-            border-right-color: #666666;
-          ">
-        <p class="s5" style="
-              padding-top: 6pt;
-              padding-left: 3pt;
-              text-indent: 0pt;
-              text-align: left;
-            ">
-          Blockchain on-chain
-        </p>
-      </td>
-      <td style="
-            border-top-style: dashed;
-            border-top-width: 1pt;
-            border-top-color: #666666;
-            border-left-style: dashed;
-            border-left-width: 1pt;
-            border-left-color: #666666;
-          ">
-        <ul id="l1">
-          <li data-list-text="*">
-            <p style="
-                  padding-top: 5pt;
-                  padding-left: 17pt;
-                  text-indent: -12pt;
-                  text-align: left;
-                ">
-              Solana: Anchor, @solana/web3.js, @solana/spl-token
-            </p>
-          </li>
-          <li data-list-text="*">
-            <p style="
-                  padding-top: 3pt;
-                  padding-left: 17pt;
-                  text-indent: -12pt;
-                  text-align: left;
-                ">
-              EVM: Hardhat, Truffle, OpenZeppelin
-            </p>
-          </li>
-          <li data-list-text="*">
-            <p style="
-                  padding-top: 3pt;
-                  padding-left: 17pt;
-                  text-indent: -12pt;
-                  text-align: left;
-                ">
-              Cardano: Aiken, Lucid
-            </p>
-          </li>
+  <div class="skills-grid">
+    <div class="skill-row">
+      <div class="skill-label"><p class="s5">Knowledge</p></div>
+      <div class="skill-value"><p class="s6">Deep expertise in consensus algorithms, cryptography, and decentralized finance (DeFi). Hands-on experience integrating with major protocols (Pancake, Uniswap, Aave) and developing smart contract interactions for frontend and backend systems.</p></div>
+    </div>
+
+    <div class="skill-row">
+      <div class="skill-label"><p class="s5">Programming Language</p></div>
+      <div class="skill-value"><div class="tag-list"><span class="skill-tag">Solidity</span><span class="skill-tag">Rust</span><span class="skill-tag">JavaScript</span><span class="skill-tag">TypeScript</span><span class="skill-tag">Haskell</span><span class="skill-tag">Golang</span><span class="skill-tag">PHP</span><span class="skill-tag">HTML5</span><span class="skill-tag">CSS3</span></div></div>
+    </div>
+
+    <div class="skill-row">
+      <div class="skill-label"><p class="s5">Blockchain on-chain</p></div>
+      <div class="skill-value">
+        <ul class="onchain-list">
+          <li>Solana: Anchor, @solana/web3.js, @solana/spl-token</li>
+          <li>EVM: Hardhat, Truffle, OpenZeppelin</li>
+          <li>Cardano: Aiken, Lucid</li>
         </ul>
-      </td>
-    </tr>
-    <tr style="height: 30pt">
-      <td style="
-            border-top-style: dashed;
-            border-top-width: 1pt;
-            border-top-color: #666666;
-            border-right-style: dashed;
-            border-right-width: 1pt;
-            border-right-color: #666666;
-          ">
-        <p class="s5" style="
-              padding-top: 6pt;
-              padding-left: 3pt;
-              text-indent: 0pt;
-              text-align: left;
-            ">
-          Front-End
-        </p>
-      </td>
-      <td style="
-            border-top-style: dashed;
-            border-top-width: 1pt;
-            border-top-color: #666666;
-            border-left-style: dashed;
-            border-left-width: 1pt;
-            border-left-color: #666666;
-          ">
-        <div style="padding-top: 6pt; padding-left: 3pt;">
-          <span class="skill-tag">React</span>
-          <span class="skill-tag">React Native</span>
-          <span class="skill-tag">Next.js</span>
-          <span class="skill-tag">Vue</span>
-          <span class="skill-tag">Nuxt</span>
-          <span class="skill-tag">Angular</span>
-        </div>
-      </td>
-    </tr>
-    <tr style="height: 30pt">
-      <td style="
-            border-top-style: dashed;
-            border-top-width: 1pt;
-            border-top-color: #666666;
-            border-right-style: dashed;
-            border-right-width: 1pt;
-            border-right-color: #666666;
-          ">
-        <p class="s5" style="
-              padding-top: 6pt;
-              padding-left: 3pt;
-              text-indent: 0pt;
-              text-align: left;
-            ">
-          Back-End
-        </p>
-      </td>
-      <td style="
-            border-top-style: dashed;
-            border-top-width: 1pt;
-            border-top-color: #666666;
-            border-left-style: dashed;
-            border-left-width: 1pt;
-            border-left-color: #666666;
-          ">
-        <div style="padding-top: 6pt; padding-left: 3pt;">
-          <span class="skill-tag">Node.js</span>
-          <span class="skill-tag">NestJS</span>
-          <span class="skill-tag">Express</span>
-        </div>
-      </td>
-    </tr>
-    <tr style="height: 30pt">
-      <td style="
-            border-top-style: dashed;
-            border-top-width: 1pt;
-            border-top-color: #666666;
-            border-right-style: dashed;
-            border-right-width: 1pt;
-            border-right-color: #666666;
-          ">
-        <p class="s5" style="
-              padding-top: 6pt;
-              padding-left: 3pt;
-              text-indent: 0pt;
-              text-align: left;
-            ">
-          Database
-        </p>
-      </td>
-      <td style="
-            border-top-style: dashed;
-            border-top-width: 1pt;
-            border-top-color: #666666;
-            border-left-style: dashed;
-            border-left-width: 1pt;
-            border-left-color: #666666;
-          ">
-        <div style="padding-top: 6pt; padding-left: 3pt;">
-          <span class="skill-tag">PostgreSQL</span>
-          <span class="skill-tag">MySQL</span>
-          <span class="skill-tag">MongoDB</span>
-          <span class="skill-tag">Redis</span>
-          <span class="skill-tag">LevelDB</span>
-        </div>
-      </td>
-    </tr>
-    <tr>
-      <td style="
-            border-top-style: dashed;
-            border-top-width: 1pt;
-            border-top-color: #666666;
-            border-right-style: dashed;
-            border-right-width: 1pt;
-            border-right-color: #666666;
-          ">
-        <p class="s5" style="
-              padding-top: 6pt;
-              padding-left: 3pt;
-              text-indent: 0pt;
-              text-align: left;
-            ">
-          Testing tools & Frameworks
-        </p>
-      </td>
-      <td style="
-            border-top-style: dashed;
-            border-top-width: 1pt;
-            border-top-color: #666666;
-            border-left-style: dashed;
-            border-left-width: 1pt;
-            border-left-color: #666666;
-          ">
-        <div style="padding-top: 6pt; padding-left: 3pt;">
-          <span class="skill-tag">Jest</span>
-          <span class="skill-tag">Mocha</span>
-          <span class="skill-tag">Chai</span>
-          <span class="skill-tag">Hardhat Testing</span>
-        </div>
-      </td>
-    </tr>
-  </table>
+      </div>
+    </div>
+
+    <div class="skill-row">
+      <div class="skill-label"><p class="s5">Front-End</p></div>
+      <div class="skill-value"><div class="tag-list"><span class="skill-tag">React</span><span class="skill-tag">React Native</span><span class="skill-tag">Next.js</span><span class="skill-tag">Vue</span><span class="skill-tag">Nuxt</span><span class="skill-tag">Angular</span></div></div>
+    </div>
+
+    <div class="skill-row">
+      <div class="skill-label"><p class="s5">Back-End</p></div>
+      <div class="skill-value"><div class="tag-list"><span class="skill-tag">Node.js</span><span class="skill-tag">NestJS</span><span class="skill-tag">Express</span></div></div>
+    </div>
+
+    <div class="skill-row">
+      <div class="skill-label"><p class="s5">Database</p></div>
+      <div class="skill-value"><div class="tag-list"><span class="skill-tag">PostgreSQL</span><span class="skill-tag">MySQL</span><span class="skill-tag">MongoDB</span><span class="skill-tag">Redis</span><span class="skill-tag">LevelDB</span></div></div>
+    </div>
+
+    <div class="skill-row">
+      <div class="skill-label"><p class="s5">Testing tools &amp; Frameworks</p></div>
+      <div class="skill-value"><div class="tag-list"><span class="skill-tag">Jest</span><span class="skill-tag">Mocha</span><span class="skill-tag">Chai</span><span class="skill-tag">Hardhat Testing</span></div></div>
+    </div>
+  </div>
   <p style="padding-top: 10pt; text-indent: 0pt; text-align: left"><br /></p>
   <p class="s3" style="padding-left: 5pt; text-indent: 0pt; text-align: left">
    WORK EXPERIENCE
@@ -1535,202 +1513,33 @@
       ">
     Ginar Solution <span class="p">(Nov 2023 - Now)</span>
   </h1>
-  <table style="border-collapse: collapse; margin-left: 5.50946pt" cellspacing="0">
-    <tr style="height: 60pt">
-      <td style="
-            border-top-style: dashed;
-            border-top-width: 1pt;
-            border-top-color: #666666;
-            border-right-style: dashed;
-            border-right-width: 1pt;
-            border-right-color: #666666;
-          ">
-        <p class="s5" style="
-              padding-top: 6pt;
-              padding-left: 3pt;
-              text-indent: 0pt;
-              text-align: left;
-            ">
-          Description
-        </p>
-      </td>
-      <td style="
-            border-top-style: dashed;
-            border-top-width: 1pt;
-            border-top-color: #666666;
-            border-left-style: dashed;
-            border-left-width: 1pt;
-            border-left-color: #666666;
-          ">
-        <p class="s6" style="
-              padding-top: 6pt;
-              padding-left: 3pt;
-              padding-right: 28pt;
-              text-indent: 0pt;
-              line-height: 125%;
-              text-align: left;
-            ">
-          Leading technology company specializing in Web3 infrastructure and AI-powered applications, developing cutting-edge solutions for DeFi, cryptocurrency trading, and blockchain integration.
-        </p>
-      </td>
-    </tr>
-    <tr style="height: 21pt">
-      <td style="
-            border-top-style: dashed;
-            border-top-width: 1pt;
-            border-top-color: #666666;
-            border-bottom-style: dashed;
-            border-bottom-width: 1pt;
-            border-bottom-color: #666666;
-            border-right-style: dashed;
-            border-right-width: 1pt;
-            border-right-color: #666666;
-          ">
-        <p class="s5" style="
-              padding-top: 5pt;
-              padding-left: 3pt;
-              text-indent: 0pt;
-              text-align: left;
-            ">
-          Team size
-        </p>
-      </td>
-      <td style="
-            border-top-style: dashed;
-            border-top-width: 1pt;
-            border-top-color: #666666;
-            border-left-style: dashed;
-            border-left-width: 1pt;
-            border-left-color: #666666;
-            border-bottom-style: dashed;
-            border-bottom-width: 1pt;
-            border-bottom-color: #666666;
-          ">
-        <p class="s6" style="
-              padding-top: 5pt;
-              padding-left: 3pt;
-              text-indent: 0pt;
-              text-align: left;
-            ">
-          20
-        </p>
-      </td>
-    </tr>
-    <tr style="height: 21pt">
-      <td style="
-            border-top-style: dashed;
-            border-top-width: 1pt;
-            border-top-color: #666666;
-            border-bottom-style: dashed;
-            border-bottom-width: 1pt;
-            border-bottom-color: #666666;
-            border-right-style: dashed;
-            border-right-width: 1pt;
-            border-right-color: #666666;
-          ">
-        <p class="s5" style="
-              padding-top: 5pt;
-              padding-left: 3pt;
-              text-indent: 0pt;
-              text-align: left;
-            ">
-          My position
-        </p>
-      </td>
-      <td style="
-            border-top-style: dashed;
-            border-top-width: 1pt;
-            border-top-color: #666666;
-            border-left-style: dashed;
-            border-left-width: 1pt;
-            border-left-color: #666666;
-            border-bottom-style: dashed;
-            border-bottom-width: 1pt;
-            border-bottom-color: #666666;
-          ">
-        <p class="s6" style="
-              padding-top: 5pt;
-              padding-left: 3pt;
-              text-indent: 0pt;
-              text-align: left;
-            ">
-          Senior Backend Engineer
-        </p>
-      </td>
-    </tr>
-    <tr style="height: 76pt">
-      <td style="
-            border-top-style: dashed;
-            border-top-width: 1pt;
-            border-top-color: #666666;
-            border-bottom-style: dashed;
-            border-bottom-width: 1pt;
-            border-bottom-color: #666666;
-            border-right-style: dashed;
-            border-right-width: 1pt;
-            border-right-color: #666666;
-          ">
-        <p style="text-indent: 0pt; text-align: left"><br /></p>
-        <p class="s5" style="padding-left: 3pt; text-indent: 0pt; text-align: left">
-          My responsibilities
-        </p>
-      </td>
-      <td style="
-            border-top-style: dashed;
-            border-top-width: 1pt;
-            border-top-color: #666666;
-            border-left-style: dashed;
-            border-left-width: 1pt;
-            border-left-color: #666666;
-            border-bottom-style: dashed;
-            border-bottom-width: 1pt;
-            border-bottom-color: #666666;
-          ">
-        <ul id="l1">
-          <li data-list-text="*">
-            <p style="
-                  padding-top: 5pt;
-                  padding-left: 17pt;
-                  text-indent: -12pt;
-                  text-align: left;
-                ">
-              Architected and deployed gasless cryptocurrency deposit/withdrawal APIs supporting multiple tokens (USDT, USDC) with seamless frontend integration, improving user transaction experience.
-            </p>
-          </li>
-          <li data-list-text="*">
-            <p style="
-                  padding-top: 3pt;
-                  padding-left: 17pt;
-                  text-indent: -12pt;
-                  text-align: left;
-                ">
-              Developed sophisticated DeFi trading APIs enabling automated liquidity management and token swapping across multiple decentralized exchanges (DEXs) for AI-driven trading operations.
-            </p>
-          </li>
-          <li data-list-text="*">
-            <p style="
-                  padding-top: 3pt;
-                  padding-left: 17pt;
-                  text-indent: -12pt;
-                  text-align: left;
-                ">
-              Engineered real-time cryptocurrency pricing and DEX data pipelines, providing critical market intelligence to support AI team's automated trading bot development and strategy optimization.
-            </p>
-          </li>
-          <li data-list-text="*">
-            <p style="
-                  padding-top: 3pt;
-                  padding-left: 17pt;
-                  text-indent: -12pt;
-                  text-align: left;
-                ">
-              Designed and implemented secure vault withdrawal processing APIs with multi-layer authentication, facilitating safe user fund extraction from platform reserves.
-            </p>
-          </li>
-        </ul>
-      </td>
-    </tr>
-  </table>
+  <div class="work-entry">
+    <div class="work-grid">
+      <div class="work-row">
+        <div class="work-label">Description</div>
+        <div class="work-value">Leading technology company specializing in Web3 infrastructure and AI-powered applications, developing cutting-edge solutions for DeFi, cryptocurrency trading, and blockchain integration.</div>
+      </div>
+      <div class="work-row">
+        <div class="work-label">Team size</div>
+        <div class="work-value">20</div>
+      </div>
+      <div class="work-row">
+        <div class="work-label">My position</div>
+        <div class="work-value">Senior Backend Engineer</div>
+      </div>
+      <div class="work-row">
+        <div class="work-label">My responsibilities</div>
+        <div class="work-value">
+          <ul>
+            <li>Architected and deployed gasless cryptocurrency deposit/withdrawal APIs supporting multiple tokens (USDT, USDC) with seamless frontend integration, improving user transaction experience.</li>
+            <li>Developed sophisticated DeFi trading APIs enabling automated liquidity management and token swapping across multiple decentralized exchanges (DEXs) for AI-driven trading operations.</li>
+            <li>Engineered real-time cryptocurrency pricing and DEX data pipelines, providing critical market intelligence to support AI team's automated trading bot development and strategy optimization.</li>
+            <li>Designed and implemented secure vault withdrawal processing APIs with multi-layer authentication, facilitating safe user fund extraction from platform reserves.</li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </div>
   <p style="padding-top: 6pt; text-indent: 0pt; text-align: left"><br /></p>
   <h1 style="
         padding-bottom: 1pt;
@@ -1740,226 +1549,35 @@
       ">
     Outsourcing <span class="p">(Aug 2021 - Now)</span>
   </h1>
-  <table style="border-collapse: collapse; margin-left: 5.50946pt" cellspacing="0">
-    <tr style="height: 35pt">
-      <td style="
-            border-top-style: dashed;
-            border-top-width: 1pt;
-            border-top-color: #666666;
-            border-bottom-style: dashed;
-            border-bottom-width: 1pt;
-            border-bottom-color: #666666;
-            border-right-style: dashed;
-            border-right-width: 1pt;
-            border-right-color: #666666;
-          ">
-        <p style="padding-top: 1pt; text-indent: 0pt; text-align: left">
-          <br />
-        </p>
-        <p class="s5" style="padding-left: 3pt; text-indent: 0pt; text-align: left">
-          Description
-        </p>
-      </td>
-      <td style="
-            border-top-style: dashed;
-            border-top-width: 1pt;
-            border-top-color: #666666;
-            border-left-style: dashed;
-            border-left-width: 1pt;
-            border-left-color: #666666;
-            border-bottom-style: dashed;
-            border-bottom-width: 1pt;
-            border-bottom-color: #666666;
-          ">
-        <p class="s6" style="
-              padding-top: 2pt;
-              padding-left: 3pt;
-              padding-right: 28pt;
-              text-indent: 0pt;
-              line-height: 14pt;
-              text-align: left;
-            ">
-          Independent consulting and development work delivering end-to-end blockchain solutions for DeFi protocols, NFT marketplaces, and blockchain gaming platforms.
-        </p>
-      </td>
-    </tr>
-    <tr style="height: 21pt">
-      <td style="
-            border-top-style: dashed;
-            border-top-width: 1pt;
-            border-top-color: #666666;
-            border-bottom-style: dashed;
-            border-bottom-width: 1pt;
-            border-bottom-color: #666666;
-            border-right-style: dashed;
-            border-right-width: 1pt;
-            border-right-color: #666666;
-          ">
-        <p class="s5" style="
-              padding-top: 5pt;
-              padding-left: 3pt;
-              text-indent: 0pt;
-              text-align: left;
-            ">
-          Team size
-        </p>
-      </td>
-      <td style="
-            border-top-style: dashed;
-            border-top-width: 1pt;
-            border-top-color: #666666;
-            border-left-style: dashed;
-            border-left-width: 1pt;
-            border-left-color: #666666;
-            border-bottom-style: dashed;
-            border-bottom-width: 1pt;
-            border-bottom-color: #666666;
-          ">
-        <p class="s6" style="
-              padding-top: 5pt;
-              padding-left: 3pt;
-              text-indent: 0pt;
-              text-align: left;
-            ">
-          14
-        </p>
-      </td>
-    </tr>
-    <tr style="height: 21pt">
-      <td style="
-            border-top-style: dashed;
-            border-top-width: 1pt;
-            border-top-color: #666666;
-            border-bottom-style: dashed;
-            border-bottom-width: 1pt;
-            border-bottom-color: #666666;
-            border-right-style: dashed;
-            border-right-width: 1pt;
-            border-right-color: #666666;
-          ">
-        <p class="s5" style="
-              padding-top: 5pt;
-              padding-left: 3pt;
-              text-indent: 0pt;
-              text-align: left;
-            ">
-          My position
-        </p>
-      </td>
-      <td style="
-            border-top-style: dashed;
-            border-top-width: 1pt;
-            border-top-color: #666666;
-            border-left-style: dashed;
-            border-left-width: 1pt;
-            border-left-color: #666666;
-            border-bottom-style: dashed;
-            border-bottom-width: 1pt;
-            border-bottom-color: #666666;
-          ">
-        <p class="s6" style="
-              padding-top: 5pt;
-              padding-left: 3pt;
-              text-indent: 0pt;
-              text-align: left;
-            ">
-          Full-stack developer
-        </p>
-      </td>
-    </tr>
-    <tr style="height: 172pt">
-      <td style="
-            border-top-style: dashed;
-            border-top-width: 1pt;
-            border-top-color: #666666;
-            border-bottom-style: dashed;
-            border-bottom-width: 1pt;
-            border-bottom-color: #666666;
-            border-right-style: dashed;
-            border-right-width: 1pt;
-            border-right-color: #666666;
-          ">
-        <p style="text-indent: 0pt; text-align: left"><br /></p>
-        <p class="s5" style="padding-left: 3pt; text-indent: 0pt; text-align: left">
-          My responsibilities
-        </p>
-      </td>
-      <td style="
-            border-top-style: dashed;
-            border-top-width: 1pt;
-            border-top-color: #666666;
-            border-left-style: dashed;
-            border-left-width: 1pt;
-            border-left-color: #666666;
-            border-bottom-style: dashed;
-            border-bottom-width: 1pt;
-            border-bottom-color: #666666;
-          ">
-        <ul id="l1">
-          <li data-list-text="*">
-            <p style="
-                  padding-top: 5pt;
-                  padding-left: 17pt;
-                  text-indent: -12pt;
-                  text-align: left;
-                ">
-              NFT Land (OpenSea-like marketplace): Developed comprehensive Solidity smart contracts using Hardhat and OpenZeppelin frameworks. Created TypeScript SDK and EVM event parser for efficient blockchain data indexing and database integration.
-            </p>
-          </li>
-          <li data-list-text="*">
-            <p style="
-                  padding-top: 3pt;
-                  padding-left: 17pt;
-                  text-indent: -12pt;
-                  text-align: left;
-                ">
-              Hanabi (PancakeSwap-like DEX): Architected and implemented full-suite Solidity smart contracts for automated market maker (AMM) functionality, liquidity pools, and token swapping mechanisms.
-            </p>
-          </li>
-          <li data-list-text="*">
-            <p style="
-                  padding-top: 3pt;
-                  padding-left: 17pt;
-                  text-indent: -12pt;
-                  text-align: left;
-                ">
-              DMTP (Digital Marketplace): Engineered secure smart contracts for peer-to-peer digital asset trading with robust escrow mechanisms and dispute resolution functionality.
-            </p>
-          </li>
-          <li data-list-text="*">
-            <p style="
-                  padding-top: 3pt;
-                  padding-left: 17pt;
-                  text-indent: -12pt;
-                  text-align: left;
-                ">
-              Phoenix (NFT Gaming Platform): Developed Solidity smart contracts on the Defiverse network for NFT minting (LootBox), daily check-in rewards, lottery mechanics (spin-to-win), and staking functionality.
-            </p>
-          </li>
-          <li data-list-text="*">
-            <p style="
-                  padding-top: 3pt;
-                  padding-left: 17pt;
-                  text-indent: -12pt;
-                  text-align: left;
-                ">
-              Capital DAO: Engineered complete DeFi ecosystem including ERC20 token contracts, staking mechanisms with reward distribution, and on-chain governance voting systems.
-            </p>
-          </li>
-          <li data-list-text="*">
-            <p style="
-                  padding-top: 3pt;
-                  padding-left: 17pt;
-                  text-indent: -12pt;
-                  text-align: left;
-                ">
-              Sunrise Casino: Developed provably fair gaming smart contracts for multiple casino games (Jacks or Better, Blackjack, Baccarat) with transparent random number generation.
-            </p>
-          </li>
-        </ul>
-      </td>
-    </tr>
-  </table>
+  <div class="work-entry">
+    <div class="work-grid">
+      <div class="work-row">
+        <div class="work-label">Description</div>
+        <div class="work-value">Independent consulting and development work delivering end-to-end blockchain solutions for DeFi protocols, NFT marketplaces, and blockchain gaming platforms.</div>
+      </div>
+      <div class="work-row">
+        <div class="work-label">Team size</div>
+        <div class="work-value">14</div>
+      </div>
+      <div class="work-row">
+        <div class="work-label">My position</div>
+        <div class="work-value">Full-stack developer</div>
+      </div>
+      <div class="work-row">
+        <div class="work-label">My responsibilities</div>
+        <div class="work-value">
+          <ul>
+            <li>NFT Land (OpenSea-like marketplace): Developed comprehensive Solidity smart contracts using Hardhat and OpenZeppelin frameworks. Created TypeScript SDK and EVM event parser for efficient blockchain data indexing and database integration.</li>
+            <li>Hanabi (PancakeSwap-like DEX): Architected and implemented full-suite Solidity smart contracts for automated market maker (AMM) functionality, liquidity pools, and token swapping mechanisms.</li>
+            <li>DMTP (Digital Marketplace): Engineered secure smart contracts for peer-to-peer digital asset trading with robust escrow mechanisms and dispute resolution functionality.</li>
+            <li>Phoenix (NFT Gaming Platform): Developed Solidity smart contracts on the Defiverse network for NFT minting (LootBox), daily check-in rewards, lottery mechanics (spin-to-win), and staking functionality.</li>
+            <li>Capital DAO: Engineered complete DeFi ecosystem including ERC20 token contracts, staking mechanisms with reward distribution, and on-chain governance voting systems.</li>
+            <li>Sunrise Casino: Developed provably fair gaming smart contracts for multiple casino games (Jacks or Better, Blackjack, Baccarat) with transparent random number generation.</li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </div>
   <p style="padding-top: 6pt; text-indent: 0pt; text-align: left"><br /></p>
   <h1 style="
         padding-bottom: 1pt;
@@ -1969,206 +1587,33 @@
       ">
     Moonstake <span class="p">(Aug 2021 - Nov 2023)</span>
   </h1>
-  <table style="border-collapse: collapse; margin-left: 5.50946pt" cellspacing="0">
-    <tr style="height: 35pt">
-      <td style="
-            border-top-style: dashed;
-            border-top-width: 1pt;
-            border-top-color: #666666;
-            border-bottom-style: dashed;
-            border-bottom-width: 1pt;
-            border-bottom-color: #666666;
-            border-right-style: dashed;
-            border-right-width: 1pt;
-            border-right-color: #666666;
-          ">
-        <p style="padding-top: 1pt; text-indent: 0pt; text-align: left">
-          <br />
-        </p>
-        <p class="s5" style="padding-left: 3pt; text-indent: 0pt; text-align: left">
-          Description
-        </p>
-      </td>
-      <td style="
-            border-top-style: dashed;
-            border-top-width: 1pt;
-            border-top-color: #666666;
-            border-left-style: dashed;
-            border-left-width: 1pt;
-            border-left-color: #666666;
-            border-bottom-style: dashed;
-            border-bottom-width: 1pt;
-            border-bottom-color: #666666;
-          ">
-        <p class="s6" style="
-              padding-top: 2pt;
-              padding-left: 3pt;
-              padding-right: 28pt;
-              text-indent: 0pt;
-              line-height: 14pt;
-              text-align: left;
-            ">
-          Leading blockchain infrastructure company focused on developing staking pool protocols and wallet solutions for institutional and retail investors across multiple blockchain networks in Asian and global markets.
-        </p>
-      </td>
-    </tr>
-    <tr style="height: 21pt">
-      <td style="
-            border-top-style: dashed;
-            border-top-width: 1pt;
-            border-top-color: #666666;
-            border-bottom-style: dashed;
-            border-bottom-width: 1pt;
-            border-bottom-color: #666666;
-            border-right-style: dashed;
-            border-right-width: 1pt;
-            border-right-color: #666666;
-          ">
-        <p class="s5" style="
-              padding-top: 5pt;
-              padding-left: 3pt;
-              text-indent: 0pt;
-              text-align: left;
-            ">
-          Team size
-        </p>
-      </td>
-      <td style="
-            border-top-style: dashed;
-            border-top-width: 1pt;
-            border-top-color: #666666;
-            border-left-style: dashed;
-            border-left-width: 1pt;
-            border-left-color: #666666;
-            border-bottom-style: dashed;
-            border-bottom-width: 1pt;
-            border-bottom-color: #666666;
-          ">
-        <p class="s6" style="
-              padding-top: 5pt;
-              padding-left: 3pt;
-              text-indent: 0pt;
-              text-align: left;
-            ">
-          30
-        </p>
-      </td>
-    </tr>
-    <tr style="height: 21pt">
-      <td style="
-            border-top-style: dashed;
-            border-top-width: 1pt;
-            border-top-color: #666666;
-            border-bottom-style: dashed;
-            border-bottom-width: 1pt;
-            border-bottom-color: #666666;
-            border-right-style: dashed;
-            border-right-width: 1pt;
-            border-right-color: #666666;
-          ">
-        <p class="s5" style="
-              padding-top: 5pt;
-              padding-left: 3pt;
-              text-indent: 0pt;
-              text-align: left;
-            ">
-          My position
-        </p>
-      </td>
-      <td style="
-            border-top-style: dashed;
-            border-top-width: 1pt;
-            border-top-color: #666666;
-            border-left-style: dashed;
-            border-left-width: 1pt;
-            border-left-color: #666666;
-            border-bottom-style: dashed;
-            border-bottom-width: 1pt;
-            border-bottom-color: #666666;
-          ">
-        <p class="s6" style="
-              padding-top: 5pt;
-              padding-left: 3pt;
-              text-indent: 0pt;
-              text-align: left;
-            ">
-          Full-stack developer
-        </p>
-      </td>
-    </tr>
-    <tr style="height: 172pt">
-      <td style="
-            border-top-style: dashed;
-            border-top-width: 1pt;
-            border-top-color: #666666;
-            border-bottom-style: dashed;
-            border-bottom-width: 1pt;
-            border-bottom-color: #666666;
-            border-right-style: dashed;
-            border-right-width: 1pt;
-            border-right-color: #666666;
-          ">
-        <p style="text-indent: 0pt; text-align: left"><br /></p>
-        <p class="s5" style="padding-left: 3pt; text-indent: 0pt; text-align: left">
-          My responsibilities
-        </p>
-      </td>
-      <td style="
-            border-top-style: dashed;
-            border-top-width: 1pt;
-            border-top-color: #666666;
-            border-left-style: dashed;
-            border-left-width: 1pt;
-            border-left-color: #666666;
-            border-bottom-style: dashed;
-            border-bottom-width: 1pt;
-            border-bottom-color: #666666;
-          ">
-        <ul id="l1">
-          <li data-list-text="*">
-            <p style="
-                  padding-top: 5pt;
-                  padding-left: 17pt;
-                  text-indent: -12pt;
-                  text-align: left;
-                ">
-              World Peace Finance (AAVE-like DeFi Protocol): Architected and developed a lending/borrowing protocol on Solana using the Anchor framework. Built comprehensive TypeScript SDK to enable seamless frontend integration with Nuxt.js for on-chain data interactions.
-            </p>
-          </li>
-          <li data-list-text="*">
-            <p style="
-                  padding-top: 3pt;
-                  padding-left: 17pt;
-                  text-indent: -12pt;
-                  text-align: left;
-                ">
-              Moonstake Wallet Extension: Developed browser extension for multi-chain cryptocurrency management using Nuxt.js and Solana Web3 libraries, enabling secure transaction signing and wallet operations.
-            </p>
-          </li>
-          <li data-list-text="*">
-            <p style="
-                  padding-top: 3pt;
-                  padding-left: 17pt;
-                  text-indent: -12pt;
-                  text-align: left;
-                ">
-              MoonWealth (Educational Platform): Built RESTful APIs using Node.js and PostgreSQL for a cryptocurrency investment education platform, implementing user progress tracking and content management systems.
-            </p>
-          </li>
-          <li data-list-text="*">
-            <p style="
-                  padding-top: 3pt;
-                  padding-left: 17pt;
-                  text-indent: -12pt;
-                  text-align: left;
-                ">
-              Moonstake Wallet (Web Application): Developed multi-chain wallet interface supporting cryptocurrency transactions across multiple blockchain networks including KAVA, AVAX, Fantom, and Cardano.
-            </p>
-          </li>
-        </ul>
-      </td>
-    </tr>
-  </table>
+  <div class="work-entry">
+    <div class="work-grid">
+      <div class="work-row">
+        <div class="work-label">Description</div>
+        <div class="work-value">Leading blockchain infrastructure company focused on developing staking pool protocols and wallet solutions for institutional and retail investors across multiple blockchain networks in Asian and global markets.</div>
+      </div>
+      <div class="work-row">
+        <div class="work-label">Team size</div>
+        <div class="work-value">30</div>
+      </div>
+      <div class="work-row">
+        <div class="work-label">My position</div>
+        <div class="work-value">Full-stack developer</div>
+      </div>
+      <div class="work-row">
+        <div class="work-label">My responsibilities</div>
+        <div class="work-value">
+          <ul>
+            <li>World Peace Finance (AAVE-like DeFi Protocol): Architected and developed a lending/borrowing protocol on Solana using the Anchor framework. Built comprehensive TypeScript SDK to enable seamless frontend integration with Nuxt.js for on-chain data interactions.</li>
+            <li>Moonstake Wallet Extension: Developed browser extension for multi-chain cryptocurrency management using Nuxt.js and Solana Web3 libraries, enabling secure transaction signing and wallet operations.</li>
+            <li>MoonWealth (Educational Platform): Built RESTful APIs using Node.js and PostgreSQL for a cryptocurrency investment education platform, implementing user progress tracking and content management systems.</li>
+            <li>Moonstake Wallet (Web Application): Developed multi-chain wallet interface supporting cryptocurrency transactions across multiple blockchain networks including KAVA, AVAX, Fantom, and Cardano.</li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </div>
 
   <p style="padding-top: 6pt; text-indent: 0pt; text-align: left"><br /></p>
   <h1 style="
@@ -2179,206 +1624,33 @@
       ">
     Infinity Blockchain Labs <span class="p">(Oct 2017 - Jan 2021)</span>
   </h1>
-  <table style="border-collapse: collapse; margin-left: 5.50946pt" cellspacing="0">
-    <tr style="height: 35pt">
-      <td style="
-            border-top-style: dashed;
-            border-top-width: 1pt;
-            border-top-color: #666666;
-            border-bottom-style: dashed;
-            border-bottom-width: 1pt;
-            border-bottom-color: #666666;
-            border-right-style: dashed;
-            border-right-width: 1pt;
-            border-right-color: #666666;
-          ">
-        <p style="padding-top: 1pt; text-indent: 0pt; text-align: left">
-          <br />
-        </p>
-        <p class="s5" style="padding-left: 3pt; text-indent: 0pt; text-align: left">
-          Description
-        </p>
-      </td>
-      <td style="
-            border-top-style: dashed;
-            border-top-width: 1pt;
-            border-top-color: #666666;
-            border-left-style: dashed;
-            border-left-width: 1pt;
-            border-left-color: #666666;
-            border-bottom-style: dashed;
-            border-bottom-width: 1pt;
-            border-bottom-color: #666666;
-          ">
-        <p class="s6" style="
-              padding-top: 2pt;
-              padding-left: 3pt;
-              padding-right: 28pt;
-              text-indent: 0pt;
-              line-height: 14pt;
-              text-align: left;
-            ">
-          Leading blockchain research and development company specializing in FinTech and RegTech solutions, with a focus on building innovative blockchain applications and fostering developer communities.
-        </p>
-      </td>
-    </tr>
-    <tr style="height: 21pt">
-      <td style="
-            border-top-style: dashed;
-            border-top-width: 1pt;
-            border-top-color: #666666;
-            border-bottom-style: dashed;
-            border-bottom-width: 1pt;
-            border-bottom-color: #666666;
-            border-right-style: dashed;
-            border-right-width: 1pt;
-            border-right-color: #666666;
-          ">
-        <p class="s5" style="
-              padding-top: 5pt;
-              padding-left: 3pt;
-              text-indent: 0pt;
-              text-align: left;
-            ">
-          Team size
-        </p>
-      </td>
-      <td style="
-            border-top-style: dashed;
-            border-top-width: 1pt;
-            border-top-color: #666666;
-            border-left-style: dashed;
-            border-left-width: 1pt;
-            border-left-color: #666666;
-            border-bottom-style: dashed;
-            border-bottom-width: 1pt;
-            border-bottom-color: #666666;
-          ">
-        <p class="s6" style="
-              padding-top: 5pt;
-              padding-left: 3pt;
-              text-indent: 0pt;
-              text-align: left;
-            ">
-          30
-        </p>
-      </td>
-    </tr>
-    <tr style="height: 21pt">
-      <td style="
-            border-top-style: dashed;
-            border-top-width: 1pt;
-            border-top-color: #666666;
-            border-bottom-style: dashed;
-            border-bottom-width: 1pt;
-            border-bottom-color: #666666;
-            border-right-style: dashed;
-            border-right-width: 1pt;
-            border-right-color: #666666;
-          ">
-        <p class="s5" style="
-              padding-top: 5pt;
-              padding-left: 3pt;
-              text-indent: 0pt;
-              text-align: left;
-            ">
-          My position
-        </p>
-      </td>
-      <td style="
-            border-top-style: dashed;
-            border-top-width: 1pt;
-            border-top-color: #666666;
-            border-left-style: dashed;
-            border-left-width: 1pt;
-            border-left-color: #666666;
-            border-bottom-style: dashed;
-            border-bottom-width: 1pt;
-            border-bottom-color: #666666;
-          ">
-        <p class="s6" style="
-              padding-top: 5pt;
-              padding-left: 3pt;
-              text-indent: 0pt;
-              text-align: left;
-            ">
-          Full-stack developer
-        </p>
-      </td>
-    </tr>
-    <tr style="height: 172pt">
-      <td style="
-            border-top-style: dashed;
-            border-top-width: 1pt;
-            border-top-color: #666666;
-            border-bottom-style: dashed;
-            border-bottom-width: 1pt;
-            border-bottom-color: #666666;
-            border-right-style: dashed;
-            border-right-width: 1pt;
-            border-right-color: #666666;
-          ">
-        <p style="text-indent: 0pt; text-align: left"><br /></p>
-        <p class="s5" style="padding-left: 3pt; text-indent: 0pt; text-align: left">
-          My responsibilities
-        </p>
-      </td>
-      <td style="
-            border-top-style: dashed;
-            border-top-width: 1pt;
-            border-top-color: #666666;
-            border-left-style: dashed;
-            border-left-width: 1pt;
-            border-left-color: #666666;
-            border-bottom-style: dashed;
-            border-bottom-width: 1pt;
-            border-bottom-color: #666666;
-          ">
-        <ul id="l1">
-          <li data-list-text="*">
-            <p style="
-                  padding-top: 5pt;
-                  padding-left: 17pt;
-                  text-indent: -12pt;
-                  text-align: left;
-                ">
-              Researched, designed, and maintained scalable APIs integrating with multiple blockchain networks, enabling cross-chain functionality and data synchronization.
-            </p>
-          </li>
-          <li data-list-text="*">
-            <p style="
-                  padding-top: 3pt;
-                  padding-left: 17pt;
-                  text-indent: -12pt;
-                  text-align: left;
-                ">
-              Infinito Wallet (Mobile Application): Developed multi-currency cryptocurrency wallet using React Native, implementing features for portfolio management, custom token support, and transaction history.
-            </p>
-          </li>
-          <li data-list-text="*">
-            <p style="
-                  padding-top: 3pt;
-                  padding-left: 17pt;
-                  text-indent: -12pt;
-                  text-align: left;
-                ">
-              Infinito Appsquare (DApp Marketplace): Engineered blockchain-based application marketplace using Solidity smart contracts (Hardhat/OpenZeppelin) for secure digital asset trading. Developed full-stack solution with Nuxt.js frontend and Node.js backend.
-            </p>
-          </li>
-          <li data-list-text="*">
-            <p style="
-                  padding-top: 3pt;
-                  padding-left: 17pt;
-                  text-indent: -12pt;
-                  text-align: left;
-                ">
-              Quanta (Blockchain Lottery): Built decentralized lottery platform as full-stack developer, implementing React.js frontend and Node.js backend with smart contract integration for transparent prize distribution.
-            </p>
-          </li>
-        </ul>
-      </td>
-    </tr>
-  </table>
+  <div class="work-entry">
+    <div class="work-grid">
+      <div class="work-row">
+        <div class="work-label">Description</div>
+        <div class="work-value">Leading blockchain research and development company specializing in FinTech and RegTech solutions, with a focus on building innovative blockchain applications and fostering developer communities.</div>
+      </div>
+      <div class="work-row">
+        <div class="work-label">Team size</div>
+        <div class="work-value">30</div>
+      </div>
+      <div class="work-row">
+        <div class="work-label">My position</div>
+        <div class="work-value">Full-stack developer</div>
+      </div>
+      <div class="work-row">
+        <div class="work-label">My responsibilities</div>
+        <div class="work-value">
+          <ul>
+            <li>Researched, designed, and maintained scalable APIs integrating with multiple blockchain networks, enabling cross-chain functionality and data synchronization.</li>
+            <li>Infinito Wallet (Mobile Application): Developed multi-currency cryptocurrency wallet using React Native, implementing features for portfolio management, custom token support, and transaction history.</li>
+            <li>Infinito Appsquare (DApp Marketplace): Engineered blockchain-based application marketplace using Solidity smart contracts (Hardhat/OpenZeppelin) for secure digital asset trading. Developed full-stack solution with Nuxt.js frontend and Node.js backend.</li>
+            <li>Quanta (Blockchain Lottery): Built decentralized lottery platform as full-stack developer, implementing React.js frontend and Node.js backend with smart contract integration for transparent prize distribution.</li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </div>
   <p style="padding-top: 6pt; text-indent: 0pt; text-align: left"><br /></p>
   <h1 style="
         padding-bottom: 1pt;
@@ -2388,216 +1660,34 @@
       ">
     SystemEXE Việt Nam <span class="p">(Apr 2014 - Oct 2017)</span>
   </h1>
-  <table style="border-collapse: collapse; margin-left: 5.50946pt" cellspacing="0">
-    <tr style="height: 35pt">
-      <td style="
-            border-top-style: dashed;
-            border-top-width: 1pt;
-            border-top-color: #666666;
-            border-bottom-style: dashed;
-            border-bottom-width: 1pt;
-            border-bottom-color: #666666;
-            border-right-style: dashed;
-            border-right-width: 1pt;
-            border-right-color: #666666;
-          ">
-        <p style="padding-top: 1pt; text-indent: 0pt; text-align: left">
-          <br />
-        </p>
-        <p class="s5" style="padding-left: 3pt; text-indent: 0pt; text-align: left">
-          Description
-        </p>
-      </td>
-      <td style="
-            border-top-style: dashed;
-            border-top-width: 1pt;
-            border-top-color: #666666;
-            border-left-style: dashed;
-            border-left-width: 1pt;
-            border-left-color: #666666;
-            border-bottom-style: dashed;
-            border-bottom-width: 1pt;
-            border-bottom-color: #666666;
-          ">
-        <p class="s6" style="
-              padding-top: 2pt;
-              padding-left: 3pt;
-              padding-right: 28pt;
-              text-indent: 0pt;
-              line-height: 14pt;
-              text-align: left;
-            ">
-          Vietnamese subsidiary of a leading Japanese IT consulting group, specializing in enterprise software development and digital transformation solutions for diverse industries.
-        </p>
-      </td>
-    </tr>
-    <tr style="height: 21pt">
-      <td style="
-            border-top-style: dashed;
-            border-top-width: 1pt;
-            border-top-color: #666666;
-            border-bottom-style: dashed;
-            border-bottom-width: 1pt;
-            border-bottom-color: #666666;
-            border-right-style: dashed;
-            border-right-width: 1pt;
-            border-right-color: #666666;
-          ">
-        <p class="s5" style="
-              padding-top: 5pt;
-              padding-left: 3pt;
-              text-indent: 0pt;
-              text-align: left;
-            ">
-          Team size
-        </p>
-      </td>
-      <td style="
-            border-top-style: dashed;
-            border-top-width: 1pt;
-            border-top-color: #666666;
-            border-left-style: dashed;
-            border-left-width: 1pt;
-            border-left-color: #666666;
-            border-bottom-style: dashed;
-            border-bottom-width: 1pt;
-            border-bottom-color: #666666;
-          ">
-        <p class="s6" style="
-              padding-top: 5pt;
-              padding-left: 3pt;
-              text-indent: 0pt;
-              text-align: left;
-            ">
-          50
-        </p>
-      </td>
-    </tr>
-    <tr style="height: 21pt">
-      <td style="
-            border-top-style: dashed;
-            border-top-width: 1pt;
-            border-top-color: #666666;
-            border-bottom-style: dashed;
-            border-bottom-width: 1pt;
-            border-bottom-color: #666666;
-            border-right-style: dashed;
-            border-right-width: 1pt;
-            border-right-color: #666666;
-          ">
-        <p class="s5" style="
-              padding-top: 5pt;
-              padding-left: 3pt;
-              text-indent: 0pt;
-              text-align: left;
-            ">
-          My position
-        </p>
-      </td>
-      <td style="
-            border-top-style: dashed;
-            border-top-width: 1pt;
-            border-top-color: #666666;
-            border-left-style: dashed;
-            border-left-width: 1pt;
-            border-left-color: #666666;
-            border-bottom-style: dashed;
-            border-bottom-width: 1pt;
-            border-bottom-color: #666666;
-          ">
-        <p class="s6" style="
-              padding-top: 5pt;
-              padding-left: 3pt;
-              text-indent: 0pt;
-              text-align: left;
-            ">
-          Full-stack developer
-        </p>
-      </td>
-    </tr>
-    <tr style="height: 172pt">
-      <td style="
-            border-top-style: dashed;
-            border-top-width: 1pt;
-            border-top-color: #666666;
-            border-bottom-style: dashed;
-            border-bottom-width: 1pt;
-            border-bottom-color: #666666;
-            border-right-style: dashed;
-            border-right-width: 1pt;
-            border-right-color: #666666;
-          ">
-        <p style="text-indent: 0pt; text-align: left"><br /></p>
-        <p class="s5" style="padding-left: 3pt; text-indent: 0pt; text-align: left">
-          My responsibilities
-        </p>
-      </td>
-      <td style="
-            border-top-style: dashed;
-            border-top-width: 1pt;
-            border-top-color: #666666;
-            border-left-style: dashed;
-            border-left-width: 1pt;
-            border-left-color: #666666;
-            border-bottom-style: dashed;
-            border-bottom-width: 1pt;
-            border-bottom-color: #666666;
-          ">
-        <ul id="l1">
-          <li data-list-text="*">
-            <p style="
-                  padding-top: 5pt;
-                  padding-left: 17pt;
-                  text-indent: -12pt;
-                  text-align: left;
-                ">
-              PTSP (Online Accounting Platform): Developed enterprise accounting SaaS application with Java-based RESTful APIs and Angular frontend, implementing financial reporting and bookkeeping features.
-            </p>
-          </li>
-          <li data-list-text="*">
-            <p style="
-                  padding-top: 3pt;
-                  padding-left: 17pt;
-                  text-indent: -12pt;
-                  text-align: left;
-                ">
-              IFoodGo (Food Delivery Platform): Built comprehensive food delivery ecosystem including Laravel-powered APIs, Angular web application, and Ionic mobile apps for iOS/Android with real-time order tracking.
-            </p>
-          </li>
-          <li data-list-text="*">
-            <p style="
-                  padding-top: 3pt;
-                  padding-left: 17pt;
-                  text-indent: -12pt;
-                  text-align: left;
-                ">
-              Phu Tho Stadium Management System: Engineered facility management platform with Laravel backend and AngularJS frontend for staff administration, field booking, and scheduling operations.
-            </p>
-          </li>
-          <li data-list-text="*">
-            <p style="
-                  padding-top: 3pt;
-                  padding-left: 17pt;
-                  text-indent: -12pt;
-                  text-align: left;
-                ">
-              Database Management Tool: Developed Java-based web application for enterprise database administration, featuring query builders, schema management, and data visualization capabilities.
-            </p>
-          </li>
-          <li data-list-text="*">
-            <p style="
-                  padding-top: 3pt;
-                  padding-left: 17pt;
-                  text-indent: -12pt;
-                  text-align: left;
-                ">
-              Aolani (Hospital Management System): Built comprehensive healthcare management platform using Java and AngularJS, implementing patient records, appointment scheduling, and medical billing systems.
-            </p>
-          </li>
-        </ul>
-      </td>
-    </tr>
-  </table>
+  <div class="work-entry">
+    <div class="work-grid">
+      <div class="work-row">
+        <div class="work-label">Description</div>
+        <div class="work-value">Vietnamese subsidiary of a leading Japanese IT consulting group, specializing in enterprise software development and digital transformation solutions for diverse industries.</div>
+      </div>
+      <div class="work-row">
+        <div class="work-label">Team size</div>
+        <div class="work-value">50</div>
+      </div>
+      <div class="work-row">
+        <div class="work-label">My position</div>
+        <div class="work-value">Full-stack developer</div>
+      </div>
+      <div class="work-row">
+        <div class="work-label">My responsibilities</div>
+        <div class="work-value">
+          <ul>
+            <li>PTSP (Online Accounting Platform): Developed enterprise accounting SaaS application with Java-based RESTful APIs and Angular frontend, implementing financial reporting and bookkeeping features.</li>
+            <li>IFoodGo (Food Delivery Platform): Built comprehensive food delivery ecosystem including Laravel-powered APIs, Angular web application, and Ionic mobile apps for iOS/Android with real-time order tracking.</li>
+            <li>Phu Tho Stadium Management System: Engineered facility management platform with Laravel backend and AngularJS frontend for staff administration, field booking, and scheduling operations.</li>
+            <li>Database Management Tool: Developed Java-based web application for enterprise database administration, featuring query builders, schema management, and data visualization capabilities.</li>
+            <li>Aolani (Hospital Management System): Built comprehensive healthcare management platform using Java and AngularJS, implementing patient records, appointment scheduling, and medical billing systems.</li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </div>
   <p class="s3" style="
         padding-top: 6pt;
         padding-left: 5pt;
