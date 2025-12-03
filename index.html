@@ -1,465 +1,471 @@
-<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<!DOCTYPE html
+  PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
 <html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
-  <head>
-    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
-    <meta name="viewport" content="width=device-width" />
-    <title>Pi - Fullstack</title>
-    <style type="text/css">
-      * {
-        margin: 0;
-        padding: 0;
-        text-indent: 0;
-      }
-      body {
-        background-color: #262821;
-      }
-      .s1 {
-        color: #a6e22e;
-        font-family: "Courier New", monospace;
-        font-style: normal;
-        font-weight: normal;
-        text-decoration: none;
-        font-size: 24pt;
-      }
-      .s2 {
-        color: #f7f7f1;
-        font-family: "Courier New", monospace;
-        font-style: normal;
-        font-weight: normal;
-        text-decoration: none;
-        font-size: 13.5pt;
-      }
-      .p,
-      p {
-        color: #f7f7f1;
-        font-family: "Courier New", monospace;
-        font-style: normal;
-        font-weight: normal;
-        text-decoration: none;
-        font-size: 14px;
-        margin: 0pt;
-      }
-      a {
-        color: #f7f7f1;
-        font-family: "Courier New", monospace;
-        font-style: normal;
-        font-weight: normal;
-        text-decoration: none;
-        font-size: 14px;
-      }
-      .s3 {
-        color: #666;
-        font-family: "Courier New", monospace;
-        font-style: normal;
-        font-weight: normal;
-        text-decoration: none;
-        font-size: 12pt;
-      }
-      h1 {
-        color: #f92572;
-        font-family: "Courier New", monospace;
-        font-style: normal;
-        font-weight: bold;
-        text-decoration: none;
-        font-size: 11pt;
-      }
-      .s4 {
-        color: #66d9ef;
-        font-family: "Courier New", monospace;
-        font-style: normal;
-        font-weight: bold;
-        text-decoration: none;
-        font-size: 11pt;
-      }
-      .s5 {
-        color: #66d9ef;
-        font-family: "Courier New", monospace;
-        font-style: normal;
-        font-weight: bold;
-        text-decoration: none;
-        font-size: 14px;
-      }
-      .s6 {
-        color: #f7f7f1;
-        font-family: "Courier New", monospace;
-        font-style: normal;
-        font-weight: normal;
-        text-decoration: none;
-        font-size: 14px;
-      }
-      h2 {
-        color: #f92572;
-        font-family: "Courier New", monospace;
-        font-style: normal;
-        font-weight: bold;
-        text-decoration: none;
-        font-size: 14px;
-      }
-      .s7 {
-        color: #f7f7f1;
-        font-family: "Courier New", monospace;
-        font-style: normal;
-        font-weight: bold;
-        text-decoration: none;
-        font-size: 14px;
-      }
-      .s8 {
-        color: #66d9ef;
-        font-family: "Courier New", monospace;
-        font-style: normal;
-        font-weight: normal;
-        text-decoration: none;
-        font-size: 14px;
-      }
-      .s9 {
-        color: black;
-        font-family: "Times New Roman", serif;
-        font-style: normal;
-        font-weight: normal;
-        text-decoration: none;
-        font-size: 10pt;
-      }
-      .s10 {
-        color: #545454;
-        font-family: Arial, sans-serif;
-        font-style: normal;
-        font-weight: normal;
-        text-decoration: none;
-        font-size: 14px;
-      }
-      li {
-        display: block;
-      }
-      #l1 {
-        padding-left: 0pt;
-      }
-      #l1 > li > *:first-child:before {
-        content: "* ";
-        color: #f7f7f1;
-        font-family: "Courier New", monospace;
-        font-style: normal;
-        font-weight: normal;
-        text-decoration: none;
-        font-size: 14px;
-      }
-      li {
-        display: block;
-      }
-      #l2 {
-        padding-left: 0pt;
-      }
-      #l2 > li > *:first-child:before {
-        content: "- ";
-        color: #f7f7f1;
-        font-family: "Courier New", monospace;
-        font-style: normal;
-        font-weight: normal;
-        text-decoration: none;
-        font-size: 14px;
-      }
-      li {
-        display: block;
-      }
-      #l3 {
-        padding-left: 0pt;
-        counter-reset: e1 1;
-      }
-      #l3 > li > *:first-child:before {
-        counter-increment: e1;
-        content: counter(e1, decimal) ". ";
-        color: #f7f7f1;
-        font-family: "Courier New", monospace;
-        font-style: normal;
-        font-weight: normal;
-        text-decoration: none;
-        font-size: 14px;
-      }
-      #l3 > li:first-child > *:first-child:before {
-        counter-increment: e1 0;
-      }
-      li {
-        display: block;
-      }
-      #l4 {
-        padding-left: 0pt;
-        counter-reset: f1 1;
-      }
-      #l4 > li > *:first-child:before {
-        counter-increment: f1;
-        content: counter(f1, decimal) ". ";
-        color: #f7f7f1;
-        font-family: "Courier New", monospace;
-        font-style: normal;
-        font-weight: normal;
-        text-decoration: none;
-        font-size: 14px;
-      }
-      #l4 > li:first-child > *:first-child:before {
-        counter-increment: f1 0;
-      }
-      li {
-        display: block;
-      }
-      #l5 {
-        padding-left: 0pt;
-        counter-reset: g1 1;
-      }
-      #l5 > li > *:first-child:before {
-        counter-increment: g1;
-        content: counter(g1, decimal) ". ";
-        color: #f7f7f1;
-        font-family: "Courier New", monospace;
-        font-style: normal;
-        font-weight: normal;
-        text-decoration: none;
-        font-size: 14px;
-      }
-      #l5 > li:first-child > *:first-child:before {
-        counter-increment: g1 0;
-      }
-      li {
-        display: block;
-      }
-      #l6 {
-        padding-left: 0pt;
-      }
-      #l6 > li > *:first-child:before {
-        content: "- ";
-        color: black;
-        font-family: "Courier New", monospace;
-        font-style: normal;
-        font-weight: normal;
-        text-decoration: none;
-      }
-      table,
-      tbody {
-        vertical-align: top;
-        overflow: visible;
-      }
 
+<head>
+  <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+  <meta name="viewport" content="width=device-width" />
+  <title>Pi - Fullstack</title>
+  <style type="text/css">
+    * {
+      margin: 0;
+      padding: 0;
+      text-indent: 0;
+    }
+
+    body {
+      background-color: #262821;
+    }
+
+    .s1 {
+      color: #a6e22e;
+      font-family: "Courier New", monospace;
+      font-style: normal;
+      font-weight: normal;
+      text-decoration: none;
+      font-size: 24pt;
+    }
+
+    .s2 {
+      color: #f7f7f1;
+      font-family: "Courier New", monospace;
+      font-style: normal;
+      font-weight: normal;
+      text-decoration: none;
+      font-size: 13.5pt;
+    }
+
+    .p,
+    p {
+      color: #f7f7f1;
+      font-family: "Courier New", monospace;
+      font-style: normal;
+      font-weight: normal;
+      text-decoration: none;
+      font-size: 14px;
+      margin: 0pt;
+    }
+
+    a {
+      color: #f7f7f1;
+      font-family: "Courier New", monospace;
+      font-style: normal;
+      font-weight: normal;
+      text-decoration: none;
+      font-size: 14px;
+    }
+
+    .s3 {
+      color: #666;
+      font-family: "Courier New", monospace;
+      font-style: normal;
+      font-weight: normal;
+      text-decoration: none;
+      font-size: 12pt;
+    }
+
+    h1 {
+      color: #f92572;
+      font-family: "Courier New", monospace;
+      font-style: normal;
+      font-weight: bold;
+      text-decoration: none;
+      font-size: 11pt;
+    }
+
+    .s4 {
+      color: #66d9ef;
+      font-family: "Courier New", monospace;
+      font-style: normal;
+      font-weight: bold;
+      text-decoration: none;
+      font-size: 11pt;
+    }
+
+    .s5 {
+      color: #66d9ef;
+      font-family: "Courier New", monospace;
+      font-style: normal;
+      font-weight: bold;
+      text-decoration: none;
+      font-size: 14px;
+    }
+
+    .s6 {
+      color: #f7f7f1;
+      font-family: "Courier New", monospace;
+      font-style: normal;
+      font-weight: normal;
+      text-decoration: none;
+      font-size: 14px;
+    }
+
+    h2 {
+      color: #f92572;
+      font-family: "Courier New", monospace;
+      font-style: normal;
+      font-weight: bold;
+      text-decoration: none;
+      font-size: 14px;
+    }
+
+    .s7 {
+      color: #f7f7f1;
+      font-family: "Courier New", monospace;
+      font-style: normal;
+      font-weight: bold;
+      text-decoration: none;
+      font-size: 14px;
+    }
+
+    .s8 {
+      color: #66d9ef;
+      font-family: "Courier New", monospace;
+      font-style: normal;
+      font-weight: normal;
+      text-decoration: none;
+      font-size: 14px;
+    }
+
+    .s9 {
+      color: black;
+      font-family: "Times New Roman", serif;
+      font-style: normal;
+      font-weight: normal;
+      text-decoration: none;
+      font-size: 10pt;
+    }
+
+    .s10 {
+      color: #545454;
+      font-family: Arial, sans-serif;
+      font-style: normal;
+      font-weight: normal;
+      text-decoration: none;
+      font-size: 14px;
+    }
+
+    li {
+      display: block;
+    }
+
+    #l1 {
+      padding-left: 0pt;
+    }
+
+    #l1>li>*:first-child:before {
+      content: "* ";
+      color: #f7f7f1;
+      font-family: "Courier New", monospace;
+      font-style: normal;
+      font-weight: normal;
+      text-decoration: none;
+      font-size: 14px;
+    }
+
+    li {
+      display: block;
+    }
+
+    #l2 {
+      padding-left: 0pt;
+    }
+
+    #l2>li>*:first-child:before {
+      content: "- ";
+      color: #f7f7f1;
+      font-family: "Courier New", monospace;
+      font-style: normal;
+      font-weight: normal;
+      text-decoration: none;
+      font-size: 14px;
+    }
+
+    li {
+      display: block;
+    }
+
+    #l3 {
+      padding-left: 0pt;
+      counter-reset: e1 1;
+    }
+
+    #l3>li>*:first-child:before {
+      counter-increment: e1;
+      content: counter(e1, decimal) ". ";
+      color: #f7f7f1;
+      font-family: "Courier New", monospace;
+      font-style: normal;
+      font-weight: normal;
+      text-decoration: none;
+      font-size: 14px;
+    }
+
+    #l3>li:first-child>*:first-child:before {
+      counter-increment: e1 0;
+    }
+
+    li {
+      display: block;
+    }
+
+    #l4 {
+      padding-left: 0pt;
+      counter-reset: f1 1;
+    }
+
+    #l4>li>*:first-child:before {
+      counter-increment: f1;
+      content: counter(f1, decimal) ". ";
+      color: #f7f7f1;
+      font-family: "Courier New", monospace;
+      font-style: normal;
+      font-weight: normal;
+      text-decoration: none;
+      font-size: 14px;
+    }
+
+    #l4>li:first-child>*:first-child:before {
+      counter-increment: f1 0;
+    }
+
+    li {
+      display: block;
+    }
+
+    #l5 {
+      padding-left: 0pt;
+      counter-reset: g1 1;
+    }
+
+    #l5>li>*:first-child:before {
+      counter-increment: g1;
+      content: counter(g1, decimal) ". ";
+      color: #f7f7f1;
+      font-family: "Courier New", monospace;
+      font-style: normal;
+      font-weight: normal;
+      text-decoration: none;
+      font-size: 14px;
+    }
+
+    #l5>li:first-child>*:first-child:before {
+      counter-increment: g1 0;
+    }
+
+    li {
+      display: block;
+    }
+
+    #l6 {
+      padding-left: 0pt;
+    }
+
+    #l6>li>*:first-child:before {
+      content: "- ";
+      color: black;
+      font-family: "Courier New", monospace;
+      font-style: normal;
+      font-weight: normal;
+      text-decoration: none;
+    }
+
+    table,
+    tbody {
+      vertical-align: top;
+      overflow: visible;
+    }
+
+    .header {
+      display: flex;
+      justify-content: space-between;
+      flex-wrap: wrap;
+    }
+
+    .header__left {
+      display: flex;
+      flex-wrap: wrap;
+    }
+
+    .header__left__content {
+      display: flex;
+      flex-direction: column;
+      margin-left: 16px;
+      align-self: center;
+    }
+
+    .header__right__content {
+      display: flex;
+      flex-direction: column;
+      align-self: center;
+      text-align: right;
+    }
+
+    @media only screen and (max-width: 600px) {
       .header {
-        display: flex;
-        justify-content: space-between;
-        flex-wrap: wrap;
+        justify-content: center;
+        align-items: center;
       }
 
       .header__left {
-        display: flex;
-        flex-wrap: wrap;
+        justify-content: center;
+        align-items: center;
       }
 
       .header__left__content {
-        display: flex;
-        flex-direction: column;
-        margin-left: 16px;
-        align-self: center;
+        margin-top: 24px;
+        text-align: center;
+        margin-left: 0px;
+        align-items: center;
       }
 
       .header__right__content {
-        display: flex;
-        flex-direction: column;
-        align-self: center;
-        text-align: right;
+        margin-top: 24px;
+        justify-content: center;
+        align-items: center;
+        text-align: center;
       }
-      @media only screen and (max-width: 600px) {
-        .header {
-          justify-content: center;
-          align-items: center;
-        }
-        .header__left {
-          justify-content: center;
-          align-items: center;
-        }
+    }
+  </style>
+</head>
 
-        .header__left__content {
-          margin-top: 24px;
-          text-align: center;
-          margin-left: 0px;
-          align-items: center;
-        }
+<body style="padding: 40px 32px">
+  <div class="header">
+    <div class="header__left">
+      <img width="120" height="120" style="border-radius: 100%" src="./public/images/avatar.jpg" />
 
-        .header__right__content {
-          margin-top: 24px;
-          justify-content: center;
-          align-items: center;
-          text-align: center;
-        }
-      }
-    </style>
-  </head>
-  <body style="padding: 40px 32px">
-    <div class="header">
-      <div class="header__left">
-        <img
-          width="120"
-          height="120"
-          style="border-radius: 100%"
-          src="./public/images/avatar.jpg"
-        />
-
-        <div class="header__left__content">
-          <p class="s1" style="text-align: left">Huynh Tan Ngoc</p>
-          <p class="s2">Fullstack, Blockchain Developer</p>
-        </div>
-      </div>
-      <div class="header__right__content">
-        <p style="padding-top: 3pt">
-          <a href="mailto:huynhtanngoc91@gmail.com">
-            huynhtanngoc91@gmail.com</a
-          >
-        </p>
-        <p style="padding-top: 3pt">+84 855799199</p>
-        <p style="padding-top: 3pt">Ho Chi Minh City - Vietnam</p>
-        <p style="padding-top: 3pt">
-          <a
-            target="_blank"
-            href="https://github.com/ngocht-dev?tab=repositories"
-          >
-            github.com/ngocht-dev
-          </a>
-        </p>
-        <p style="padding-top: 3pt">
-          <a
-            target="_blank"
-            href="https://www.linkedin.com/in/ngoc-huynhtan-77b646a0"
-          >
-            linkedin.com/in/ngoc-huynhtan-77b646a0
-          </a>
-        </p>
+      <div class="header__left__content">
+        <p class="s1" style="text-align: left">Huynh Tan Ngoc</p>
+        <p class="s2">Fullstack, Blockchain Developer</p>
       </div>
     </div>
+    <div class="header__right__content">
+      <p style="padding-top: 3pt">
+        <a href="mailto:huynhtanngoc91@gmail.com">
+          huynhtanngoc91@gmail.com</a>
+      </p>
+      <p style="padding-top: 3pt">+84 855799199</p>
+      <p style="padding-top: 3pt">Ho Chi Minh City - Vietnam</p>
+      <p style="padding-top: 3pt">
+        <a target="_blank" href="https://github.com/ngocht-dev?tab=repositories">
+          github.com/ngocht-dev
+        </a>
+      </p>
+      <p style="padding-top: 3pt">
+        <a target="_blank" href="https://www.linkedin.com/in/ngoc-huynhtan-77b646a0">
+          linkedin.com/in/ngoc-huynhtan-77b646a0
+        </a>
+      </p>
+    </div>
+  </div>
 
-    <p
-      class="s3"
-      style="
+  <p class="s3" style="
         padding-left: 5pt;
         text-indent: 0pt;
         text-align: left;
         margin-top: 40px;
-      "
-    >
-      // PERSONAL SUMMARY
-    </p>
-    <ul id="l1">
-      <li data-list-text="*">
-        <p
-          style="
+      ">
+    // PERSONAL SUMMARY
+  </p>
+  <ul id="l1">
+    <li data-list-text="*">
+      <p style="
             padding-top: 5pt;
             padding-left: 17pt;
             text-indent: -12pt;
             text-align: left;
-          "
-        >
-          Senior Full Stack Engineer with over 10 years of experience in
-          full-stack web development.
-        </p>
-      </li>
-      <li data-list-text="*">
-        <p
-          style="
+          ">
+        Senior Full Stack Engineer with over 10 years of experience in
+        full-stack web development.
+      </p>
+    </li>
+    <li data-list-text="*">
+      <p style="
             padding-top: 3pt;
             padding-left: 17pt;
             text-indent: -12pt;
             text-align: left;
-          "
-        >
-          Skilled in multiple programming languages including Solidity, Rust,
-          JavaScript, Haskell, Golang, and PHP, HTML5, CSS3.
-        </p>
-      </li>
-      <li data-list-text="*">
-        <p
-          style="
+          ">
+        Skilled in multiple programming languages including Solidity, Rust,
+        JavaScript, Haskell, Golang, and PHP, HTML5, CSS3.
+      </p>
+    </li>
+    <li data-list-text="*">
+      <p style="
             padding-top: 3pt;
             padding-left: 17pt;
             text-indent: -12pt;
             text-align: left;
-          "
-        >
-          Proficient in various blockchain development frameworks such as Anchor
-          to build Solana smart contracts and Hardhat and Truffle to build EVM
-          smart contracts. In addition, I can use the Aiken framework to build
-          the Cardano smart contracts as well.
-        </p>
-      </li>
-      <li data-list-text="*">
-        <p
-          style="
+          ">
+        Proficient in various blockchain development frameworks such as Anchor
+        to build Solana smart contracts and Hardhat and Truffle to build EVM
+        smart contracts. In addition, I can use the Aiken framework to build
+        the Cardano smart contracts as well.
+      </p>
+    </li>
+    <li data-list-text="*">
+      <p style="
             padding-top: 3pt;
             padding-left: 17pt;
             text-indent: -12pt;
             text-align: left;
-          "
-        >
-          Proficient in various backends frameworks such as Nodejs, NestJs, and
-          various databases such as MongoDB, MySQL, and Postgresql to build
-          Restful APIs.
-        </p>
-      </li>
-      <li data-list-text="*">
-        <p
-          style="
+          ">
+        Proficient in various backends frameworks such as Nodejs, NestJs, and
+        various databases such as MongoDB, MySQL, and Postgresql to build
+        Restful APIs.
+      </p>
+    </li>
+    <li data-list-text="*">
+      <p style="
             padding-top: 3pt;
             padding-left: 17pt;
             text-indent: -12pt;
             text-align: left;
-          "
-        >
-          Proficient in various front-end frameworks such as React, React
-          Native, NextJs, Vue, NuxtJs, and Angular to build web-based and mobile
-          applications.
-        </p>
-      </li>
-      <li data-list-text="*">
-        <p
-          style="
+          ">
+        Proficient in various front-end frameworks such as React, React
+        Native, NextJs, Vue, NuxtJs, and Angular to build web-based and mobile
+        applications.
+      </p>
+    </li>
+    <li data-list-text="*">
+      <p style="
             padding-top: 3pt;
             padding-left: 17pt;
             text-indent: -12pt;
             text-align: left;
-          "
-        >
-          Accomplished in designing and implementing scalable, high-performance
-          web applications, Strong understanding of database design, Restful API
-          development, and cloud technologies, and delivering innovative
-          solutions to complex technical challenges.
-        </p>
-      </li>
-      <li data-list-text="*">
-        <p
-          style="
+          ">
+        Accomplished in designing and implementing scalable, high-performance
+        web applications, Strong understanding of database design, Restful API
+        development, and cloud technologies, and delivering innovative
+        solutions to complex technical challenges.
+      </p>
+    </li>
+    <li data-list-text="*">
+      <p style="
             padding-top: 2pt;
             padding-left: 17pt;
             text-indent: -12pt;
             text-align: left;
-          "
-        >
-          Collaborative team player with a strong focus on communication and
-          customer satisfaction. Passionate about staying up-to-date with
-          emerging technologies and applying them to create innovative products
-          that solve real-world problems.
-        </p>
-      </li>
-    </ul>
+          ">
+        Collaborative team player with a strong focus on communication and
+        customer satisfaction. Passionate about staying up-to-date with
+        emerging technologies and applying them to create innovative products
+        that solve real-world problems.
+      </p>
+    </li>
+  </ul>
 
-    <p
-      class="s3"
-      style="
+  <p class="s3" style="
         padding-left: 5pt;
         text-indent: 0pt;
         text-align: left;
         margin-top: 40px;
-      "
-    >
-      // TECHNICAL SKILLS & KNOWLEDGE
-    </p>
-    <table
-      style="border-collapse: collapse; margin-left: 5.50946pt; margin-top: 5pt"
-      cellspacing="0"
-    >
-      <tr style="height: 60pt">
-        <td
-          style="
+      ">
+    // TECHNICAL SKILLS & KNOWLEDGE
+  </p>
+  <table style="border-collapse: collapse; margin-left: 5.50946pt; margin-top: 5pt" cellspacing="0">
+    <tr style="height: 60pt">
+      <td style="
             border-top-style: dashed;
             border-top-width: 1pt;
             border-top-color: #666666;
@@ -469,22 +475,17 @@
             border-right-style: dashed;
             border-right-width: 1pt;
             border-right-color: #666666;
-          "
-        >
-          <p
-            class="s5"
-            style="
+          ">
+        <p class="s5" style="
               padding-top: 6pt;
               padding-left: 3pt;
               text-indent: 0pt;
               text-align: left;
-            "
-          >
-            Knowledge
-          </p>
-        </td>
-        <td
-          style="
+            ">
+          Knowledge
+        </p>
+      </td>
+      <td style="
             border-top-style: dashed;
             border-top-width: 1pt;
             border-top-color: #666666;
@@ -494,27 +495,22 @@
             border-bottom-style: dashed;
             border-bottom-width: 1pt;
             border-bottom-color: #666666;
-          "
-        >
-          <p
-            class="s6"
-            style="
+          ">
+        <p class="s6" style="
               padding-top: 6pt;
               padding-left: 3pt;
               text-indent: 0pt;
               text-align: left;
-            "
-          >
-            In-depth knowledge of consensus algorithms, cryptography, and
-            decentralized finance (DeFi) principles. Experience with web3 and
-            DeFi projects such as Pancake, Uniswap and Aave, including smart
-            contract development and interaction for Front-end and Back-end
-          </p>
-        </td>
-      </tr>
-      <tr style="height: 30pt">
-        <td
-          style="
+            ">
+          In-depth knowledge of consensus algorithms, cryptography, and
+          decentralized finance (DeFi) principles. Experience with web3 and
+          DeFi projects such as Pancake, Uniswap and Aave, including smart
+          contract development and interaction for Front-end and Back-end
+        </p>
+      </td>
+    </tr>
+    <tr style="height: 30pt">
+      <td style="
             border-top-style: dashed;
             border-top-width: 1pt;
             border-top-color: #666666;
@@ -524,22 +520,17 @@
             border-right-style: dashed;
             border-right-width: 1pt;
             border-right-color: #666666;
-          "
-        >
-          <p
-            class="s5"
-            style="
+          ">
+        <p class="s5" style="
               padding-top: 6pt;
               padding-left: 3pt;
               text-indent: 0pt;
               text-align: left;
-            "
-          >
-            Programming Language
-          </p>
-        </td>
-        <td
-          style="
+            ">
+          Programming Language
+        </p>
+      </td>
+      <td style="
             border-top-style: dashed;
             border-top-width: 1pt;
             border-top-color: #666666;
@@ -549,350 +540,277 @@
             border-bottom-style: dashed;
             border-bottom-width: 1pt;
             border-bottom-color: #666666;
-          "
-        >
-          <p
-            class="s6"
-            style="
+          ">
+        <p class="s6" style="
               padding-top: 6pt;
               padding-left: 3pt;
               text-indent: 0pt;
               text-align: left;
-            "
-          >
-            Rust, Solidity JavaScript, Haskell, Golang, and PHP, HTML5, CSS3
-          </p>
-        </td>
-      </tr>
-      <tr style="height: 60pt">
-        <td
-          style="
+            ">
+          Rust, Solidity JavaScript, Haskell, Golang, and PHP, HTML5, CSS3
+        </p>
+      </td>
+    </tr>
+    <tr style="height: 60pt">
+      <td style="
             border-top-style: dashed;
             border-top-width: 1pt;
             border-top-color: #666666;
             border-right-style: dashed;
             border-right-width: 1pt;
             border-right-color: #666666;
-          "
-        >
-          <p
-            class="s5"
-            style="
+          ">
+        <p class="s5" style="
               padding-top: 6pt;
               padding-left: 3pt;
               text-indent: 0pt;
               text-align: left;
-            "
-          >
-            Blockchain on-chain
-          </p>
-        </td>
-        <td
-          style="
+            ">
+          Blockchain on-chain
+        </p>
+      </td>
+      <td style="
             border-top-style: dashed;
             border-top-width: 1pt;
             border-top-color: #666666;
             border-left-style: dashed;
             border-left-width: 1pt;
             border-left-color: #666666;
-          "
-        >
-          <ul id="l1">
-            <li data-list-text="*">
-              <p
-                style="
+          ">
+        <ul id="l1">
+          <li data-list-text="*">
+            <p style="
                   padding-top: 5pt;
                   padding-left: 17pt;
                   text-indent: -12pt;
                   text-align: left;
-                "
-              >
-                Anchor, @solana/web3.js, @solana/spl-token: to implement and
-                build solana smart-contracts.
-              </p>
-            </li>
-            <li data-list-text="*">
-              <p
-                style="
+                ">
+              Anchor, @solana/web3.js, @solana/spl-token: to implement and
+              build solana smart-contracts.
+            </p>
+          </li>
+          <li data-list-text="*">
+            <p style="
                   padding-top: 3pt;
                   padding-left: 17pt;
                   text-indent: -12pt;
                   text-align: left;
-                "
-              >
-                Hardhat and Truffle: to build EVM smart contracts.
-              </p>
-            </li>
-            <li data-list-text="*">
-              <p
-                style="
+                ">
+              Hardhat and Truffle: to build EVM smart contracts.
+            </p>
+          </li>
+          <li data-list-text="*">
+            <p style="
                   padding-top: 3pt;
                   padding-left: 17pt;
                   text-indent: -12pt;
                   text-align: left;
-                "
-              >
-                Aiken and lucid: to build Cardano smart contracts.
-              </p>
-            </li>
-          </ul>
-        </td>
-      </tr>
-      <tr style="height: 30pt">
-        <td
-          style="
+                ">
+              Aiken and lucid: to build Cardano smart contracts.
+            </p>
+          </li>
+        </ul>
+      </td>
+    </tr>
+    <tr style="height: 30pt">
+      <td style="
             border-top-style: dashed;
             border-top-width: 1pt;
             border-top-color: #666666;
             border-right-style: dashed;
             border-right-width: 1pt;
             border-right-color: #666666;
-          "
-        >
-          <p
-            class="s5"
-            style="
+          ">
+        <p class="s5" style="
               padding-top: 6pt;
               padding-left: 3pt;
               text-indent: 0pt;
               text-align: left;
-            "
-          >
-            Front-End
-          </p>
-        </td>
-        <td
-          style="
+            ">
+          Front-End
+        </p>
+      </td>
+      <td style="
             border-top-style: dashed;
             border-top-width: 1pt;
             border-top-color: #666666;
             border-left-style: dashed;
             border-left-width: 1pt;
             border-left-color: #666666;
-          "
-        >
-          <p
-            class="s6"
-            style="
+          ">
+        <p class="s6" style="
               padding-top: 6pt;
               padding-left: 3pt;
               text-indent: 0pt;
               text-align: left;
-            "
-          >
-            React, React Native, NextJs, Vue, NuxtJs, and Angular: to build
-            web-based and mobile applications.
-          </p>
-        </td>
-      </tr>
-      <tr style="height: 30pt">
-        <td
-          style="
+            ">
+          React, React Native, NextJs, Vue, NuxtJs, and Angular: to build
+          web-based and mobile applications.
+        </p>
+      </td>
+    </tr>
+    <tr style="height: 30pt">
+      <td style="
             border-top-style: dashed;
             border-top-width: 1pt;
             border-top-color: #666666;
             border-right-style: dashed;
             border-right-width: 1pt;
             border-right-color: #666666;
-          "
-        >
-          <p
-            class="s5"
-            style="
+          ">
+        <p class="s5" style="
               padding-top: 6pt;
               padding-left: 3pt;
               text-indent: 0pt;
               text-align: left;
-            "
-          >
-            Back-End
-          </p>
-        </td>
-        <td
-          style="
+            ">
+          Back-End
+        </p>
+      </td>
+      <td style="
             border-top-style: dashed;
             border-top-width: 1pt;
             border-top-color: #666666;
             border-left-style: dashed;
             border-left-width: 1pt;
             border-left-color: #666666;
-          "
-        >
-          <p
-            class="s6"
-            style="
+          ">
+        <p class="s6" style="
               padding-top: 6pt;
               padding-left: 3pt;
               text-indent: 0pt;
               text-align: left;
-            "
-          >
-            Nodejs, NestJs.
-          </p>
-        </td>
-      </tr>
-      <tr style="height: 30pt">
-        <td
-          style="
+            ">
+          Nodejs, NestJs.
+        </p>
+      </td>
+    </tr>
+    <tr style="height: 30pt">
+      <td style="
             border-top-style: dashed;
             border-top-width: 1pt;
             border-top-color: #666666;
             border-right-style: dashed;
             border-right-width: 1pt;
             border-right-color: #666666;
-          "
-        >
-          <p
-            class="s5"
-            style="
+          ">
+        <p class="s5" style="
               padding-top: 6pt;
               padding-left: 3pt;
               text-indent: 0pt;
               text-align: left;
-            "
-          >
-            Database
-          </p>
-        </td>
-        <td
-          style="
+            ">
+          Database
+        </p>
+      </td>
+      <td style="
             border-top-style: dashed;
             border-top-width: 1pt;
             border-top-color: #666666;
             border-left-style: dashed;
             border-left-width: 1pt;
             border-left-color: #666666;
-          "
-        >
-          <p
-            class="s6"
-            style="
+          ">
+        <p class="s6" style="
               padding-top: 6pt;
               padding-left: 3pt;
               text-indent: 0pt;
               text-align: left;
-            "
-          >
-            MySQL, Postgresql, Redis, MongoDb and LevelDb.
-          </p>
-        </td>
-      </tr>
-      <tr>
-        <td
-          style="
+            ">
+          MySQL, Postgresql, Redis, MongoDb and LevelDb.
+        </p>
+      </td>
+    </tr>
+    <tr>
+      <td style="
             border-top-style: dashed;
             border-top-width: 1pt;
             border-top-color: #666666;
             border-right-style: dashed;
             border-right-width: 1pt;
             border-right-color: #666666;
-          "
-        >
-          <p
-            class="s5"
-            style="
+          ">
+        <p class="s5" style="
               padding-top: 6pt;
               padding-left: 3pt;
               text-indent: 0pt;
               text-align: left;
-            "
-          >
-            Testing tools & Frameworks
-          </p>
-        </td>
-        <td
-          style="
+            ">
+          Testing tools & Frameworks
+        </p>
+      </td>
+      <td style="
             border-top-style: dashed;
             border-top-width: 1pt;
             border-top-color: #666666;
             border-left-style: dashed;
             border-left-width: 1pt;
             border-left-color: #666666;
-          "
-        >
-          <p
-            class="s6"
-            style="
+          ">
+        <p class="s6" style="
               padding-top: 6pt;
               padding-left: 3pt;
               text-indent: 0pt;
               text-align: left;
-            "
-          >
-            Mocha, Chai.
-          </p>
-        </td>
-      </tr>
-    </table>
-    <p style="padding-top: 10pt; text-indent: 0pt; text-align: left"><br /></p>
-    <p class="s3" style="padding-left: 5pt; text-indent: 0pt; text-align: left">
-      // WORK EXPERIENCE
-    </p>
-    <h1
-      style="
+            ">
+          Mocha, Chai.
+        </p>
+      </td>
+    </tr>
+  </table>
+  <p style="padding-top: 10pt; text-indent: 0pt; text-align: left"><br /></p>
+  <p class="s3" style="padding-left: 5pt; text-indent: 0pt; text-align: left">
+    // WORK EXPERIENCE
+  </p>
+  <h1 style="
         padding-top: 2pt;
         padding-left: 5pt;
         text-indent: 0pt;
         text-align: left;
-      "
-    >
-      Jambo <span class="p">(Nov 2023 - Sep 2024)</span>
-    </h1>
-    <table
-      style="border-collapse: collapse; margin-left: 5.50946pt"
-      cellspacing="0"
-    >
-      <tr style="height: 60pt">
-        <td
-          style="
+      ">
+    Ginar Solution<span class="p">(Nov 2023 - Now)</span>
+  </h1>
+  <table style="border-collapse: collapse; margin-left: 5.50946pt" cellspacing="0">
+    <tr style="height: 60pt">
+      <td style="
             border-top-style: dashed;
             border-top-width: 1pt;
             border-top-color: #666666;
             border-right-style: dashed;
             border-right-width: 1pt;
             border-right-color: #666666;
-          "
-        >
-          <p
-            class="s5"
-            style="
+          ">
+        <p class="s5" style="
               padding-top: 6pt;
               padding-left: 3pt;
               text-indent: 0pt;
               text-align: left;
-            "
-          >
-            Description
-          </p>
-        </td>
-        <td
-          style="
+            ">
+          Description
+        </p>
+      </td>
+      <td style="
             border-top-style: dashed;
             border-top-width: 1pt;
             border-top-color: #666666;
             border-left-style: dashed;
             border-left-width: 1pt;
             border-left-color: #666666;
-          "
-        >
-          <p
-            class="s6"
-            style="
+          ">
+        <p class="s6" style="
               padding-top: 6pt;
               padding-left: 3pt;
               padding-right: 28pt;
               text-indent: 0pt;
               line-height: 125%;
               text-align: left;
-            "
-          >
-            Building the Web3 mobile infrastructure for emerging markets
-          </p>
-        </td>
-      </tr>
-      <tr style="height: 21pt">
-        <td
-          style="
+            ">
+          Creating Web3 and AI applications on a foundation of web technologies.
+        </p>
+      </td>
+    </tr>
+    <tr style="height: 21pt">
+      <td style="
             border-top-style: dashed;
             border-top-width: 1pt;
             border-top-color: #666666;
@@ -902,22 +820,17 @@
             border-right-style: dashed;
             border-right-width: 1pt;
             border-right-color: #666666;
-          "
-        >
-          <p
-            class="s5"
-            style="
+          ">
+        <p class="s5" style="
               padding-top: 5pt;
               padding-left: 3pt;
               text-indent: 0pt;
               text-align: left;
-            "
-          >
-            Team size
-          </p>
-        </td>
-        <td
-          style="
+            ">
+          Team size
+        </p>
+      </td>
+      <td style="
             border-top-style: dashed;
             border-top-width: 1pt;
             border-top-color: #666666;
@@ -927,24 +840,19 @@
             border-bottom-style: dashed;
             border-bottom-width: 1pt;
             border-bottom-color: #666666;
-          "
-        >
-          <p
-            class="s6"
-            style="
+          ">
+        <p class="s6" style="
               padding-top: 5pt;
               padding-left: 3pt;
               text-indent: 0pt;
               text-align: left;
-            "
-          >
-            20
-          </p>
-        </td>
-      </tr>
-      <tr style="height: 21pt">
-        <td
-          style="
+            ">
+          20
+        </p>
+      </td>
+    </tr>
+    <tr style="height: 21pt">
+      <td style="
             border-top-style: dashed;
             border-top-width: 1pt;
             border-top-color: #666666;
@@ -954,22 +862,17 @@
             border-right-style: dashed;
             border-right-width: 1pt;
             border-right-color: #666666;
-          "
-        >
-          <p
-            class="s5"
-            style="
+          ">
+        <p class="s5" style="
               padding-top: 5pt;
               padding-left: 3pt;
               text-indent: 0pt;
               text-align: left;
-            "
-          >
-            My position
-          </p>
-        </td>
-        <td
-          style="
+            ">
+          My position
+        </p>
+      </td>
+      <td style="
             border-top-style: dashed;
             border-top-width: 1pt;
             border-top-color: #666666;
@@ -979,24 +882,19 @@
             border-bottom-style: dashed;
             border-bottom-width: 1pt;
             border-bottom-color: #666666;
-          "
-        >
-          <p
-            class="s6"
-            style="
+          ">
+        <p class="s6" style="
               padding-top: 5pt;
               padding-left: 3pt;
               text-indent: 0pt;
               text-align: left;
-            "
-          >
-            Full-stack developer
-          </p>
-        </td>
-      </tr>
-      <tr style="height: 76pt">
-        <td
-          style="
+            ">
+          Back-end Developer
+        </p>
+      </td>
+    </tr>
+    <tr style="height: 76pt">
+      <td style="
             border-top-style: dashed;
             border-top-width: 1pt;
             border-top-color: #666666;
@@ -1006,18 +904,13 @@
             border-right-style: dashed;
             border-right-width: 1pt;
             border-right-color: #666666;
-          "
-        >
-          <p style="text-indent: 0pt; text-align: left"><br /></p>
-          <p
-            class="s5"
-            style="padding-left: 3pt; text-indent: 0pt; text-align: left"
-          >
-            My responsibilities
-          </p>
-        </td>
-        <td
-          style="
+          ">
+        <p style="text-indent: 0pt; text-align: left"><br /></p>
+        <p class="s5" style="padding-left: 3pt; text-indent: 0pt; text-align: left">
+          My responsibilities
+        </p>
+      </td>
+      <td style="
             border-top-style: dashed;
             border-top-width: 1pt;
             border-top-color: #666666;
@@ -1027,85 +920,66 @@
             border-bottom-style: dashed;
             border-bottom-width: 1pt;
             border-bottom-color: #666666;
-          "
-        >
-          <ul id="l1">
-            <li data-list-text="*">
-              <p
-                style="
+          ">
+        <ul id="l1">
+          <li data-list-text="*">
+            <p style="
                   padding-top: 5pt;
                   padding-left: 17pt;
                   text-indent: -12pt;
                   text-align: left;
-                "
-              >
-                Build the Jambo mobile wallet as a Web3 mobile app to send,
-                receive some cryptocurrencies on some blockchains, such as
-                Solana, Ethereum, Aptos, Injective, Base, Avalanche, Binance
-                Smart Chain, Sei, Bitcoin, MultiversX, and Mantle.
-              </p>
-            </li>
-            <li data-list-text="*">
-              <p
-                style="
+                ">
+              Developed APIs for gasless cryptocurrency deposits and withdrawals (e.g., USDT, USDC) to support the
+              front-end team.
+            </p>
+          </li>
+          <li data-list-text="*">
+            <p style="
                   padding-top: 3pt;
                   padding-left: 17pt;
                   text-indent: -12pt;
                   text-align: left;
-                "
-              >
-                Build the Jambo token and bank using Anchor and Metaplex
-                frameworks
-              </p>
-            </li>
-            <li data-list-text="*">
-              <p
-                style="
+                ">
+              Developed APIs for the AI team to execute DeFi trades, including adding/removing liquidity and swapping
+              tokens on decentralized exchanges.
+            </p>
+          </li>
+          <li data-list-text="*">
+            <p style="
                   padding-top: 3pt;
                   padding-left: 17pt;
                   text-indent: -12pt;
                   text-align: left;
-                "
-              >
-                Build the Jambo check-out website so that user can use the
-                website to buy Jambo phones by some cryptocurrencies such as
-                USDT, USDC.
-              </p>
-            </li>
-            <li data-list-text="*">
-              <p
-                style="
+                ">
+              Crawled and processed real-time cryptocurrency pricing and decentralized exchange (DEX) data to train and support the AI team's automated trading bot development.
+            </p>
+          </li>
+          <li data-list-text="*">
+            <p style="
                   padding-top: 3pt;
                   padding-left: 17pt;
                   text-indent: -12pt;
                   text-align: left;
-                "
-              >
-                Build the Jambo admin website using React
-              </p>
-            </li>
-          </ul>
-        </td>
-      </tr>
-    </table>
-    <p style="padding-top: 6pt; text-indent: 0pt; text-align: left"><br /></p>
-    <h1
-      style="
+                ">
+              Built APIs to support the front-end and AI teams in processing user withdrawals from the platform's vaults.
+            </p>
+          </li>
+        </ul>
+      </td>
+    </tr>
+  </table>
+  <p style="padding-top: 6pt; text-indent: 0pt; text-align: left"><br /></p>
+  <h1 style="
         padding-bottom: 1pt;
         padding-left: 5pt;
         text-indent: 0pt;
         text-align: left;
-      "
-    >
-      Outsourcing <span class="p">(Aug 2021 - Now)</span>
-    </h1>
-    <table
-      style="border-collapse: collapse; margin-left: 5.50946pt"
-      cellspacing="0"
-    >
-      <tr style="height: 35pt">
-        <td
-          style="
+      ">
+    Outsourcing <span class="p">(Aug 2021 - Now)</span>
+  </h1>
+  <table style="border-collapse: collapse; margin-left: 5.50946pt" cellspacing="0">
+    <tr style="height: 35pt">
+      <td style="
             border-top-style: dashed;
             border-top-width: 1pt;
             border-top-color: #666666;
@@ -1115,20 +989,15 @@
             border-right-style: dashed;
             border-right-width: 1pt;
             border-right-color: #666666;
-          "
-        >
-          <p style="padding-top: 1pt; text-indent: 0pt; text-align: left">
-            <br />
-          </p>
-          <p
-            class="s5"
-            style="padding-left: 3pt; text-indent: 0pt; text-align: left"
-          >
-            Description
-          </p>
-        </td>
-        <td
-          style="
+          ">
+        <p style="padding-top: 1pt; text-indent: 0pt; text-align: left">
+          <br />
+        </p>
+        <p class="s5" style="padding-left: 3pt; text-indent: 0pt; text-align: left">
+          Description
+        </p>
+      </td>
+      <td style="
             border-top-style: dashed;
             border-top-width: 1pt;
             border-top-color: #666666;
@@ -1138,26 +1007,21 @@
             border-bottom-style: dashed;
             border-bottom-width: 1pt;
             border-bottom-color: #666666;
-          "
-        >
-          <p
-            class="s6"
-            style="
+          ">
+        <p class="s6" style="
               padding-top: 2pt;
               padding-left: 3pt;
               padding-right: 28pt;
               text-indent: 0pt;
               line-height: 14pt;
               text-align: left;
-            "
-          >
-            Some projects that I have joined as a freelance developer.
-          </p>
-        </td>
-      </tr>
-      <tr style="height: 21pt">
-        <td
-          style="
+            ">
+          Some projects that I have joined as a freelance developer.
+        </p>
+      </td>
+    </tr>
+    <tr style="height: 21pt">
+      <td style="
             border-top-style: dashed;
             border-top-width: 1pt;
             border-top-color: #666666;
@@ -1167,22 +1031,17 @@
             border-right-style: dashed;
             border-right-width: 1pt;
             border-right-color: #666666;
-          "
-        >
-          <p
-            class="s5"
-            style="
+          ">
+        <p class="s5" style="
               padding-top: 5pt;
               padding-left: 3pt;
               text-indent: 0pt;
               text-align: left;
-            "
-          >
-            Team size
-          </p>
-        </td>
-        <td
-          style="
+            ">
+          Team size
+        </p>
+      </td>
+      <td style="
             border-top-style: dashed;
             border-top-width: 1pt;
             border-top-color: #666666;
@@ -1192,24 +1051,19 @@
             border-bottom-style: dashed;
             border-bottom-width: 1pt;
             border-bottom-color: #666666;
-          "
-        >
-          <p
-            class="s6"
-            style="
+          ">
+        <p class="s6" style="
               padding-top: 5pt;
               padding-left: 3pt;
               text-indent: 0pt;
               text-align: left;
-            "
-          >
-            14
-          </p>
-        </td>
-      </tr>
-      <tr style="height: 21pt">
-        <td
-          style="
+            ">
+          14
+        </p>
+      </td>
+    </tr>
+    <tr style="height: 21pt">
+      <td style="
             border-top-style: dashed;
             border-top-width: 1pt;
             border-top-color: #666666;
@@ -1219,22 +1073,17 @@
             border-right-style: dashed;
             border-right-width: 1pt;
             border-right-color: #666666;
-          "
-        >
-          <p
-            class="s5"
-            style="
+          ">
+        <p class="s5" style="
               padding-top: 5pt;
               padding-left: 3pt;
               text-indent: 0pt;
               text-align: left;
-            "
-          >
-            My position
-          </p>
-        </td>
-        <td
-          style="
+            ">
+          My position
+        </p>
+      </td>
+      <td style="
             border-top-style: dashed;
             border-top-width: 1pt;
             border-top-color: #666666;
@@ -1244,24 +1093,19 @@
             border-bottom-style: dashed;
             border-bottom-width: 1pt;
             border-bottom-color: #666666;
-          "
-        >
-          <p
-            class="s6"
-            style="
+          ">
+        <p class="s6" style="
               padding-top: 5pt;
               padding-left: 3pt;
               text-indent: 0pt;
               text-align: left;
-            "
-          >
-            Full-stack developer
-          </p>
-        </td>
-      </tr>
-      <tr style="height: 172pt">
-        <td
-          style="
+            ">
+          Full-stack developer
+        </p>
+      </td>
+    </tr>
+    <tr style="height: 172pt">
+      <td style="
             border-top-style: dashed;
             border-top-width: 1pt;
             border-top-color: #666666;
@@ -1271,18 +1115,13 @@
             border-right-style: dashed;
             border-right-width: 1pt;
             border-right-color: #666666;
-          "
-        >
-          <p style="text-indent: 0pt; text-align: left"><br /></p>
-          <p
-            class="s5"
-            style="padding-left: 3pt; text-indent: 0pt; text-align: left"
-          >
-            My responsibilities
-          </p>
-        </td>
-        <td
-          style="
+          ">
+        <p style="text-indent: 0pt; text-align: left"><br /></p>
+        <p class="s5" style="padding-left: 3pt; text-indent: 0pt; text-align: left">
+          My responsibilities
+        </p>
+      </td>
+      <td style="
             border-top-style: dashed;
             border-top-width: 1pt;
             border-top-color: #666666;
@@ -1292,145 +1131,124 @@
             border-bottom-style: dashed;
             border-bottom-width: 1pt;
             border-bottom-color: #666666;
-          "
-        >
-          <ul id="l1">
-            <li data-list-text="*">
-              <p
-                style="
+          ">
+        <ul id="l1">
+          <li data-list-text="*">
+            <p style="
                   padding-top: 5pt;
                   padding-left: 17pt;
                   text-indent: -12pt;
                   text-align: left;
-                "
-              >
-                Build a web-based application called NFT Land similar to
-                Opensea. I join the project as an on-chain developer for
-                building Solidity smart contracts using the Hardhat and
-                Openzeppelin frameworks. I also have built a SDK to support the
-                front-end developers integrate the smart contracts using
-                typescript and ethers libraries to read/write on-chain data. I
-                have built a parser to listen to the blockchain EVM and then
-                parse the event data. After that, I have imported this data into
-                the database.
-              </p>
-            </li>
-            <li data-list-text="*">
-              <p
-                style="
+                ">
+              Build a web-based application called NFT Land similar to
+              Opensea. I join the project as an on-chain developer for
+              building Solidity smart contracts using the Hardhat and
+              Openzeppelin frameworks. I also have built a SDK to support the
+              front-end developers integrate the smart contracts using
+              typescript and ethers libraries to read/write on-chain data. I
+              have built a parser to listen to the blockchain EVM and then
+              parse the event data. After that, I have imported this data into
+              the database.
+            </p>
+          </li>
+          <li data-list-text="*">
+            <p style="
                   padding-top: 3pt;
                   padding-left: 17pt;
                   text-indent: -12pt;
                   text-align: left;
-                "
-              >
-                Build a web-based application called Hanabi similar to Pancake
-                Swap. I join the project as an on-chain developer for building
-                Solidity smart contracts using the Hardhat and Openzeppelin
-                frameworks.
-              </p>
-            </li>
-            <li data-list-text="*">
-              <p
-                style="
+                ">
+              Build a web-based application called Hanabi similar to Pancake
+              Swap. I join the project as an on-chain developer for building
+              Solidity smart contracts using the Hardhat and Openzeppelin
+              frameworks.
+            </p>
+          </li>
+          <li data-list-text="*">
+            <p style="
                   padding-top: 3pt;
                   padding-left: 17pt;
                   text-indent: -12pt;
                   text-align: left;
-                "
-              >
-                Build a web-based application called DMTP that is a maketplace.
-                I join the project as an on-chain developer for building
-                Solidity smart contracts using the Hardhat and Openzeppelin
-                frameworks to buy and sell some items called keys.
-              </p>
-            </li>
-            <li data-list-text="*">
-              <p
-                style="
+                ">
+              Build a web-based application called DMTP that is a maketplace.
+              I join the project as an on-chain developer for building
+              Solidity smart contracts using the Hardhat and Openzeppelin
+              frameworks to buy and sell some items called keys.
+            </p>
+          </li>
+          <li data-list-text="*">
+            <p style="
                   padding-top: 3pt;
                   padding-left: 17pt;
                   text-indent: -12pt;
                   text-align: left;
-                "
-              >
-                Build a web-based application called Phoenix that is an NFT game
-                project on the defiverse network. I joined the project as an
-                on-chain developer for building Solidity smart contracts to
-                initial some NFT called LootBox. I also implemented and built
-                smart contracts for daily check-in, spin to win lottery and
-                staking features.
-              </p>
-            </li>
-            <li data-list-text="*">
-              <p
-                style="
+                ">
+              Build a web-based application called Phoenix that is an NFT game
+              project on the defiverse network. I joined the project as an
+              on-chain developer for building Solidity smart contracts to
+              initial some NFT called LootBox. I also implemented and built
+              smart contracts for daily check-in, spin to win lottery and
+              staking features.
+            </p>
+          </li>
+          <li data-list-text="*">
+            <p style="
                   padding-top: 3pt;
                   padding-left: 17pt;
                   text-indent: -12pt;
                   text-align: left;
-                "
-              >
-                Build a web-based application called Phoenix that is an NFT game
-                project on the defiverse network. I joined the project as an
-                on-chain developer for building Solidity smart contracts to
-                initial some NFT called LootBox. I also implemented and built
-                smart contracts for daily check-in, spin to win lottery and
-                staking features.
-              </p>
-            </li>
-            <li data-list-text="*">
-              <p
-                style="
+                ">
+              Build a web-based application called Phoenix that is an NFT game
+              project on the defiverse network. I joined the project as an
+              on-chain developer for building Solidity smart contracts to
+              initial some NFT called LootBox. I also implemented and built
+              smart contracts for daily check-in, spin to win lottery and
+              staking features.
+            </p>
+          </li>
+          <li data-list-text="*">
+            <p style="
                   padding-top: 3pt;
                   padding-left: 17pt;
                   text-indent: -12pt;
                   text-align: left;
-                "
-              >
-                Build a web-based application called Capital Dao that is an
-                web-based application for DAO fundamentals. I joined the project
-                as an on-chain developer to build some Solidity smart contracts
-                for ERC20 tokenize, Staking,..
-              </p>
-            </li>
-            <li data-list-text="*">
-              <p
-                style="
+                ">
+              Build a web-based application called Capital Dao that is an
+              web-based application for DAO fundamentals. I joined the project
+              as an on-chain developer to build some Solidity smart contracts
+              for ERC20 tokenize, Staking,..
+            </p>
+          </li>
+          <li data-list-text="*">
+            <p style="
                   padding-top: 3pt;
                   padding-left: 17pt;
                   text-indent: -12pt;
                   text-align: left;
-                "
-              >
-                Build a web-based application called Sunrise Casino that is an
-                web-based application for gaming. I joined the project as an
-                on-chain developer to build some Solidity smart contracts for
-                some games such as Jacks or better, Blackjack, Baccarat,...
-              </p>
-            </li>
-          </ul>
-        </td>
-      </tr>
-    </table>
-    <p style="padding-top: 6pt; text-indent: 0pt; text-align: left"><br /></p>
-    <h1
-      style="
+                ">
+              Build a web-based application called Sunrise Casino that is an
+              web-based application for gaming. I joined the project as an
+              on-chain developer to build some Solidity smart contracts for
+              some games such as Jacks or better, Blackjack, Baccarat,...
+            </p>
+          </li>
+        </ul>
+      </td>
+    </tr>
+  </table>
+  <p style="padding-top: 6pt; text-indent: 0pt; text-align: left"><br /></p>
+  <h1 style="
         padding-bottom: 1pt;
         padding-left: 5pt;
         text-indent: 0pt;
         text-align: left;
-      "
-    >
-      Moonstake <span class="p">(Aug 2021 - Nov 2023)</span>
-    </h1>
-    <table
-      style="border-collapse: collapse; margin-left: 5.50946pt"
-      cellspacing="0"
-    >
-      <tr style="height: 35pt">
-        <td
-          style="
+      ">
+    Moonstake <span class="p">(Aug 2021 - Nov 2023)</span>
+  </h1>
+  <table style="border-collapse: collapse; margin-left: 5.50946pt" cellspacing="0">
+    <tr style="height: 35pt">
+      <td style="
             border-top-style: dashed;
             border-top-width: 1pt;
             border-top-color: #666666;
@@ -1440,20 +1258,15 @@
             border-right-style: dashed;
             border-right-width: 1pt;
             border-right-color: #666666;
-          "
-        >
-          <p style="padding-top: 1pt; text-indent: 0pt; text-align: left">
-            <br />
-          </p>
-          <p
-            class="s5"
-            style="padding-left: 3pt; text-indent: 0pt; text-align: left"
-          >
-            Description
-          </p>
-        </td>
-        <td
-          style="
+          ">
+        <p style="padding-top: 1pt; text-indent: 0pt; text-align: left">
+          <br />
+        </p>
+        <p class="s5" style="padding-left: 3pt; text-indent: 0pt; text-align: left">
+          Description
+        </p>
+      </td>
+      <td style="
             border-top-style: dashed;
             border-top-width: 1pt;
             border-top-color: #666666;
@@ -1463,30 +1276,25 @@
             border-bottom-style: dashed;
             border-bottom-width: 1pt;
             border-bottom-color: #666666;
-          "
-        >
-          <p
-            class="s6"
-            style="
+          ">
+        <p class="s6" style="
               padding-top: 2pt;
               padding-left: 3pt;
               padding-right: 28pt;
               text-indent: 0pt;
               line-height: 14pt;
               text-align: left;
-            "
-          >
-            Moonstake was established to develop a staking pool protocol to
-            satisfy increasing demands of investors and businesses in regional
-            and global blockchain markets. We aim to be the largest staking pool
-            network in Asia by providing an active environment for crypto asset
-            holders.
-          </p>
-        </td>
-      </tr>
-      <tr style="height: 21pt">
-        <td
-          style="
+            ">
+          Moonstake was established to develop a staking pool protocol to
+          satisfy increasing demands of investors and businesses in regional
+          and global blockchain markets. We aim to be the largest staking pool
+          network in Asia by providing an active environment for crypto asset
+          holders.
+        </p>
+      </td>
+    </tr>
+    <tr style="height: 21pt">
+      <td style="
             border-top-style: dashed;
             border-top-width: 1pt;
             border-top-color: #666666;
@@ -1496,22 +1304,17 @@
             border-right-style: dashed;
             border-right-width: 1pt;
             border-right-color: #666666;
-          "
-        >
-          <p
-            class="s5"
-            style="
+          ">
+        <p class="s5" style="
               padding-top: 5pt;
               padding-left: 3pt;
               text-indent: 0pt;
               text-align: left;
-            "
-          >
-            Team size
-          </p>
-        </td>
-        <td
-          style="
+            ">
+          Team size
+        </p>
+      </td>
+      <td style="
             border-top-style: dashed;
             border-top-width: 1pt;
             border-top-color: #666666;
@@ -1521,24 +1324,19 @@
             border-bottom-style: dashed;
             border-bottom-width: 1pt;
             border-bottom-color: #666666;
-          "
-        >
-          <p
-            class="s6"
-            style="
+          ">
+        <p class="s6" style="
               padding-top: 5pt;
               padding-left: 3pt;
               text-indent: 0pt;
               text-align: left;
-            "
-          >
-            30
-          </p>
-        </td>
-      </tr>
-      <tr style="height: 21pt">
-        <td
-          style="
+            ">
+          30
+        </p>
+      </td>
+    </tr>
+    <tr style="height: 21pt">
+      <td style="
             border-top-style: dashed;
             border-top-width: 1pt;
             border-top-color: #666666;
@@ -1548,22 +1346,17 @@
             border-right-style: dashed;
             border-right-width: 1pt;
             border-right-color: #666666;
-          "
-        >
-          <p
-            class="s5"
-            style="
+          ">
+        <p class="s5" style="
               padding-top: 5pt;
               padding-left: 3pt;
               text-indent: 0pt;
               text-align: left;
-            "
-          >
-            My position
-          </p>
-        </td>
-        <td
-          style="
+            ">
+          My position
+        </p>
+      </td>
+      <td style="
             border-top-style: dashed;
             border-top-width: 1pt;
             border-top-color: #666666;
@@ -1573,24 +1366,19 @@
             border-bottom-style: dashed;
             border-bottom-width: 1pt;
             border-bottom-color: #666666;
-          "
-        >
-          <p
-            class="s6"
-            style="
+          ">
+        <p class="s6" style="
               padding-top: 5pt;
               padding-left: 3pt;
               text-indent: 0pt;
               text-align: left;
-            "
-          >
-            Full-stack developer
-          </p>
-        </td>
-      </tr>
-      <tr style="height: 172pt">
-        <td
-          style="
+            ">
+          Full-stack developer
+        </p>
+      </td>
+    </tr>
+    <tr style="height: 172pt">
+      <td style="
             border-top-style: dashed;
             border-top-width: 1pt;
             border-top-color: #666666;
@@ -1600,18 +1388,13 @@
             border-right-style: dashed;
             border-right-width: 1pt;
             border-right-color: #666666;
-          "
-        >
-          <p style="text-indent: 0pt; text-align: left"><br /></p>
-          <p
-            class="s5"
-            style="padding-left: 3pt; text-indent: 0pt; text-align: left"
-          >
-            My responsibilities
-          </p>
-        </td>
-        <td
-          style="
+          ">
+        <p style="text-indent: 0pt; text-align: left"><br /></p>
+        <p class="s5" style="padding-left: 3pt; text-indent: 0pt; text-align: left">
+          My responsibilities
+        </p>
+      </td>
+      <td style="
             border-top-style: dashed;
             border-top-width: 1pt;
             border-top-color: #666666;
@@ -1621,94 +1404,79 @@
             border-bottom-style: dashed;
             border-bottom-width: 1pt;
             border-bottom-color: #666666;
-          "
-        >
-          <ul id="l1">
-            <li data-list-text="*">
-              <p
-                style="
+          ">
+        <ul id="l1">
+          <li data-list-text="*">
+            <p style="
                   padding-top: 5pt;
                   padding-left: 17pt;
                   text-indent: -12pt;
                   text-align: left;
-                "
-              >
-                Build a web-based application called World Peace Finance similar
-                to AAVE but it operates on the Solana network. I join the
-                project as a full-stack developer for building Solana smart
-                contracts using the Anchor framework and implementing a SDK to
-                support the front-end developers integrate the Solana smart
-                contract using NuxtJs and Solana libraries to read/write
-                on-chain data.
-              </p>
-            </li>
-            <li data-list-text="*">
-              <p
-                style="
+                ">
+              Build a web-based application called World Peace Finance similar
+              to AAVE but it operates on the Solana network. I join the
+              project as a full-stack developer for building Solana smart
+              contracts using the Anchor framework and implementing a SDK to
+              support the front-end developers integrate the Solana smart
+              contract using NuxtJs and Solana libraries to read/write
+              on-chain data.
+            </p>
+          </li>
+          <li data-list-text="*">
+            <p style="
                   padding-top: 3pt;
                   padding-left: 17pt;
                   text-indent: -12pt;
                   text-align: left;
-                "
-              >
-                Build a browser extension called Moonstake Wallet Extension. I
-                joined the project as a Web3 Front-End developer to build the
-                website using NuxtJs and Solana libraries to read/write on-chain
-                data.
-              </p>
-            </li>
-            <li data-list-text="*">
-              <p
-                style="
+                ">
+              Build a browser extension called Moonstake Wallet Extension. I
+              joined the project as a Web3 Front-End developer to build the
+              website using NuxtJs and Solana libraries to read/write on-chain
+              data.
+            </p>
+          </li>
+          <li data-list-text="*">
+            <p style="
                   padding-top: 3pt;
                   padding-left: 17pt;
                   text-indent: -12pt;
                   text-align: left;
-                "
-              >
-                Build a web-based application called MoonWealth which will
-                teaches the fundamentals of cryptocurrency investing for users .
-                I join the project as a Web3 Back-End developer to build the
-                APIs for the project using NodeJS and Postgresql.
-              </p>
-            </li>
-            <li data-list-text="*">
-              <p
-                style="
+                ">
+              Build a web-based application called MoonWealth which will
+              teaches the fundamentals of cryptocurrency investing for users .
+              I join the project as a Web3 Back-End developer to build the
+              APIs for the project using NodeJS and Postgresql.
+            </p>
+          </li>
+          <li data-list-text="*">
+            <p style="
                   padding-top: 3pt;
                   padding-left: 17pt;
                   text-indent: -12pt;
                   text-align: left;
-                "
-              >
-                Build a web-based application called Moonstake's Wallet Website
-                to send, receive some cryptocurrencies on some blockchains, such
-                as KAVA, AVAX, Fantom, and Cardano,...
-              </p>
-            </li>
-          </ul>
-        </td>
-      </tr>
-    </table>
+                ">
+              Build a web-based application called Moonstake's Wallet Website
+              to send, receive some cryptocurrencies on some blockchains, such
+              as KAVA, AVAX, Fantom, and Cardano,...
+            </p>
+          </li>
+        </ul>
+      </td>
+    </tr>
+  </table>
 
-    <p style="padding-top: 6pt; text-indent: 0pt; text-align: left"><br /></p>
-    <h1
-      style="
+  <p style="padding-top: 6pt; text-indent: 0pt; text-align: left"><br /></p>
+  <h1 style="
         padding-bottom: 1pt;
         padding-left: 5pt;
         text-indent: 0pt;
         text-align: left;
-      "
-    >
-      Infinity Blockchain Labs <span class="p">(Oct 2017 - Jan 2021)</span>
-    </h1>
-    <table
-      style="border-collapse: collapse; margin-left: 5.50946pt"
-      cellspacing="0"
-    >
-      <tr style="height: 35pt">
-        <td
-          style="
+      ">
+    Infinity Blockchain Labs <span class="p">(Oct 2017 - Jan 2021)</span>
+  </h1>
+  <table style="border-collapse: collapse; margin-left: 5.50946pt" cellspacing="0">
+    <tr style="height: 35pt">
+      <td style="
             border-top-style: dashed;
             border-top-width: 1pt;
             border-top-color: #666666;
@@ -1718,20 +1486,15 @@
             border-right-style: dashed;
             border-right-width: 1pt;
             border-right-color: #666666;
-          "
-        >
-          <p style="padding-top: 1pt; text-indent: 0pt; text-align: left">
-            <br />
-          </p>
-          <p
-            class="s5"
-            style="padding-left: 3pt; text-indent: 0pt; text-align: left"
-          >
-            Description
-          </p>
-        </td>
-        <td
-          style="
+          ">
+        <p style="padding-top: 1pt; text-indent: 0pt; text-align: left">
+          <br />
+        </p>
+        <p class="s5" style="padding-left: 3pt; text-indent: 0pt; text-align: left">
+          Description
+        </p>
+      </td>
+      <td style="
             border-top-style: dashed;
             border-top-width: 1pt;
             border-top-color: #666666;
@@ -1741,27 +1504,22 @@
             border-bottom-style: dashed;
             border-bottom-width: 1pt;
             border-bottom-color: #666666;
-          "
-        >
-          <p
-            class="s6"
-            style="
+          ">
+        <p class="s6" style="
               padding-top: 2pt;
               padding-left: 3pt;
               padding-right: 28pt;
               text-indent: 0pt;
               line-height: 14pt;
               text-align: left;
-            "
-          >
-            Infinity Blockchain Labs is a leading blockchain R&D. Focused on
-            FinTech, RegTech and education build communities.
-          </p>
-        </td>
-      </tr>
-      <tr style="height: 21pt">
-        <td
-          style="
+            ">
+          Infinity Blockchain Labs is a leading blockchain R&D. Focused on
+          FinTech, RegTech and education build communities.
+        </p>
+      </td>
+    </tr>
+    <tr style="height: 21pt">
+      <td style="
             border-top-style: dashed;
             border-top-width: 1pt;
             border-top-color: #666666;
@@ -1771,22 +1529,17 @@
             border-right-style: dashed;
             border-right-width: 1pt;
             border-right-color: #666666;
-          "
-        >
-          <p
-            class="s5"
-            style="
+          ">
+        <p class="s5" style="
               padding-top: 5pt;
               padding-left: 3pt;
               text-indent: 0pt;
               text-align: left;
-            "
-          >
-            Team size
-          </p>
-        </td>
-        <td
-          style="
+            ">
+          Team size
+        </p>
+      </td>
+      <td style="
             border-top-style: dashed;
             border-top-width: 1pt;
             border-top-color: #666666;
@@ -1796,24 +1549,19 @@
             border-bottom-style: dashed;
             border-bottom-width: 1pt;
             border-bottom-color: #666666;
-          "
-        >
-          <p
-            class="s6"
-            style="
+          ">
+        <p class="s6" style="
               padding-top: 5pt;
               padding-left: 3pt;
               text-indent: 0pt;
               text-align: left;
-            "
-          >
-            30
-          </p>
-        </td>
-      </tr>
-      <tr style="height: 21pt">
-        <td
-          style="
+            ">
+          30
+        </p>
+      </td>
+    </tr>
+    <tr style="height: 21pt">
+      <td style="
             border-top-style: dashed;
             border-top-width: 1pt;
             border-top-color: #666666;
@@ -1823,22 +1571,17 @@
             border-right-style: dashed;
             border-right-width: 1pt;
             border-right-color: #666666;
-          "
-        >
-          <p
-            class="s5"
-            style="
+          ">
+        <p class="s5" style="
               padding-top: 5pt;
               padding-left: 3pt;
               text-indent: 0pt;
               text-align: left;
-            "
-          >
-            My position
-          </p>
-        </td>
-        <td
-          style="
+            ">
+          My position
+        </p>
+      </td>
+      <td style="
             border-top-style: dashed;
             border-top-width: 1pt;
             border-top-color: #666666;
@@ -1848,24 +1591,19 @@
             border-bottom-style: dashed;
             border-bottom-width: 1pt;
             border-bottom-color: #666666;
-          "
-        >
-          <p
-            class="s6"
-            style="
+          ">
+        <p class="s6" style="
               padding-top: 5pt;
               padding-left: 3pt;
               text-indent: 0pt;
               text-align: left;
-            "
-          >
-            Full-stack developer
-          </p>
-        </td>
-      </tr>
-      <tr style="height: 172pt">
-        <td
-          style="
+            ">
+          Full-stack developer
+        </p>
+      </td>
+    </tr>
+    <tr style="height: 172pt">
+      <td style="
             border-top-style: dashed;
             border-top-width: 1pt;
             border-top-color: #666666;
@@ -1875,18 +1613,13 @@
             border-right-style: dashed;
             border-right-width: 1pt;
             border-right-color: #666666;
-          "
-        >
-          <p style="text-indent: 0pt; text-align: left"><br /></p>
-          <p
-            class="s5"
-            style="padding-left: 3pt; text-indent: 0pt; text-align: left"
-          >
-            My responsibilities
-          </p>
-        </td>
-        <td
-          style="
+          ">
+        <p style="text-indent: 0pt; text-align: left"><br /></p>
+        <p class="s5" style="padding-left: 3pt; text-indent: 0pt; text-align: left">
+          My responsibilities
+        </p>
+      </td>
+      <td style="
             border-top-style: dashed;
             border-top-width: 1pt;
             border-top-color: #666666;
@@ -1896,92 +1629,77 @@
             border-bottom-style: dashed;
             border-bottom-width: 1pt;
             border-bottom-color: #666666;
-          "
-        >
-          <ul id="l1">
-            <li data-list-text="*">
-              <p
-                style="
+          ">
+        <ul id="l1">
+          <li data-list-text="*">
+            <p style="
                   padding-top: 5pt;
                   padding-left: 17pt;
                   text-indent: -12pt;
                   text-align: left;
-                "
-              >
-                Research, implement, and maintain some APIs that integrate with
-                lots of blockchain networks.
-              </p>
-            </li>
-            <li data-list-text="*">
-              <p
-                style="
+                ">
+              Research, implement, and maintain some APIs that integrate with
+              lots of blockchain networks.
+            </p>
+          </li>
+          <li data-list-text="*">
+            <p style="
                   padding-top: 3pt;
                   padding-left: 17pt;
                   text-indent: -12pt;
                   text-align: left;
-                "
-              >
-                Build a cryptocurrency wallet called Infinito Wallet. I have
-                joined the project as a mobile developer to implement features
-                such as adding and removing favorite cryptocurrencies using
-                React Native.
-              </p>
-            </li>
-            <li data-list-text="*">
-              <p
-                style="
+                ">
+              Build a cryptocurrency wallet called Infinito Wallet. I have
+              joined the project as a mobile developer to implement features
+              such as adding and removing favorite cryptocurrencies using
+              React Native.
+            </p>
+          </li>
+          <li data-list-text="*">
+            <p style="
                   padding-top: 3pt;
                   padding-left: 17pt;
                   text-indent: -12pt;
                   text-align: left;
-                "
-              >
-                Build a web-based application called Infinito Appsquare similar
-                to App Store or Play Store. I join the project as an on-chain
-                developer for building Solidity smart contracts using the
-                Hardhat and Openzeppelin frameworks to buy and sell some items
-                called keys. I have joined the project as a full-stack developer
-                to implement both front-end and back-end features using NuxtJS
-                and NodeJS.
-              </p>
-            </li>
-            <li data-list-text="*">
-              <p
-                style="
+                ">
+              Build a web-based application called Infinito Appsquare similar
+              to App Store or Play Store. I join the project as an on-chain
+              developer for building Solidity smart contracts using the
+              Hardhat and Openzeppelin frameworks to buy and sell some items
+              called keys. I have joined the project as a full-stack developer
+              to implement both front-end and back-end features using NuxtJS
+              and NodeJS.
+            </p>
+          </li>
+          <li data-list-text="*">
+            <p style="
                   padding-top: 3pt;
                   padding-left: 17pt;
                   text-indent: -12pt;
                   text-align: left;
-                "
-              >
-                Build a web-based application called Quanta that is a lottery
-                game. I joined the project as an full-stack developer to
-                implement both front-end and back-end features using ReactJS and
-                NodeJS.
-              </p>
-            </li>
-          </ul>
-        </td>
-      </tr>
-    </table>
-    <p style="padding-top: 6pt; text-indent: 0pt; text-align: left"><br /></p>
-    <h1
-      style="
+                ">
+              Build a web-based application called Quanta that is a lottery
+              game. I joined the project as an full-stack developer to
+              implement both front-end and back-end features using ReactJS and
+              NodeJS.
+            </p>
+          </li>
+        </ul>
+      </td>
+    </tr>
+  </table>
+  <p style="padding-top: 6pt; text-indent: 0pt; text-align: left"><br /></p>
+  <h1 style="
         padding-bottom: 1pt;
         padding-left: 5pt;
         text-indent: 0pt;
         text-align: left;
-      "
-    >
-      SystemEXE Việt Nam <span class="p">(Apr 2014 - Oct 2017)</span>
-    </h1>
-    <table
-      style="border-collapse: collapse; margin-left: 5.50946pt"
-      cellspacing="0"
-    >
-      <tr style="height: 35pt">
-        <td
-          style="
+      ">
+    SystemEXE Việt Nam <span class="p">(Apr 2014 - Oct 2017)</span>
+  </h1>
+  <table style="border-collapse: collapse; margin-left: 5.50946pt" cellspacing="0">
+    <tr style="height: 35pt">
+      <td style="
             border-top-style: dashed;
             border-top-width: 1pt;
             border-top-color: #666666;
@@ -1991,20 +1709,15 @@
             border-right-style: dashed;
             border-right-width: 1pt;
             border-right-color: #666666;
-          "
-        >
-          <p style="padding-top: 1pt; text-indent: 0pt; text-align: left">
-            <br />
-          </p>
-          <p
-            class="s5"
-            style="padding-left: 3pt; text-indent: 0pt; text-align: left"
-          >
-            Description
-          </p>
-        </td>
-        <td
-          style="
+          ">
+        <p style="padding-top: 1pt; text-indent: 0pt; text-align: left">
+          <br />
+        </p>
+        <p class="s5" style="padding-left: 3pt; text-indent: 0pt; text-align: left">
+          Description
+        </p>
+      </td>
+      <td style="
             border-top-style: dashed;
             border-top-width: 1pt;
             border-top-color: #666666;
@@ -2014,27 +1727,22 @@
             border-bottom-style: dashed;
             border-bottom-width: 1pt;
             border-bottom-color: #666666;
-          "
-        >
-          <p
-            class="s6"
-            style="
+          ">
+        <p class="s6" style="
               padding-top: 2pt;
               padding-left: 3pt;
               padding-right: 28pt;
               text-indent: 0pt;
               line-height: 14pt;
               text-align: left;
-            "
-          >
-            SystemEXE VietNam is a member of Japan's leading information
-            technology group.
-          </p>
-        </td>
-      </tr>
-      <tr style="height: 21pt">
-        <td
-          style="
+            ">
+          SystemEXE VietNam is a member of Japan's leading information
+          technology group.
+        </p>
+      </td>
+    </tr>
+    <tr style="height: 21pt">
+      <td style="
             border-top-style: dashed;
             border-top-width: 1pt;
             border-top-color: #666666;
@@ -2044,22 +1752,17 @@
             border-right-style: dashed;
             border-right-width: 1pt;
             border-right-color: #666666;
-          "
-        >
-          <p
-            class="s5"
-            style="
+          ">
+        <p class="s5" style="
               padding-top: 5pt;
               padding-left: 3pt;
               text-indent: 0pt;
               text-align: left;
-            "
-          >
-            Team size
-          </p>
-        </td>
-        <td
-          style="
+            ">
+          Team size
+        </p>
+      </td>
+      <td style="
             border-top-style: dashed;
             border-top-width: 1pt;
             border-top-color: #666666;
@@ -2069,24 +1772,19 @@
             border-bottom-style: dashed;
             border-bottom-width: 1pt;
             border-bottom-color: #666666;
-          "
-        >
-          <p
-            class="s6"
-            style="
+          ">
+        <p class="s6" style="
               padding-top: 5pt;
               padding-left: 3pt;
               text-indent: 0pt;
               text-align: left;
-            "
-          >
-            50
-          </p>
-        </td>
-      </tr>
-      <tr style="height: 21pt">
-        <td
-          style="
+            ">
+          50
+        </p>
+      </td>
+    </tr>
+    <tr style="height: 21pt">
+      <td style="
             border-top-style: dashed;
             border-top-width: 1pt;
             border-top-color: #666666;
@@ -2096,22 +1794,17 @@
             border-right-style: dashed;
             border-right-width: 1pt;
             border-right-color: #666666;
-          "
-        >
-          <p
-            class="s5"
-            style="
+          ">
+        <p class="s5" style="
               padding-top: 5pt;
               padding-left: 3pt;
               text-indent: 0pt;
               text-align: left;
-            "
-          >
-            My position
-          </p>
-        </td>
-        <td
-          style="
+            ">
+          My position
+        </p>
+      </td>
+      <td style="
             border-top-style: dashed;
             border-top-width: 1pt;
             border-top-color: #666666;
@@ -2121,24 +1814,19 @@
             border-bottom-style: dashed;
             border-bottom-width: 1pt;
             border-bottom-color: #666666;
-          "
-        >
-          <p
-            class="s6"
-            style="
+          ">
+        <p class="s6" style="
               padding-top: 5pt;
               padding-left: 3pt;
               text-indent: 0pt;
               text-align: left;
-            "
-          >
-            Full-stack developer
-          </p>
-        </td>
-      </tr>
-      <tr style="height: 172pt">
-        <td
-          style="
+            ">
+          Full-stack developer
+        </p>
+      </td>
+    </tr>
+    <tr style="height: 172pt">
+      <td style="
             border-top-style: dashed;
             border-top-width: 1pt;
             border-top-color: #666666;
@@ -2148,18 +1836,13 @@
             border-right-style: dashed;
             border-right-width: 1pt;
             border-right-color: #666666;
-          "
-        >
-          <p style="text-indent: 0pt; text-align: left"><br /></p>
-          <p
-            class="s5"
-            style="padding-left: 3pt; text-indent: 0pt; text-align: left"
-          >
-            My responsibilities
-          </p>
-        </td>
-        <td
-          style="
+          ">
+        <p style="text-indent: 0pt; text-align: left"><br /></p>
+        <p class="s5" style="padding-left: 3pt; text-indent: 0pt; text-align: left">
+          My responsibilities
+        </p>
+      </td>
+      <td style="
             border-top-style: dashed;
             border-top-width: 1pt;
             border-top-color: #666666;
@@ -2169,174 +1852,148 @@
             border-bottom-style: dashed;
             border-bottom-width: 1pt;
             border-bottom-color: #666666;
-          "
-        >
-          <ul id="l1">
-            <li data-list-text="*">
-              <p
-                style="
+          ">
+        <ul id="l1">
+          <li data-list-text="*">
+            <p style="
                   padding-top: 5pt;
                   padding-left: 17pt;
                   text-indent: -12pt;
                   text-align: left;
-                "
-              >
-                Build a web-based application called PTSP that is an online
-                accounting service. I have joined the project as a full stack
-                developer to implement APIs using Java and web applications
-                using Angular.
-              </p>
-            </li>
-            <li data-list-text="*">
-              <p
-                style="
+                ">
+              Build a web-based application called PTSP that is an online
+              accounting service. I have joined the project as a full stack
+              developer to implement APIs using Java and web applications
+              using Angular.
+            </p>
+          </li>
+          <li data-list-text="*">
+            <p style="
                   padding-top: 3pt;
                   padding-left: 17pt;
                   text-indent: -12pt;
                   text-align: left;
-                "
-              >
-                Build a web-based application called IFoodGo that is an online
-                food delivery service. I have joined the project as a full stack
-                developer to implement APIs using Laravel, web applications
-                using Angular, and mobile applications using Ionic.
-              </p>
-            </li>
-            <li data-list-text="*">
-              <p
-                style="
+                ">
+              Build a web-based application called IFoodGo that is an online
+              food delivery service. I have joined the project as a full stack
+              developer to implement APIs using Laravel, web applications
+              using Angular, and mobile applications using Ionic.
+            </p>
+          </li>
+          <li data-list-text="*">
+            <p style="
                   padding-top: 3pt;
                   padding-left: 17pt;
                   text-indent: -12pt;
                   text-align: left;
-                "
-              >
-                Build a web-based application called Phu Tho Website used to
-                manage staff and book fields at Phu Tho Stadium. I have joined
-                the project as a full stack developer to implement APIs using
-                Laravel and web applications using AngularJS.
-              </p>
-            </li>
-            <li data-list-text="*">
-              <p
-                style="
+                ">
+              Build a web-based application called Phu Tho Website used to
+              manage staff and book fields at Phu Tho Stadium. I have joined
+              the project as a full stack developer to implement APIs using
+              Laravel and web applications using AngularJS.
+            </p>
+          </li>
+          <li data-list-text="*">
+            <p style="
                   padding-top: 3pt;
                   padding-left: 17pt;
                   text-indent: -12pt;
                   text-align: left;
-                "
-              >
-                Build a web-based application that is an online database
-                management tool. I have joined the project as a full stack
-                developer to implement APIs and a web application using Java.
-              </p>
-            </li>
-            <li data-list-text="*">
-              <p
-                style="
+                ">
+              Build a web-based application that is an online database
+              management tool. I have joined the project as a full stack
+              developer to implement APIs and a web application using Java.
+            </p>
+          </li>
+          <li data-list-text="*">
+            <p style="
                   padding-top: 3pt;
                   padding-left: 17pt;
                   text-indent: -12pt;
                   text-align: left;
-                "
-              >
-                Build a web-based application called Aolani that is an online
-                hospital service. I have joined the project as a full stack
-                developer to implement APIs using Java and web applications/
-                using AngularJS.
-              </p>
-            </li>
-          </ul>
-        </td>
-      </tr>
-    </table>
-    <p
-      class="s3"
-      style="
+                ">
+              Build a web-based application called Aolani that is an online
+              hospital service. I have joined the project as a full stack
+              developer to implement APIs using Java and web applications/
+              using AngularJS.
+            </p>
+          </li>
+        </ul>
+      </td>
+    </tr>
+  </table>
+  <p class="s3" style="
         padding-top: 6pt;
         padding-left: 5pt;
         text-indent: 0pt;
         text-align: left;
         margin-top: 40px;
-      "
-    >
-      // EDUCATION &amp; ACHIEVEMENTS
-    </p>
-    <p
-      style="
+      ">
+    // EDUCATION &amp; ACHIEVEMENTS
+  </p>
+  <p style="
         padding-top: 2pt;
         padding-left: 5pt;
         text-indent: 0pt;
         text-align: left;
-      "
-    >
-      2009 - 2014
-    </p>
-    <h1
-      style="
+      ">
+    2009 - 2014
+  </p>
+  <h1 style="
         padding-top: 2pt;
         padding-left: 5pt;
         text-indent: 0pt;
         text-align: left;
-      "
-    >
-      HCMC University of Technology and Education
-    </h1>
-    <p
-      class="s4"
-      style="
+      ">
+    HCMC University of Technology and Education
+  </h1>
+  <p class="s4" style="
         padding-top: 2pt;
         padding-left: 5pt;
         text-indent: 0pt;
         text-align: left;
-      "
-    >
-      Software Engineering
-    </p>
-    <p style="padding-top: 12pt; text-indent: 0pt; text-align: left"><br /></p>
-    <p class="s3" style="padding-left: 5pt; text-indent: 0pt; text-align: left">
-      // NOTES ABOUT MYSELF
-    </p>
-    <p
-      style="
+      ">
+    Software Engineering
+  </p>
+  <p style="padding-top: 12pt; text-indent: 0pt; text-align: left"><br /></p>
+  <p class="s3" style="padding-left: 5pt; text-indent: 0pt; text-align: left">
+    // NOTES ABOUT MYSELF
+  </p>
+  <p style="
         padding-left: 5pt;
         text-indent: 0pt;
         line-height: 125%;
         text-align: left;
-      "
-    >
-      I certify that the information declared above is true to the best of my
-      knowledge and belief. Sep 2023.
-    </p>
-    <p style="padding-top: 3pt; text-indent: 0pt; text-align: left"><br /></p>
-    <p
-      style="
+      ">
+    I certify that the information declared above is true to the best of my
+    knowledge and belief. Sep 2023.
+  </p>
+  <p style="padding-top: 3pt; text-indent: 0pt; text-align: left"><br /></p>
+  <p style="
         padding-left: 5pt;
         text-indent: 0pt;
         line-height: 125%;
         text-align: left;
-      "
-    >
-      I hope your place is one of these; if so, give me a chance to show you
-      what I can do for you
-    </p>
-    <p
-      style="
+      ">
+    I hope your place is one of these; if so, give me a chance to show you
+    what I can do for you
+  </p>
+  <p style="
         padding-left: 5pt;
         text-indent: 0pt;
         line-height: 27pt;
         text-align: left;
-      "
-    >
-      When passion comes, success follows.
-    </p>
-    <p style="padding-left: 5pt; text-indent: 0pt; text-align: left">
-      Sincerely,
-    </p>
-    <p style="padding-left: 11pt; text-indent: 0pt; text-align: left">
-      Huynh Tan Ngoc
-    </p>
-    <p style="text-indent: 0pt; text-align: left"><br /></p>
-    <p class="s10" style="text-indent: 0pt; text-align: right">© topcv.vn</p>
-  </body>
+      ">
+    When passion comes, success follows.
+  </p>
+  <p style="padding-left: 5pt; text-indent: 0pt; text-align: left">
+    Sincerely,
+  </p>
+  <p style="padding-left: 11pt; text-indent: 0pt; text-align: left">
+    Huynh Tan Ngoc
+  </p>
+  <p style="text-indent: 0pt; text-align: left"><br /></p>
+  <p class="s10" style="text-indent: 0pt; text-align: right">© topcv.vn</p>
+</body>
+
 </html>
