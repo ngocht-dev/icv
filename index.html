@@ -15,19 +15,37 @@
     }
 
     body {
-      background: linear-gradient(135deg, #1a1a2e 0%, #16213e 100%);
+      background: linear-gradient(-45deg, #0f0c29, #302b63, #24243e, #1a1a2e);
+      background-size: 400% 400%;
+      animation: gradientShift 15s ease infinite;
       min-height: 100vh;
+      scroll-behavior: smooth;
+    }
+
+    @keyframes gradientShift {
+      0% { background-position: 0% 50%; }
+      50% { background-position: 100% 50%; }
+      100% { background-position: 0% 50%; }
     }
 
     .s1 {
-      color: #00d9ff;
+      background: linear-gradient(135deg, #00d9ff 0%, #00ffcc 50%, #00d9ff 100%);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+      background-clip: text;
       font-family: "Segoe UI", "Helvetica Neue", Arial, sans-serif;
       font-style: normal;
-      font-weight: 700;
+      font-weight: 800;
       text-decoration: none;
-      font-size: 32pt;
-      text-shadow: 0 2px 4px rgba(0, 217, 255, 0.3);
+      font-size: 36pt;
+      filter: drop-shadow(0 4px 8px rgba(0, 217, 255, 0.4));
       letter-spacing: -0.5px;
+      animation: shimmer 3s ease-in-out infinite;
+    }
+
+    @keyframes shimmer {
+      0%, 100% { filter: drop-shadow(0 4px 8px rgba(0, 217, 255, 0.4)); }
+      50% { filter: drop-shadow(0 4px 12px rgba(0, 255, 204, 0.6)); }
     }
 
     .s2 {
@@ -69,17 +87,34 @@
     }
 
     .s3 {
-      color: #00d9ff;
+      background: linear-gradient(90deg, #00d9ff 0%, #00ffcc 100%);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+      background-clip: text;
       font-family: "Segoe UI", "Helvetica Neue", Arial, sans-serif;
       font-style: normal;
-      font-weight: 600;
+      font-weight: 700;
       text-decoration: none;
-      font-size: 14pt;
+      font-size: 16pt;
       text-transform: uppercase;
-      letter-spacing: 2px;
-      border-left: 4px solid #00d9ff;
-      padding-left: 12px;
-      margin-bottom: 16px;
+      letter-spacing: 3px;
+      border-left: 5px solid #00d9ff;
+      padding-left: 16px;
+      margin-bottom: 20px;
+      display: inline-block;
+      position: relative;
+      filter: drop-shadow(0 2px 4px rgba(0, 217, 255, 0.3));
+    }
+
+    .s3::after {
+      content: '';
+      position: absolute;
+      bottom: -8px;
+      left: 0;
+      width: 60px;
+      height: 3px;
+      background: linear-gradient(90deg, #00d9ff 0%, transparent 100%);
+      border-radius: 2px;
     }
 
     h1 {
@@ -112,39 +147,41 @@
     }
 
     .s6 {
-      color: #f7f7f1;
-      font-family: "Courier New", monospace;
+      color: #e0e0e0;
+      font-family: "Segoe UI", "Helvetica Neue", Arial, sans-serif;
       font-style: normal;
       font-weight: normal;
       text-decoration: none;
-      font-size: 14px;
+      font-size: 15px;
+      line-height: 1.7;
     }
 
     h2 {
-      color: #f92572;
-      font-family: "Courier New", monospace;
+      color: #ff6b6b;
+      font-family: "Segoe UI", "Helvetica Neue", Arial, sans-serif;
       font-style: normal;
-      font-weight: bold;
+      font-weight: 700;
       text-decoration: none;
-      font-size: 14px;
+      font-size: 16px;
+      margin: 12px 0;
     }
 
     .s7 {
-      color: #f7f7f1;
-      font-family: "Courier New", monospace;
+      color: #e0e0e0;
+      font-family: "Segoe UI", "Helvetica Neue", Arial, sans-serif;
       font-style: normal;
-      font-weight: bold;
+      font-weight: 600;
       text-decoration: none;
-      font-size: 14px;
+      font-size: 15px;
     }
 
     .s8 {
-      color: #66d9ef;
-      font-family: "Courier New", monospace;
+      color: #00d9ff;
+      font-family: "Segoe UI", "Helvetica Neue", Arial, sans-serif;
       font-style: normal;
       font-weight: normal;
       text-decoration: none;
-      font-size: 14px;
+      font-size: 15px;
     }
 
     .s9 {
@@ -157,12 +194,13 @@
     }
 
     .s10 {
-      color: #545454;
-      font-family: Arial, sans-serif;
+      color: #808080;
+      font-family: "Segoe UI", Arial, sans-serif;
       font-style: normal;
       font-weight: normal;
       text-decoration: none;
-      font-size: 14px;
+      font-size: 13px;
+      opacity: 0.7;
     }
 
     li {
@@ -174,13 +212,13 @@
     }
 
     #l1>li>*:first-child:before {
-      content: "* ";
-      color: #f7f7f1;
-      font-family: "Courier New", monospace;
+      content: "▹ ";
+      color: #00d9ff;
+      font-family: "Segoe UI", Arial, sans-serif;
       font-style: normal;
-      font-weight: normal;
+      font-weight: bold;
       text-decoration: none;
-      font-size: 14px;
+      font-size: 16px;
     }
 
     li {
@@ -192,13 +230,13 @@
     }
 
     #l2>li>*:first-child:before {
-      content: "- ";
-      color: #f7f7f1;
-      font-family: "Courier New", monospace;
+      content: "▹ ";
+      color: #00d9ff;
+      font-family: "Segoe UI", Arial, sans-serif;
       font-style: normal;
-      font-weight: normal;
+      font-weight: bold;
       text-decoration: none;
-      font-size: 14px;
+      font-size: 16px;
     }
 
     li {
@@ -213,12 +251,12 @@
     #l3>li>*:first-child:before {
       counter-increment: e1;
       content: counter(e1, decimal) ". ";
-      color: #f7f7f1;
-      font-family: "Courier New", monospace;
+      color: #00d9ff;
+      font-family: "Segoe UI", Arial, sans-serif;
       font-style: normal;
-      font-weight: normal;
+      font-weight: 600;
       text-decoration: none;
-      font-size: 14px;
+      font-size: 15px;
     }
 
     #l3>li:first-child>*:first-child:before {
@@ -237,12 +275,12 @@
     #l4>li>*:first-child:before {
       counter-increment: f1;
       content: counter(f1, decimal) ". ";
-      color: #f7f7f1;
-      font-family: "Courier New", monospace;
+      color: #00d9ff;
+      font-family: "Segoe UI", Arial, sans-serif;
       font-style: normal;
-      font-weight: normal;
+      font-weight: 600;
       text-decoration: none;
-      font-size: 14px;
+      font-size: 15px;
     }
 
     #l4>li:first-child>*:first-child:before {
@@ -261,12 +299,12 @@
     #l5>li>*:first-child:before {
       counter-increment: g1;
       content: counter(g1, decimal) ". ";
-      color: #f7f7f1;
-      font-family: "Courier New", monospace;
+      color: #00d9ff;
+      font-family: "Segoe UI", Arial, sans-serif;
       font-style: normal;
-      font-weight: normal;
+      font-weight: 600;
       text-decoration: none;
-      font-size: 14px;
+      font-size: 15px;
     }
 
     #l5>li:first-child>*:first-child:before {
@@ -282,12 +320,13 @@
     }
 
     #l6>li>*:first-child:before {
-      content: "- ";
-      color: black;
-      font-family: "Courier New", monospace;
+      content: "▹ ";
+      color: #00d9ff;
+      font-family: "Segoe UI", Arial, sans-serif;
       font-style: normal;
-      font-weight: normal;
+      font-weight: bold;
       text-decoration: none;
+      font-size: 16px;
     }
 
     table,
@@ -295,32 +334,51 @@
       vertical-align: top;
       overflow: visible;
       width: 100%;
-      border-radius: 8px;
+      border-radius: 12px;
       overflow: hidden;
-      box-shadow: 0 4px 6px rgba(0, 0, 0, 0.3);
-      background: rgba(255, 255, 255, 0.03);
+      box-shadow: 0 8px 16px rgba(0, 0, 0, 0.4);
+      background: linear-gradient(135deg, rgba(255, 255, 255, 0.05) 0%, rgba(255, 255, 255, 0.02) 100%);
+      border: 1px solid rgba(0, 217, 255, 0.1);
     }
 
     table td {
-      padding: 16px;
-      transition: background-color 0.3s ease;
+      padding: 20px;
+      transition: all 0.3s ease;
+      border-bottom: 1px solid rgba(255, 255, 255, 0.05);
     }
 
     table tr:hover td {
-      background-color: rgba(0, 217, 255, 0.05);
+      background-color: rgba(0, 217, 255, 0.08);
+      transform: translateX(4px);
+    }
+
+    table tr:last-child td {
+      border-bottom: none;
     }
 
     .header {
       display: flex;
       justify-content: space-between;
       flex-wrap: wrap;
-      background: rgba(255, 255, 255, 0.05);
-      border-radius: 16px;
-      padding: 32px;
-      box-shadow: 0 8px 32px rgba(0, 0, 0, 0.4);
-      backdrop-filter: blur(10px);
-      border: 1px solid rgba(255, 255, 255, 0.1);
-      margin-bottom: 40px;
+      background: linear-gradient(135deg, rgba(255, 255, 255, 0.1) 0%, rgba(255, 255, 255, 0.05) 100%);
+      border-radius: 20px;
+      padding: 40px;
+      box-shadow: 0 12px 40px rgba(0, 0, 0, 0.5), inset 0 1px 0 rgba(255, 255, 255, 0.1);
+      backdrop-filter: blur(20px);
+      border: 1px solid rgba(0, 217, 255, 0.2);
+      margin-bottom: 48px;
+      animation: fadeInScale 0.6s ease-out;
+    }
+
+    @keyframes fadeInScale {
+      from {
+        opacity: 0;
+        transform: scale(0.95);
+      }
+      to {
+        opacity: 1;
+        transform: scale(1);
+      }
     }
 
     .header__left {
@@ -344,9 +402,14 @@
     }
 
     @media only screen and (max-width: 600px) {
+      .s1 {
+        font-size: 28pt;
+      }
+
       .header {
         justify-content: center;
         align-items: center;
+        padding: 24px;
       }
 
       .header__left {
@@ -370,13 +433,25 @@
     }
 
     img[src*="avatar"] {
-      border: 4px solid #00d9ff;
-      box-shadow: 0 4px 16px rgba(0, 217, 255, 0.4);
-      transition: transform 0.3s ease;
+      border: 5px solid #00d9ff;
+      box-shadow: 0 8px 24px rgba(0, 217, 255, 0.5), 0 0 40px rgba(0, 217, 255, 0.2);
+      transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+      animation: avatarPulse 3s ease-in-out infinite;
+    }
+
+    @keyframes avatarPulse {
+      0%, 100% {
+        box-shadow: 0 8px 24px rgba(0, 217, 255, 0.5), 0 0 40px rgba(0, 217, 255, 0.2);
+      }
+      50% {
+        box-shadow: 0 8px 28px rgba(0, 255, 204, 0.6), 0 0 60px rgba(0, 255, 204, 0.3);
+      }
     }
 
     img[src*="avatar"]:hover {
-      transform: scale(1.05);
+      transform: scale(1.08) rotate(2deg);
+      border-color: #00ffcc;
+      animation: none;
     }
 
     ul li {
@@ -384,12 +459,32 @@
     }
 
     section {
-      background: rgba(255, 255, 255, 0.03);
-      border-radius: 12px;
-      padding: 24px;
-      margin-bottom: 32px;
-      border: 1px solid rgba(255, 255, 255, 0.05);
-      box-shadow: 0 4px 6px rgba(0, 0, 0, 0.2);
+      background: linear-gradient(135deg, rgba(255, 255, 255, 0.06) 0%, rgba(255, 255, 255, 0.02) 100%);
+      border-radius: 16px;
+      padding: 32px;
+      margin-bottom: 40px;
+      border: 1px solid rgba(0, 217, 255, 0.15);
+      box-shadow: 0 8px 20px rgba(0, 0, 0, 0.3), inset 0 1px 0 rgba(255, 255, 255, 0.05);
+      backdrop-filter: blur(10px);
+      transition: all 0.4s ease;
+      animation: fadeInUp 0.6s ease-out;
+    }
+
+    @keyframes fadeInUp {
+      from {
+        opacity: 0;
+        transform: translateY(20px);
+      }
+      to {
+        opacity: 1;
+        transform: translateY(0);
+      }
+    }
+
+    section:hover {
+      transform: translateY(-4px);
+      box-shadow: 0 12px 30px rgba(0, 0, 0, 0.4), inset 0 1px 0 rgba(255, 255, 255, 0.08);
+      border-color: rgba(0, 217, 255, 0.3);
     }
   </style>
 </head>
