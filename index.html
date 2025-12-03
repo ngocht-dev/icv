@@ -5,7 +5,10 @@
 <head>
   <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
   <meta name="viewport" content="width=device-width" />
-  <title>Pi - Fullstack</title>
+  <title>Huynh Tan Ngoc - Senior Full Stack & Blockchain Developer</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
   <style type="text/css">
     * {
       margin: 0;
@@ -15,150 +18,147 @@
     }
 
     body {
-      background: linear-gradient(-45deg, #0f0c29, #302b63, #24243e, #1a1a2e);
-      background-size: 400% 400%;
-      animation: gradientShift 15s ease infinite;
+      background: linear-gradient(135deg, #0a0e27 0%, #1a1f3a 50%, #0f1419 100%);
+      background-attachment: fixed;
       min-height: 100vh;
       scroll-behavior: smooth;
+      position: relative;
     }
 
-    @keyframes gradientShift {
-      0% { background-position: 0% 50%; }
-      50% { background-position: 100% 50%; }
-      100% { background-position: 0% 50%; }
+    body::before {
+      content: '';
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      background: radial-gradient(circle at 20% 50%, rgba(0, 123, 255, 0.03) 0%, transparent 50%),
+                  radial-gradient(circle at 80% 80%, rgba(0, 217, 255, 0.03) 0%, transparent 50%);
+      pointer-events: none;
+      z-index: 0;
     }
 
     .s1 {
-      background: linear-gradient(135deg, #00d9ff 0%, #00ffcc 50%, #00d9ff 100%);
-      -webkit-background-clip: text;
-      -webkit-text-fill-color: transparent;
-      background-clip: text;
-      font-family: "Segoe UI", "Helvetica Neue", Arial, sans-serif;
+      color: #ffffff;
+      font-family: 'Inter', "Segoe UI", Arial, sans-serif;
       font-style: normal;
-      font-weight: 800;
+      font-weight: 700;
       text-decoration: none;
-      font-size: 36pt;
-      filter: drop-shadow(0 4px 8px rgba(0, 217, 255, 0.4));
-      letter-spacing: -0.5px;
-      animation: shimmer 3s ease-in-out infinite;
-    }
-
-    @keyframes shimmer {
-      0%, 100% { filter: drop-shadow(0 4px 8px rgba(0, 217, 255, 0.4)); }
-      50% { filter: drop-shadow(0 4px 12px rgba(0, 255, 204, 0.6)); }
+      font-size: 38pt;
+      letter-spacing: -1px;
+      line-height: 1.2;
     }
 
     .s2 {
-      color: #a0a0a0;
-      font-family: "Segoe UI", "Helvetica Neue", Arial, sans-serif;
+      color: #94a3b8;
+      font-family: 'Inter', "Segoe UI", Arial, sans-serif;
       font-style: normal;
-      font-weight: 400;
+      font-weight: 500;
       text-decoration: none;
-      font-size: 16pt;
-      letter-spacing: 0.5px;
+      font-size: 17pt;
+      letter-spacing: 0.3px;
+      line-height: 1.5;
     }
 
     .p,
     p {
-      color: #e0e0e0;
-      font-family: "Segoe UI", "Helvetica Neue", Arial, sans-serif;
+      color: #cbd5e1;
+      font-family: 'Inter', "Segoe UI", Arial, sans-serif;
       font-style: normal;
-      font-weight: normal;
+      font-weight: 400;
       text-decoration: none;
       font-size: 15px;
       margin: 0pt;
-      line-height: 1.6;
+      line-height: 1.7;
     }
 
     a {
-      color: #00d9ff;
-      font-family: "Segoe UI", "Helvetica Neue", Arial, sans-serif;
+      color: #60a5fa;
+      font-family: 'Inter', "Segoe UI", Arial, sans-serif;
       font-style: normal;
-      font-weight: normal;
+      font-weight: 500;
       text-decoration: none;
       font-size: 14px;
-      transition: all 0.3s ease;
+      transition: all 0.2s ease;
       position: relative;
+      border-bottom: 1px solid transparent;
     }
 
     a:hover {
-      color: #00ffcc;
-      text-shadow: 0 0 8px rgba(0, 255, 204, 0.5);
+      color: #93c5fd;
+      border-bottom-color: #60a5fa;
     }
 
     .s3 {
-      background: linear-gradient(90deg, #00d9ff 0%, #00ffcc 100%);
-      -webkit-background-clip: text;
-      -webkit-text-fill-color: transparent;
-      background-clip: text;
-      font-family: "Segoe UI", "Helvetica Neue", Arial, sans-serif;
+      color: #f1f5f9;
+      font-family: 'Inter', "Segoe UI", Arial, sans-serif;
       font-style: normal;
       font-weight: 700;
       text-decoration: none;
-      font-size: 16pt;
+      font-size: 13pt;
       text-transform: uppercase;
-      letter-spacing: 3px;
-      border-left: 5px solid #00d9ff;
+      letter-spacing: 2.5px;
+      border-left: 4px solid #3b82f6;
       padding-left: 16px;
-      margin-bottom: 20px;
-      display: inline-block;
+      margin-bottom: 24px;
+      display: block;
       position: relative;
-      filter: drop-shadow(0 2px 4px rgba(0, 217, 255, 0.3));
     }
 
-    .s3::after {
+    .s3::before {
       content: '';
       position: absolute;
-      bottom: -8px;
-      left: 0;
-      width: 60px;
-      height: 3px;
-      background: linear-gradient(90deg, #00d9ff 0%, transparent 100%);
-      border-radius: 2px;
+      left: -4px;
+      top: 0;
+      width: 4px;
+      height: 100%;
+      background: linear-gradient(180deg, #3b82f6 0%, #60a5fa 100%);
     }
 
     h1 {
-      color: #ff6b6b;
-      font-family: "Segoe UI", "Helvetica Neue", Arial, sans-serif;
+      color: #f1f5f9;
+      font-family: 'Inter', "Segoe UI", Arial, sans-serif;
       font-style: normal;
       font-weight: 700;
       text-decoration: none;
-      font-size: 18pt;
+      font-size: 19pt;
       margin-top: 8px;
       margin-bottom: 8px;
+      letter-spacing: -0.3px;
     }
 
     .s4 {
-      color: #00ffcc;
-      font-family: "Segoe UI", "Helvetica Neue", Arial, sans-serif;
+      color: #94a3b8;
+      font-family: 'Inter', "Segoe UI", Arial, sans-serif;
       font-style: normal;
-      font-weight: 600;
+      font-weight: 500;
       text-decoration: none;
       font-size: 13pt;
     }
 
     .s5 {
-      color: #00d9ff;
-      font-family: "Segoe UI", "Helvetica Neue", Arial, sans-serif;
+      color: #e2e8f0;
+      font-family: 'Inter', "Segoe UI", Arial, sans-serif;
       font-style: normal;
       font-weight: 600;
       text-decoration: none;
-      font-size: 14px;
+      font-size: 14.5px;
+      letter-spacing: 0.3px;
     }
 
     .s6 {
-      color: #e0e0e0;
-      font-family: "Segoe UI", "Helvetica Neue", Arial, sans-serif;
+      color: #cbd5e1;
+      font-family: 'Inter', "Segoe UI", Arial, sans-serif;
       font-style: normal;
-      font-weight: normal;
+      font-weight: 400;
       text-decoration: none;
-      font-size: 15px;
+      font-size: 14.5px;
       line-height: 1.7;
     }
 
     h2 {
-      color: #ff6b6b;
-      font-family: "Segoe UI", "Helvetica Neue", Arial, sans-serif;
+      color: #e2e8f0;
+      font-family: 'Inter', "Segoe UI", Arial, sans-serif;
       font-style: normal;
       font-weight: 700;
       text-decoration: none;
@@ -167,8 +167,8 @@
     }
 
     .s7 {
-      color: #e0e0e0;
-      font-family: "Segoe UI", "Helvetica Neue", Arial, sans-serif;
+      color: #cbd5e1;
+      font-family: 'Inter', "Segoe UI", Arial, sans-serif;
       font-style: normal;
       font-weight: 600;
       text-decoration: none;
@@ -176,10 +176,10 @@
     }
 
     .s8 {
-      color: #00d9ff;
-      font-family: "Segoe UI", "Helvetica Neue", Arial, sans-serif;
+      color: #60a5fa;
+      font-family: 'Inter', "Segoe UI", Arial, sans-serif;
       font-style: normal;
-      font-weight: normal;
+      font-weight: 500;
       text-decoration: none;
       font-size: 15px;
     }
@@ -212,13 +212,14 @@
     }
 
     #l1>li>*:first-child:before {
-      content: "▹ ";
-      color: #00d9ff;
-      font-family: "Segoe UI", Arial, sans-serif;
+      content: "• ";
+      color: #3b82f6;
+      font-family: 'Inter', Arial, sans-serif;
       font-style: normal;
       font-weight: bold;
       text-decoration: none;
-      font-size: 16px;
+      font-size: 18px;
+      margin-right: 4px;
     }
 
     li {
@@ -230,13 +231,14 @@
     }
 
     #l2>li>*:first-child:before {
-      content: "▹ ";
-      color: #00d9ff;
-      font-family: "Segoe UI", Arial, sans-serif;
+      content: "• ";
+      color: #3b82f6;
+      font-family: 'Inter', Arial, sans-serif;
       font-style: normal;
       font-weight: bold;
       text-decoration: none;
-      font-size: 16px;
+      font-size: 18px;
+      margin-right: 4px;
     }
 
     li {
@@ -251,8 +253,8 @@
     #l3>li>*:first-child:before {
       counter-increment: e1;
       content: counter(e1, decimal) ". ";
-      color: #00d9ff;
-      font-family: "Segoe UI", Arial, sans-serif;
+      color: #60a5fa;
+      font-family: 'Inter', Arial, sans-serif;
       font-style: normal;
       font-weight: 600;
       text-decoration: none;
@@ -275,8 +277,8 @@
     #l4>li>*:first-child:before {
       counter-increment: f1;
       content: counter(f1, decimal) ". ";
-      color: #00d9ff;
-      font-family: "Segoe UI", Arial, sans-serif;
+      color: #60a5fa;
+      font-family: 'Inter', Arial, sans-serif;
       font-style: normal;
       font-weight: 600;
       text-decoration: none;
@@ -299,8 +301,8 @@
     #l5>li>*:first-child:before {
       counter-increment: g1;
       content: counter(g1, decimal) ". ";
-      color: #00d9ff;
-      font-family: "Segoe UI", Arial, sans-serif;
+      color: #60a5fa;
+      font-family: 'Inter', Arial, sans-serif;
       font-style: normal;
       font-weight: 600;
       text-decoration: none;
@@ -320,13 +322,14 @@
     }
 
     #l6>li>*:first-child:before {
-      content: "▹ ";
-      color: #00d9ff;
-      font-family: "Segoe UI", Arial, sans-serif;
+      content: "• ";
+      color: #3b82f6;
+      font-family: 'Inter', Arial, sans-serif;
       font-style: normal;
       font-weight: bold;
       text-decoration: none;
-      font-size: 16px;
+      font-size: 18px;
+      margin-right: 4px;
     }
 
     table,
@@ -334,22 +337,23 @@
       vertical-align: top;
       overflow: visible;
       width: 100%;
-      border-radius: 12px;
+      border-radius: 8px;
       overflow: hidden;
-      box-shadow: 0 8px 16px rgba(0, 0, 0, 0.4);
-      background: linear-gradient(135deg, rgba(255, 255, 255, 0.05) 0%, rgba(255, 255, 255, 0.02) 100%);
-      border: 1px solid rgba(0, 217, 255, 0.1);
+      box-shadow: 0 2px 8px rgba(0, 0, 0, 0.3);
+      background: rgba(15, 23, 42, 0.6);
+      border: 1px solid rgba(71, 85, 105, 0.3);
+      backdrop-filter: blur(10px);
     }
 
     table td {
-      padding: 20px;
-      transition: all 0.3s ease;
-      border-bottom: 1px solid rgba(255, 255, 255, 0.05);
+      padding: 18px 20px;
+      transition: all 0.2s ease;
+      border-bottom: 1px solid rgba(71, 85, 105, 0.2);
+      vertical-align: top;
     }
 
     table tr:hover td {
-      background-color: rgba(0, 217, 255, 0.08);
-      transform: translateX(4px);
+      background-color: rgba(59, 130, 246, 0.05);
     }
 
     table tr:last-child td {
@@ -360,25 +364,15 @@
       display: flex;
       justify-content: space-between;
       flex-wrap: wrap;
-      background: linear-gradient(135deg, rgba(255, 255, 255, 0.1) 0%, rgba(255, 255, 255, 0.05) 100%);
-      border-radius: 20px;
-      padding: 40px;
-      box-shadow: 0 12px 40px rgba(0, 0, 0, 0.5), inset 0 1px 0 rgba(255, 255, 255, 0.1);
+      background: rgba(15, 23, 42, 0.7);
+      border-radius: 16px;
+      padding: 48px;
+      box-shadow: 0 4px 24px rgba(0, 0, 0, 0.4), 0 0 0 1px rgba(71, 85, 105, 0.3);
       backdrop-filter: blur(20px);
-      border: 1px solid rgba(0, 217, 255, 0.2);
+      border: 1px solid rgba(71, 85, 105, 0.3);
       margin-bottom: 48px;
-      animation: fadeInScale 0.6s ease-out;
-    }
-
-    @keyframes fadeInScale {
-      from {
-        opacity: 0;
-        transform: scale(0.95);
-      }
-      to {
-        opacity: 1;
-        transform: scale(1);
-      }
+      position: relative;
+      z-index: 1;
     }
 
     .header__left {
@@ -433,25 +427,15 @@
     }
 
     img[src*="avatar"] {
-      border: 5px solid #00d9ff;
-      box-shadow: 0 8px 24px rgba(0, 217, 255, 0.5), 0 0 40px rgba(0, 217, 255, 0.2);
-      transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
-      animation: avatarPulse 3s ease-in-out infinite;
-    }
-
-    @keyframes avatarPulse {
-      0%, 100% {
-        box-shadow: 0 8px 24px rgba(0, 217, 255, 0.5), 0 0 40px rgba(0, 217, 255, 0.2);
-      }
-      50% {
-        box-shadow: 0 8px 28px rgba(0, 255, 204, 0.6), 0 0 60px rgba(0, 255, 204, 0.3);
-      }
+      border: 4px solid rgba(59, 130, 246, 0.5);
+      box-shadow: 0 8px 24px rgba(0, 0, 0, 0.3), 0 0 0 1px rgba(59, 130, 246, 0.3);
+      transition: all 0.3s ease;
     }
 
     img[src*="avatar"]:hover {
-      transform: scale(1.08) rotate(2deg);
-      border-color: #00ffcc;
-      animation: none;
+      transform: scale(1.05);
+      border-color: rgba(59, 130, 246, 0.8);
+      box-shadow: 0 12px 32px rgba(0, 0, 0, 0.4), 0 0 0 1px rgba(59, 130, 246, 0.5);
     }
 
     ul li {
@@ -459,37 +443,38 @@
     }
 
     section {
-      background: linear-gradient(135deg, rgba(255, 255, 255, 0.06) 0%, rgba(255, 255, 255, 0.02) 100%);
-      border-radius: 16px;
-      padding: 32px;
-      margin-bottom: 40px;
-      border: 1px solid rgba(0, 217, 255, 0.15);
-      box-shadow: 0 8px 20px rgba(0, 0, 0, 0.3), inset 0 1px 0 rgba(255, 255, 255, 0.05);
+      background: rgba(15, 23, 42, 0.6);
+      border-radius: 12px;
+      padding: 36px;
+      margin-bottom: 36px;
+      border: 1px solid rgba(71, 85, 105, 0.3);
+      box-shadow: 0 2px 8px rgba(0, 0, 0, 0.3);
       backdrop-filter: blur(10px);
-      transition: all 0.4s ease;
-      animation: fadeInUp 0.6s ease-out;
-    }
-
-    @keyframes fadeInUp {
-      from {
-        opacity: 0;
-        transform: translateY(20px);
-      }
-      to {
-        opacity: 1;
-        transform: translateY(0);
-      }
+      transition: all 0.2s ease;
+      position: relative;
+      z-index: 1;
     }
 
     section:hover {
-      transform: translateY(-4px);
-      box-shadow: 0 12px 30px rgba(0, 0, 0, 0.4), inset 0 1px 0 rgba(255, 255, 255, 0.08);
-      border-color: rgba(0, 217, 255, 0.3);
+      border-color: rgba(59, 130, 246, 0.4);
+      box-shadow: 0 4px 12px rgba(0, 0, 0, 0.4);
+    }
+    ul li {
+      margin-bottom: 10px;
+    }
+
+    @media print {
+      body {
+        background: white;
+      }
+      .header, section, table {
+        break-inside: avoid;
+      }
     }
   </style>
 </head>
 
-<body style="padding: 40px 32px; max-width: 1400px; margin: 0 auto;">
+<body style="padding: 56px 40px; max-width: 1200px; margin: 0 auto; position: relative;">
   <div class="header">
     <div class="header__left">
       <img width="120" height="120" style="border-radius: 100%" src="./public/images/avatar.jpg" />
@@ -535,8 +520,7 @@
             text-indent: -12pt;
             text-align: left;
           ">
-        Senior Full Stack Engineer with over 10 years of experience in
-        full-stack web development.
+        Senior Full Stack Engineer with 10+ years of proven expertise delivering scalable web applications and blockchain solutions.
       </p>
     </li>
     <li data-list-text="*">
@@ -546,8 +530,7 @@
             text-indent: -12pt;
             text-align: left;
           ">
-        Skilled in multiple programming languages including Solidity, Rust,
-        JavaScript, Haskell, Golang, and PHP, HTML5, CSS3.
+        Multilingual programmer proficient in Solidity, Rust, JavaScript, TypeScript, Haskell, Golang, PHP, HTML5, and CSS3.
       </p>
     </li>
     <li data-list-text="*">
@@ -557,10 +540,7 @@
             text-indent: -12pt;
             text-align: left;
           ">
-        Proficient in various blockchain development frameworks such as Anchor
-        to build Solana smart contracts and Hardhat and Truffle to build EVM
-        smart contracts. In addition, I can use the Aiken framework to build
-        the Cardano smart contracts as well.
+        Expertise in blockchain frameworks: Anchor (Solana), Hardhat & Truffle (EVM), and Aiken (Cardano) for smart contract development.
       </p>
     </li>
     <li data-list-text="*">
@@ -570,9 +550,7 @@
             text-indent: -12pt;
             text-align: left;
           ">
-        Proficient in various backends frameworks such as Nodejs, NestJs, and
-        various databases such as MongoDB, MySQL, and Postgresql to build
-        Restful APIs.
+        Proficient in modern backend frameworks (Node.js, NestJS) and databases (MongoDB, MySQL, PostgreSQL) for building robust REST APIs.
       </p>
     </li>
     <li data-list-text="*">
@@ -582,9 +560,7 @@
             text-indent: -12pt;
             text-align: left;
           ">
-        Proficient in various front-end frameworks such as React, React
-        Native, NextJs, Vue, NuxtJs, and Angular to build web-based and mobile
-        applications.
+        Experienced in frontend frameworks: React, React Native, Next.js, Vue, Nuxt, and Angular for cross-platform development.
       </p>
     </li>
     <li data-list-text="*">
@@ -594,10 +570,7 @@
             text-indent: -12pt;
             text-align: left;
           ">
-        Accomplished in designing and implementing scalable, high-performance
-        web applications, Strong understanding of database design, Restful API
-        development, and cloud technologies, and delivering innovative
-        solutions to complex technical challenges.
+        Specialized in architecting high-performance, scalable systems with strong expertise in database design, API development, and cloud technologies.
       </p>
     </li>
     <li data-list-text="*">
@@ -607,10 +580,7 @@
             text-indent: -12pt;
             text-align: left;
           ">
-        Collaborative team player with a strong focus on communication and
-        customer satisfaction. Passionate about staying up-to-date with
-        emerging technologies and applying them to create innovative products
-        that solve real-world problems.
+        Collaborative team leader committed to innovation, continuous learning, and delivering solutions that drive business value.
       </p>
     </li>
   </ul>
@@ -662,10 +632,7 @@
               text-indent: 0pt;
               text-align: left;
             ">
-          In-depth knowledge of consensus algorithms, cryptography, and
-          decentralized finance (DeFi) principles. Experience with web3 and
-          DeFi projects such as Pancake, Uniswap and Aave, including smart
-          contract development and interaction for Front-end and Back-end
+          Deep expertise in consensus algorithms, cryptography, and decentralized finance (DeFi). Hands-on experience integrating with major protocols (Pancake, Uniswap, Aave) and developing smart contract interactions for frontend and backend systems.
         </p>
       </td>
     </tr>
@@ -707,7 +674,7 @@
               text-indent: 0pt;
               text-align: left;
             ">
-          Rust, Solidity JavaScript, Haskell, Golang, and PHP, HTML5, CSS3
+          Solidity, Rust, JavaScript, TypeScript, Haskell, Golang, PHP, HTML5, CSS3
         </p>
       </td>
     </tr>
@@ -745,8 +712,7 @@
                   text-indent: -12pt;
                   text-align: left;
                 ">
-              Anchor, @solana/web3.js, @solana/spl-token: to implement and
-              build solana smart-contracts.
+              Solana: Anchor, @solana/web3.js, @solana/spl-token
             </p>
           </li>
           <li data-list-text="*">
@@ -756,7 +722,7 @@
                   text-indent: -12pt;
                   text-align: left;
                 ">
-              Hardhat and Truffle: to build EVM smart contracts.
+              EVM: Hardhat, Truffle, OpenZeppelin
             </p>
           </li>
           <li data-list-text="*">
@@ -766,7 +732,7 @@
                   text-indent: -12pt;
                   text-align: left;
                 ">
-              Aiken and lucid: to build Cardano smart contracts.
+              Cardano: Aiken, Lucid
             </p>
           </li>
         </ul>
@@ -804,8 +770,7 @@
               text-indent: 0pt;
               text-align: left;
             ">
-          React, React Native, NextJs, Vue, NuxtJs, and Angular: to build
-          web-based and mobile applications.
+          React, React Native, Next.js, Vue, Nuxt, Angular
         </p>
       </td>
     </tr>
@@ -841,7 +806,7 @@
               text-indent: 0pt;
               text-align: left;
             ">
-          Nodejs, NestJs.
+          Node.js, NestJS, Express
         </p>
       </td>
     </tr>
@@ -877,7 +842,7 @@
               text-indent: 0pt;
               text-align: left;
             ">
-          MySQL, Postgresql, Redis, MongoDb and LevelDb.
+          PostgreSQL, MySQL, MongoDB, Redis, LevelDB
         </p>
       </td>
     </tr>
@@ -913,7 +878,7 @@
               text-indent: 0pt;
               text-align: left;
             ">
-          Mocha, Chai.
+          Jest, Mocha, Chai, Hardhat Testing
         </p>
       </td>
     </tr>
@@ -965,7 +930,7 @@
               line-height: 125%;
               text-align: left;
             ">
-          Creating Web3 and AI applications on a foundation of web technologies.
+          Building innovative Web3 and AI-powered applications leveraging modern web technologies.
         </p>
       </td>
     </tr>
@@ -1049,7 +1014,7 @@
               text-indent: 0pt;
               text-align: left;
             ">
-          Back-end Developer
+          Senior Backend Engineer
         </p>
       </td>
     </tr>
@@ -1089,8 +1054,7 @@
                   text-indent: -12pt;
                   text-align: left;
                 ">
-              Developed APIs for gasless cryptocurrency deposits and withdrawals (e.g., USDT, USDC) to support the
-              front-end team.
+              Architected and deployed gasless cryptocurrency deposit/withdrawal APIs supporting USDT, USDC, and other tokens for seamless frontend integration.
             </p>
           </li>
           <li data-list-text="*">
@@ -1100,8 +1064,7 @@
                   text-indent: -12pt;
                   text-align: left;
                 ">
-              Developed APIs for the AI team to execute DeFi trades, including adding/removing liquidity and swapping
-              tokens on decentralized exchanges.
+              Developed advanced DeFi trading APIs enabling liquidity management and token swapping across decentralized exchanges for AI-driven bot operations.
             </p>
           </li>
           <li data-list-text="*">
@@ -1111,7 +1074,7 @@
                   text-indent: -12pt;
                   text-align: left;
                 ">
-              Crawled and processed real-time cryptocurrency pricing and decentralized exchange (DEX) data to train and support the AI team's automated trading bot development.
+              Engineered real-time cryptocurrency pricing and DEX data pipelines to support AI team's automated trading bot development and strategy optimization.
             </p>
           </li>
           <li data-list-text="*">
@@ -1121,7 +1084,7 @@
                   text-indent: -12pt;
                   text-align: left;
                 ">
-              Built APIs to support the front-end and AI teams in processing user withdrawals from the platform's vaults.
+              Designed robust vault withdrawal processing APIs facilitating secure user fund extraction from platform reserves.
             </p>
           </li>
         </ul>
@@ -1176,7 +1139,7 @@
               line-height: 14pt;
               text-align: left;
             ">
-          Some projects that I have joined as a freelance developer.
+          Portfolio of freelance projects spanning DeFi, gaming, and NFT platforms with full-stack contributions.
         </p>
       </td>
     </tr>
@@ -1300,15 +1263,7 @@
                   text-indent: -12pt;
                   text-align: left;
                 ">
-              Build a web-based application called NFT Land similar to
-              Opensea. I join the project as an on-chain developer for
-              building Solidity smart contracts using the Hardhat and
-              Openzeppelin frameworks. I also have built a SDK to support the
-              front-end developers integrate the smart contracts using
-              typescript and ethers libraries to read/write on-chain data. I
-              have built a parser to listen to the blockchain EVM and then
-              parse the event data. After that, I have imported this data into
-              the database.
+              NFT Land (OpenSea-like marketplace): Developed Solidity smart contracts using Hardhat and OpenZeppelin. Created TypeScript SDK and EVM event parser for blockchain data indexing into databases.
             </p>
           </li>
           <li data-list-text="*">
@@ -1318,10 +1273,7 @@
                   text-indent: -12pt;
                   text-align: left;
                 ">
-              Build a web-based application called Hanabi similar to Pancake
-              Swap. I join the project as an on-chain developer for building
-              Solidity smart contracts using the Hardhat and Openzeppelin
-              frameworks.
+              Hanabi (PancakeSwap-like DEX): Designed and implemented comprehensive Solidity smart contracts for decentralized exchange functionality.
             </p>
           </li>
           <li data-list-text="*">
@@ -1331,10 +1283,7 @@
                   text-indent: -12pt;
                   text-align: left;
                 ">
-              Build a web-based application called DMTP that is a maketplace.
-              I join the project as an on-chain developer for building
-              Solidity smart contracts using the Hardhat and Openzeppelin
-              frameworks to buy and sell some items called keys.
+              DMTP (Marketplace): Engineered smart contracts for secure item (keys) trading and escrow mechanisms.
             </p>
           </li>
           <li data-list-text="*">
@@ -1359,12 +1308,7 @@
                   text-indent: -12pt;
                   text-align: left;
                 ">
-              Build a web-based application called Phoenix that is an NFT game
-              project on the defiverse network. I joined the project as an
-              on-chain developer for building Solidity smart contracts to
-              initial some NFT called LootBox. I also implemented and built
-              smart contracts for daily check-in, spin to win lottery and
-              staking features.
+              Capital DAO: Engineered ERC20 tokenization, staking mechanisms, and governance contracts.
             </p>
           </li>
           <li data-list-text="*">
@@ -1374,23 +1318,7 @@
                   text-indent: -12pt;
                   text-align: left;
                 ">
-              Build a web-based application called Capital Dao that is an
-              web-based application for DAO fundamentals. I joined the project
-              as an on-chain developer to build some Solidity smart contracts
-              for ERC20 tokenize, Staking,..
-            </p>
-          </li>
-          <li data-list-text="*">
-            <p style="
-                  padding-top: 3pt;
-                  padding-left: 17pt;
-                  text-indent: -12pt;
-                  text-align: left;
-                ">
-              Build a web-based application called Sunrise Casino that is an
-              web-based application for gaming. I joined the project as an
-              on-chain developer to build some Solidity smart contracts for
-              some games such as Jacks or better, Blackjack, Baccarat,...
+              Sunrise Casino: Developed gaming smart contracts for Jacks or Better, Blackjack, and Baccarat with provably fair mechanics.
             </p>
           </li>
         </ul>
