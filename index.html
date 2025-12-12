@@ -8,7 +8,8 @@
   <title>Huynh Tan Ngoc - Senior Full Stack & Blockchain Developer</title>
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap"
+    rel="stylesheet">
   <style type="text/css">
     :root {
       --primary: #3b82f6;
@@ -35,7 +36,7 @@
 
     body {
       background-color: var(--bg-dark);
-      background-image: 
+      background-image:
         linear-gradient(rgba(14, 165, 233, 0.03) 1px, transparent 1px),
         linear-gradient(90deg, rgba(14, 165, 233, 0.03) 1px, transparent 1px),
         radial-gradient(circle at 15% 50%, rgba(56, 189, 248, 0.12) 0%, transparent 40%),
@@ -57,11 +58,21 @@
 
     /* Animations */
     @keyframes fadeIn {
-      from { opacity: 0; transform: translateY(20px); }
-      to { opacity: 1; transform: translateY(0); }
+      from {
+        opacity: 0;
+        transform: translateY(20px);
+      }
+
+      to {
+        opacity: 1;
+        transform: translateY(0);
+      }
     }
 
-    .header, table, ul, p {
+    .header,
+    table,
+    ul,
+    p {
       animation: fadeIn 0.8s ease-out forwards;
     }
 
@@ -97,7 +108,7 @@
       color: var(--neon-blue);
       width: fit-content;
       position: relative;
-      text-shadow: 
+      text-shadow:
         0 0 10px rgba(14, 165, 233, 0.6),
         0 0 20px rgba(14, 165, 233, 0.4),
         0 0 30px rgba(14, 165, 233, 0.2);
@@ -108,15 +119,24 @@
       content: '▸';
       color: var(--neon-purple);
       font-size: 1.5rem;
-      text-shadow: 
+      text-shadow:
         0 0 10px rgba(168, 85, 247, 0.8),
         0 0 20px rgba(168, 85, 247, 0.5);
       animation: blink 1.5s ease-in-out infinite;
     }
 
     @keyframes blink {
-      0%, 49%, 100% { opacity: 1; }
-      50%, 99% { opacity: 0.3; }
+
+      0%,
+      49%,
+      100% {
+        opacity: 1;
+      }
+
+      50%,
+      99% {
+        opacity: 0.3;
+      }
     }
 
     .s3::after {
@@ -126,7 +146,7 @@
       background: linear-gradient(90deg, var(--neon-blue), var(--neon-purple), transparent);
       border-radius: 2px;
       display: block;
-      box-shadow: 
+      box-shadow:
         0 0 10px rgba(14, 165, 233, 0.6),
         0 0 20px rgba(168, 85, 247, 0.4);
     }
@@ -200,7 +220,7 @@
       border: 1px solid rgba(14, 165, 233, 0.2);
       backdrop-filter: blur(20px);
       margin-bottom: 3rem;
-      box-shadow: 
+      box-shadow:
         0 20px 60px -15px rgba(0, 0, 0, 0.6),
         0 0 30px rgba(14, 165, 233, 0.15),
         0 0 60px rgba(168, 85, 247, 0.1),
@@ -213,7 +233,7 @@
 
     .header:hover {
       border-color: rgba(14, 165, 233, 0.4);
-      box-shadow: 
+      box-shadow:
         0 25px 80px -15px rgba(0, 0, 0, 0.7),
         0 0 40px rgba(14, 165, 233, 0.25),
         0 0 80px rgba(168, 85, 247, 0.15),
@@ -233,8 +253,13 @@
     }
 
     @keyframes slideRight {
-      0% { left: -100%; }
-      100% { left: 200%; }
+      0% {
+        left: -100%;
+      }
+
+      100% {
+        left: 200%;
+      }
     }
 
     .header::after {
@@ -247,8 +272,13 @@
     }
 
     @keyframes scanline {
-      0% { transform: translateY(-100%); }
-      100% { transform: translateY(100%); }
+      0% {
+        transform: translateY(-100%);
+      }
+
+      100% {
+        transform: translateY(100%);
+      }
     }
 
     .header__left {
@@ -263,10 +293,10 @@
       border-radius: 50%;
       border: 3px solid transparent;
       background: linear-gradient(var(--bg-dark), var(--bg-dark)) padding-box,
-                  linear-gradient(135deg, var(--neon-blue), var(--neon-purple), var(--accent-cyan), var(--neon-blue)) border-box;
+        linear-gradient(135deg, var(--neon-blue), var(--neon-purple), var(--accent-cyan), var(--neon-blue)) border-box;
       background-size: 200% 200%;
       animation: holographicBorder 4s ease infinite;
-      box-shadow: 
+      box-shadow:
         0 0 30px rgba(14, 165, 233, 0.5),
         0 0 60px rgba(168, 85, 247, 0.3),
         0 0 90px rgba(6, 182, 212, 0.2),
@@ -278,14 +308,21 @@
     }
 
     @keyframes holographicBorder {
-      0%, 100% { background-position: 0% 50%; }
-      50% { background-position: 100% 50%; }
+
+      0%,
+      100% {
+        background-position: 0% 50%;
+      }
+
+      50% {
+        background-position: 100% 50%;
+      }
     }
 
     .header__left img:hover {
       transform: scale(1.1) rotate(5deg);
       animation: holographicBorder 2s ease infinite, float 3s ease-in-out infinite;
-      box-shadow: 
+      box-shadow:
         0 0 50px rgba(14, 165, 233, 0.8),
         0 0 100px rgba(168, 85, 247, 0.5),
         0 0 150px rgba(6, 182, 212, 0.3),
@@ -293,8 +330,15 @@
     }
 
     @keyframes float {
-      0%, 100% { transform: scale(1.1) rotate(5deg) translateY(0); }
-      50% { transform: scale(1.1) rotate(5deg) translateY(-10px); }
+
+      0%,
+      100% {
+        transform: scale(1.1) rotate(5deg) translateY(0);
+      }
+
+      50% {
+        transform: scale(1.1) rotate(5deg) translateY(-10px);
+      }
     }
 
     .header__right__content {
@@ -316,7 +360,7 @@
       overflow: hidden;
       margin-bottom: 2rem;
       backdrop-filter: blur(12px);
-      box-shadow: 
+      box-shadow:
         0 8px 24px -4px rgba(0, 0, 0, 0.3),
         0 0 30px rgba(14, 165, 233, 0.1),
         inset 0 1px 0 rgba(14, 165, 233, 0.1),
@@ -327,7 +371,7 @@
 
     table:hover {
       border-color: rgba(14, 165, 233, 0.4);
-      box-shadow: 
+      box-shadow:
         0 12px 32px -4px rgba(0, 0, 0, 0.4),
         0 0 40px rgba(14, 165, 233, 0.2),
         0 0 60px rgba(168, 85, 247, 0.1),
@@ -411,10 +455,10 @@
         width: 100%;
       }
 
-      .s1 { 
+      .s1 {
         font-size: 1.75rem;
         line-height: 1.2;
-        text-align: center!important;
+        text-align: center !important;
       }
 
       .s2 {
@@ -445,8 +489,11 @@
         margin: 0;
         padding: 0.25rem 0;
       }
-      
-      table, tbody, tr, td {
+
+      table,
+      tbody,
+      tr,
+      td {
         display: block;
         width: 100%;
       }
@@ -474,7 +521,7 @@
         background: transparent;
         border-right: none;
       }
-      
+
       table td:last-child {
         padding: 0.5rem 0.75rem 0.75rem !important;
         font-size: 0.9rem;
@@ -499,7 +546,7 @@
         padding: 1.5rem;
         font-size: 0.95rem;
         animation: fadeInUp 1s ease-out forwards;
-        box-shadow: 
+        box-shadow:
           0 8px 32px rgba(0, 0, 0, 0.4),
           0 0 20px rgba(14, 165, 233, 0.15),
           inset 0 1px 0 rgba(255, 255, 255, 0.1);
@@ -515,6 +562,7 @@
           opacity: 0;
           transform: translateY(30px);
         }
+
         to {
           opacity: 1;
           transform: translateY(0);
@@ -522,9 +570,12 @@
       }
 
       @keyframes pulseGlow {
-        0%, 100% {
+
+        0%,
+        100% {
           filter: blur(8px) brightness(1);
         }
+
         50% {
           filter: blur(12px) brightness(1.3);
         }
@@ -603,6 +654,7 @@
 
       /* Reduce motion for better mobile performance */
       @media (prefers-reduced-motion: reduce) {
+
         .header::before,
         .header::after,
         .summary-card::before,
@@ -611,7 +663,7 @@
         .summary-icon::after {
           animation: none !important;
         }
-        
+
         * {
           transition: none !important;
         }
@@ -631,7 +683,7 @@
       transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
       cursor: default;
       font-weight: 600;
-      box-shadow: 
+      box-shadow:
         0 2px 8px rgba(0, 0, 0, 0.3),
         0 0 10px rgba(14, 165, 233, 0.2),
         inset 0 1px 0 rgba(14, 165, 233, 0.1);
@@ -661,7 +713,7 @@
     .skill-tag:hover {
       background: linear-gradient(135deg, rgba(14, 165, 233, 0.2), rgba(168, 85, 247, 0.2));
       transform: translateY(-3px) scale(1.05);
-      box-shadow: 
+      box-shadow:
         0 8px 24px rgba(14, 165, 233, 0.4),
         0 0 30px rgba(14, 165, 233, 0.3),
         0 0 0 1px rgba(14, 165, 233, 0.5),
@@ -673,15 +725,32 @@
 
     /* Spinning animation for avatar border */
     @keyframes spin {
-      0% { transform: rotate(0deg); opacity: 0.6; }
-      50% { opacity: 1; }
-      100% { transform: rotate(360deg); opacity: 0.6; }
+      0% {
+        transform: rotate(0deg);
+        opacity: 0.6;
+      }
+
+      50% {
+        opacity: 1;
+      }
+
+      100% {
+        transform: rotate(360deg);
+        opacity: 0.6;
+      }
     }
 
     /* Pulse animation for badges */
     @keyframes pulse {
-      0%, 100% { opacity: 1; }
-      50% { opacity: 0.7; }
+
+      0%,
+      100% {
+        opacity: 1;
+      }
+
+      50% {
+        opacity: 0.7;
+      }
     }
 
     /* Summary Cards */
@@ -902,7 +971,7 @@
       position: relative;
       overflow: hidden;
       animation: fadeIn 0.6s ease-out forwards;
-      box-shadow: 
+      box-shadow:
         0 4px 16px rgba(0, 0, 0, 0.3),
         0 0 20px rgba(14, 165, 233, 0.1),
         inset 0 1px 0 rgba(14, 165, 233, 0.1),
@@ -920,12 +989,29 @@
       transition: height 0.4s ease;
     }
 
-    .summary-card:nth-child(1) { animation-delay: 0.1s; }
-    .summary-card:nth-child(2) { animation-delay: 0.2s; }
-    .summary-card:nth-child(3) { animation-delay: 0.3s; }
-    .summary-card:nth-child(4) { animation-delay: 0.4s; }
-    .summary-card:nth-child(5) { animation-delay: 0.5s; }
-    .summary-card:nth-child(6) { animation-delay: 0.6s; }
+    .summary-card:nth-child(1) {
+      animation-delay: 0.1s;
+    }
+
+    .summary-card:nth-child(2) {
+      animation-delay: 0.2s;
+    }
+
+    .summary-card:nth-child(3) {
+      animation-delay: 0.3s;
+    }
+
+    .summary-card:nth-child(4) {
+      animation-delay: 0.4s;
+    }
+
+    .summary-card:nth-child(5) {
+      animation-delay: 0.5s;
+    }
+
+    .summary-card:nth-child(6) {
+      animation-delay: 0.6s;
+    }
 
     .summary-card::before {
       content: '';
@@ -942,7 +1028,7 @@
     .summary-card:hover {
       transform: translateY(-6px) scale(1.02);
       border-color: rgba(14, 165, 233, 0.5);
-      box-shadow: 
+      box-shadow:
         0 16px 48px rgba(0, 0, 0, 0.4),
         0 0 40px rgba(14, 165, 233, 0.3),
         0 0 80px rgba(168, 85, 247, 0.2),
@@ -970,7 +1056,7 @@
       font-size: 1.75rem;
       margin-bottom: 1.25rem;
       border: 1px solid rgba(14, 165, 233, 0.4);
-      box-shadow: 
+      box-shadow:
         0 4px 16px rgba(14, 165, 233, 0.3),
         0 0 30px rgba(14, 165, 233, 0.2),
         inset 0 1px 0 rgba(255, 255, 255, 0.15),
@@ -993,7 +1079,7 @@
 
     .summary-card:hover .summary-icon {
       transform: scale(1.15) rotate(10deg);
-      box-shadow: 
+      box-shadow:
         0 8px 24px rgba(14, 165, 233, 0.5),
         0 0 40px rgba(14, 165, 233, 0.4),
         inset 0 1px 0 rgba(255, 255, 255, 0.2);
@@ -1034,7 +1120,7 @@
       border-radius: 16px;
       text-align: center;
       backdrop-filter: blur(12px);
-      box-shadow: 
+      box-shadow:
         0 4px 16px rgba(0, 0, 0, 0.3),
         0 0 20px rgba(14, 165, 233, 0.15),
         inset 0 1px 0 rgba(14, 165, 233, 0.1),
@@ -1060,7 +1146,7 @@
     .stat-item:hover {
       transform: translateY(-6px);
       border-color: rgba(14, 165, 233, 0.5);
-      box-shadow: 
+      box-shadow:
         0 16px 40px rgba(0, 0, 0, 0.4),
         0 0 40px rgba(14, 165, 233, 0.3),
         0 0 80px rgba(168, 85, 247, 0.2),
@@ -1076,7 +1162,7 @@
       font-weight: 800;
       color: var(--neon-blue);
       display: block;
-      text-shadow: 
+      text-shadow:
         0 0 10px rgba(14, 165, 233, 0.8),
         0 0 20px rgba(14, 165, 233, 0.6),
         0 0 30px rgba(14, 165, 233, 0.4),
@@ -1086,14 +1172,17 @@
     }
 
     @keyframes neonPulse {
-      0%, 100% { 
-        text-shadow: 
+
+      0%,
+      100% {
+        text-shadow:
           0 0 10px rgba(14, 165, 233, 0.8),
           0 0 20px rgba(14, 165, 233, 0.6),
           0 0 30px rgba(14, 165, 233, 0.4);
       }
-      50% { 
-        text-shadow: 
+
+      50% {
+        text-shadow:
           0 0 20px rgba(14, 165, 233, 1),
           0 0 30px rgba(14, 165, 233, 0.8),
           0 0 40px rgba(14, 165, 233, 0.6),
@@ -1102,8 +1191,15 @@
     }
 
     @keyframes shimmer {
-      0%, 100% { background-position: 0% center; }
-      50% { background-position: 100% center; }
+
+      0%,
+      100% {
+        background-position: 0% center;
+      }
+
+      50% {
+        background-position: 100% center;
+      }
     }
 
     .stat-label {
@@ -1128,12 +1224,12 @@
       left: -2px;
       right: -2px;
       bottom: -2px;
-      background: linear-gradient(45deg, 
-        var(--neon-blue), 
-        var(--neon-purple), 
-        var(--accent-cyan), 
-        var(--accent-pink),
-        var(--neon-blue));
+      background: linear-gradient(45deg,
+          var(--neon-blue),
+          var(--neon-purple),
+          var(--accent-cyan),
+          var(--accent-pink),
+          var(--neon-blue));
       background-size: 300% 300%;
       border-radius: 22px;
       z-index: -1;
@@ -1153,21 +1249,33 @@
       left: -100%;
       width: 100%;
       height: 100%;
-      background: linear-gradient(90deg, 
-        transparent, 
-        rgba(255, 255, 255, 0.1), 
-        transparent);
+      background: linear-gradient(90deg,
+          transparent,
+          rgba(255, 255, 255, 0.1),
+          transparent);
       animation: shimmer 3s ease-in-out infinite;
     }
 
     @keyframes gradientBorder {
-      0%, 100% { background-position: 0% 50%; }
-      50% { background-position: 100% 50%; }
+
+      0%,
+      100% {
+        background-position: 0% 50%;
+      }
+
+      50% {
+        background-position: 100% 50%;
+      }
     }
 
     @keyframes shimmer {
-      0% { left: -100%; }
-      100% { left: 200%; }
+      0% {
+        left: -100%;
+      }
+
+      100% {
+        left: 200%;
+      }
     }
 
     @media print {
@@ -1176,30 +1284,46 @@
         color: black;
         padding: 0 !important;
       }
-      .header, table {
+
+      .header,
+      table {
         box-shadow: none;
         border: 1px solid #ddd;
         background: white;
         color: black;
       }
-      .s1, .s2, .s3, h1, h2, .s5 {
+
+      .s1,
+      .s2,
+      .s3,
+      h1,
+      h2,
+      .s5 {
         color: black;
         background: none;
         -webkit-text-fill-color: initial;
       }
+
       .s3::after {
         background: #000;
       }
-      a { color: black; text-decoration: underline; }
+
+      a {
+        color: black;
+        text-decoration: underline;
+      }
+
       .header__left img {
         box-shadow: none;
         border: 1px solid #ddd;
       }
+
       .skill-tag {
         background: #f0f0f0;
         color: #000;
       }
     }
+
     /* Flex-based responsive skills grid (new) */
     .skills-grid {
       display: flex;
@@ -1210,10 +1334,10 @@
       border-radius: 16px;
       padding: 0.5rem;
       background: linear-gradient(135deg, rgba(10, 14, 26, 0.9), rgba(30, 41, 59, 0.6));
-      border: 1px solid rgba(14,165,233,0.15);
+      border: 1px solid rgba(14, 165, 233, 0.15);
       box-sizing: border-box;
       backdrop-filter: blur(12px);
-      box-shadow: 
+      box-shadow:
         0 8px 24px -4px rgba(0, 0, 0, 0.3),
         0 0 20px rgba(14, 165, 233, 0.08),
         inset 0 1px 0 rgba(14, 165, 233, 0.08);
@@ -1222,7 +1346,7 @@
 
     .skills-grid:hover {
       border-color: rgba(14, 165, 233, 0.25);
-      box-shadow: 
+      box-shadow:
         0 12px 32px -4px rgba(0, 0, 0, 0.4),
         0 0 30px rgba(14, 165, 233, 0.12),
         inset 0 1px 0 rgba(14, 165, 233, 0.12);
@@ -1238,7 +1362,9 @@
       transition: all 0.25s ease;
     }
 
-    .skill-row:first-child { border-top: none; }
+    .skill-row:first-child {
+      border-top: none;
+    }
 
     .skill-row:hover {
       background: linear-gradient(90deg, rgba(59, 130, 246, 0.05), rgba(139, 92, 246, 0.03));
@@ -1310,11 +1436,11 @@
       margin-bottom: 1.5rem;
       border-radius: 16px;
       background: linear-gradient(135deg, rgba(10, 14, 26, 0.9), rgba(30, 41, 59, 0.6));
-      border: 1px solid rgba(14,165,233,0.15);
+      border: 1px solid rgba(14, 165, 233, 0.15);
       padding: 0.5rem;
       box-sizing: border-box;
       backdrop-filter: blur(12px);
-      box-shadow: 
+      box-shadow:
         0 8px 24px -4px rgba(0, 0, 0, 0.3),
         0 0 20px rgba(14, 165, 233, 0.08),
         inset 0 1px 0 rgba(14, 165, 233, 0.08);
@@ -1323,7 +1449,7 @@
 
     .work-entry:hover {
       border-color: rgba(14, 165, 233, 0.25);
-      box-shadow: 
+      box-shadow:
         0 12px 32px -4px rgba(0, 0, 0, 0.4),
         0 0 30px rgba(14, 165, 233, 0.12),
         inset 0 1px 0 rgba(14, 165, 233, 0.12);
@@ -1346,7 +1472,9 @@
       transition: all 0.25s ease;
     }
 
-    .work-row:first-child { border-top: none; }
+    .work-row:first-child {
+      border-top: none;
+    }
 
     .work-row:hover {
       background: linear-gradient(90deg, rgba(59, 130, 246, 0.05), rgba(139, 92, 246, 0.03));
@@ -1370,9 +1498,9 @@
       line-height: 1.6;
     }
 
-    .work-value ul { 
-      margin: 0.5rem 0 0 0; 
-      padding-left: 1.25rem; 
+    .work-value ul {
+      margin: 0.5rem 0 0 0;
+      padding-left: 1.25rem;
     }
 
     .work-value li,
@@ -1423,431 +1551,550 @@
 
 <body style="max-width: 1200px; margin: 0 auto; position: relative;">
   <!-- Floating Background Elements -->
-  <div style="position: fixed; width: 400px; height: 400px; border-radius: 50%; background: radial-gradient(circle, rgba(59, 130, 246, 0.15), transparent); top: -100px; right: -100px; pointer-events: none; z-index: 0; filter: blur(60px);"></div>
-  <div style="position: fixed; width: 300px; height: 300px; border-radius: 50%; background: radial-gradient(circle, rgba(139, 92, 246, 0.15), transparent); bottom: -50px; left: -50px; pointer-events: none; z-index: 0; filter: blur(60px);"></div>
-  
+  <div
+    style="position: fixed; width: 400px; height: 400px; border-radius: 50%; background: radial-gradient(circle, rgba(59, 130, 246, 0.15), transparent); top: -100px; right: -100px; pointer-events: none; z-index: 0; filter: blur(60px);">
+  </div>
+  <div
+    style="position: fixed; width: 300px; height: 300px; border-radius: 50%; background: radial-gradient(circle, rgba(139, 92, 246, 0.15), transparent); bottom: -50px; left: -50px; pointer-events: none; z-index: 0; filter: blur(60px);">
+  </div>
+
   <div style="position: relative; z-index: 1;">
-  <div class="header">
-    <div class="header__left">
-      <div style="position: relative;">
-        <img width="120" height="120" style="border-radius: 100%" src="./public/images/avatar.jpg" />
-        <div style="position: absolute; inset: -4px; border-radius: 100%; background: linear-gradient(45deg, #3b82f6, #8b5cf6, #3b82f6); opacity: 0; animation: spin 3s linear infinite; z-index: -1;"></div>
+    <div class="header">
+      <div class="header__left">
+        <div style="position: relative;">
+          <img width="120" height="120" style="border-radius: 100%" src="./public/images/avatar.jpg" />
+          <div
+            style="position: absolute; inset: -4px; border-radius: 100%; background: linear-gradient(45deg, #3b82f6, #8b5cf6, #3b82f6); opacity: 0; animation: spin 3s linear infinite; z-index: -1;">
+          </div>
+        </div>
+
+        <div class="header__left__content">
+          <p class="s1" style="text-align: left">Huynh Tan Ngoc</p>
+          <p class="s2">Senior Full Stack & Blockchain Engineer</p>
+          <div style="display: flex; gap: 0.5rem; margin-top: 0.5rem;">
+            <span
+              style="background: linear-gradient(135deg, rgba(59, 130, 246, 0.2), rgba(139, 92, 246, 0.2)); padding: 0.25rem 0.75rem; border-radius: 20px; font-size: 0.75rem; color: #60a5fa; border: 1px solid rgba(59, 130, 246, 0.3);">10+
+              Years</span>
+            <span
+              style="background: linear-gradient(135deg, rgba(139, 92, 246, 0.2), rgba(59, 130, 246, 0.2)); padding: 0.25rem 0.75rem; border-radius: 20px; font-size: 0.75rem; color: #a78bfa; border: 1px solid rgba(139, 92, 246, 0.3);">Blockchain
+              Expert</span>
+          </div>
+        </div>
+      </div>
+      <div class="header__right__content">
+        <p style="padding-top: 3pt">
+          <a href="mailto:huynhtanngoc91@gmail.com">
+            huynhtanngoc91@gmail.com</a>
+        </p>
+        <p style="padding-top: 3pt">+84 855799199</p>
+        <p style="padding-top: 3pt">Ho Chi Minh City - Vietnam</p>
+        <p style="padding-top: 3pt">
+          <a target="_blank" href="https://github.com/ngocht-dev?tab=repositories">
+            github.com/ngocht-dev
+          </a>
+        </p>
+        <p style="padding-top: 3pt">
+          <a target="_blank" href="https://www.linkedin.com/in/ngoc-huynhtan-77b646a0">
+            linkedin.com/in/ngoc-huynhtan-77b646a0
+          </a>
+        </p>
+      </div>
+    </div>
+
+    <p class="s3" style="
+        padding-left: 5pt;
+        text-indent: 0pt;
+        text-align: left;
+        margin-top: 40px;
+      ">
+      PERSONAL SUMMARY
+    </p>
+
+    <div class="summary-hero"
+      style="background: linear-gradient(135deg, rgba(30, 41, 59, 0.5), rgba(30, 41, 59, 0.2)); border-radius: 20px; padding: 2rem; border: 1px solid rgba(255, 255, 255, 0.05); backdrop-filter: blur(10px); margin-bottom: 2rem;">
+      <p style="color: var(--text-muted); font-size: 1.05rem; line-height: 1.8; margin: 0;">
+        <span style="color: var(--text-main); font-weight: 600;">Senior Full Stack & Blockchain Engineer</span> with
+        <span style="color: var(--primary); font-weight: 600;">10+ years</span> of proven expertise delivering scalable
+        web applications and innovative blockchain solutions. Passionate about leveraging cutting-edge technologies to
+        architect high-performance systems that drive business value and innovation.
+      </p>
+    </div>
+
+    <div class="summary-grid">
+      <div class="summary-card">
+        <div class="summary-icon">🔗</div>
+        <div class="summary-title">Blockchain Expertise</div>
+        <div class="summary-text">
+          Expert in multi-chain development across Solana (Anchor), EVM (Hardhat & Truffle), and Cardano (Aiken).
+          Specialized in DeFi protocols, NFT marketplaces, and smart contract security.
+        </div>
       </div>
 
-      <div class="header__left__content">
-        <p class="s1" style="text-align: left">Huynh Tan Ngoc</p>
-        <p class="s2">Senior Full Stack & Blockchain Engineer</p>
-        <div style="display: flex; gap: 0.5rem; margin-top: 0.5rem;">
-          <span style="background: linear-gradient(135deg, rgba(59, 130, 246, 0.2), rgba(139, 92, 246, 0.2)); padding: 0.25rem 0.75rem; border-radius: 20px; font-size: 0.75rem; color: #60a5fa; border: 1px solid rgba(59, 130, 246, 0.3);">10+ Years</span>
-          <span style="background: linear-gradient(135deg, rgba(139, 92, 246, 0.2), rgba(59, 130, 246, 0.2)); padding: 0.25rem 0.75rem; border-radius: 20px; font-size: 0.75rem; color: #a78bfa; border: 1px solid rgba(139, 92, 246, 0.3);">Blockchain Expert</span>
+      <div class="summary-card">
+        <div class="summary-icon">💻</div>
+        <div class="summary-title">Full Stack Mastery</div>
+        <div class="summary-text">
+          Proficient in modern web technologies including React, Next.js, Vue, Angular for frontend, and Node.js, NestJS
+          for backend. Expert in building responsive, user-centric applications.
+        </div>
+      </div>
+
+      <div class="summary-card">
+        <div class="summary-icon">🛠️</div>
+        <div class="summary-title">Versatile Programming</div>
+        <div class="summary-text">
+          Deep proficiency across multiple languages: Solidity, Rust, Haskell for blockchain; JavaScript, TypeScript,
+          Golang, PHP for application development.
+        </div>
+      </div>
+
+      <div class="summary-card">
+        <div class="summary-icon">🗄️</div>
+        <div class="summary-title">Database & Architecture</div>
+        <div class="summary-text">
+          Designing robust backend architectures with PostgreSQL, MongoDB, MySQL, Redis. Comprehensive expertise in
+          microservices, API design, and database optimization.
+        </div>
+      </div>
+
+      <div class="summary-card">
+        <div class="summary-icon">🚀</div>
+        <div class="summary-title">DevOps & Performance</div>
+        <div class="summary-text">
+          Specialized in architecting high-performance, scalable systems with strong focus on DevOps practices, CI/CD
+          pipelines, and cloud technologies.
+        </div>
+      </div>
+
+      <div class="summary-card">
+        <div class="summary-icon">👥</div>
+        <div class="summary-title">Leadership & Collaboration</div>
+        <div class="summary-text">
+          Strong technical leader with proven track record of mentoring teams, driving innovation, and delivering
+          business-critical solutions across diverse industries.
         </div>
       </div>
     </div>
-    <div class="header__right__content">
-      <p style="padding-top: 3pt">
-        <a href="mailto:huynhtanngoc91@gmail.com">
-          huynhtanngoc91@gmail.com</a>
-      </p>
-      <p style="padding-top: 3pt">+84 855799199</p>
-      <p style="padding-top: 3pt">Ho Chi Minh City - Vietnam</p>
-      <p style="padding-top: 3pt">
-        <a target="_blank" href="https://github.com/ngocht-dev?tab=repositories">
-          github.com/ngocht-dev
-        </a>
-      </p>
-      <p style="padding-top: 3pt">
-        <a target="_blank" href="https://www.linkedin.com/in/ngoc-huynhtan-77b646a0">
-          linkedin.com/in/ngoc-huynhtan-77b646a0
-        </a>
-      </p>
-    </div>
-  </div>
 
-  <p class="s3" style="
+    <!-- Stats Section -->
+    <div class="stats-container">
+      <div class="stat-item">
+        <span class="stat-number">10+</span>
+        <span class="stat-label">Years Experience</span>
+      </div>
+      <div class="stat-item">
+        <span class="stat-number">50+</span>
+        <span class="stat-label">Projects Delivered</span>
+      </div>
+      <div class="stat-item">
+        <span class="stat-number">3</span>
+        <span class="stat-label">Blockchain Networks</span>
+      </div>
+      <div class="stat-item">
+        <span class="stat-number">15+</span>
+        <span class="stat-label">Technologies Mastered</span>
+      </div>
+    </div>
+
+    <p class="s3" style="
         padding-left: 5pt;
         text-indent: 0pt;
         text-align: left;
         margin-top: 40px;
       ">
-   PERSONAL SUMMARY
-  </p>
-
-  <div class="summary-hero" style="background: linear-gradient(135deg, rgba(30, 41, 59, 0.5), rgba(30, 41, 59, 0.2)); border-radius: 20px; padding: 2rem; border: 1px solid rgba(255, 255, 255, 0.05); backdrop-filter: blur(10px); margin-bottom: 2rem;">
-    <p style="color: var(--text-muted); font-size: 1.05rem; line-height: 1.8; margin: 0;">
-      <span style="color: var(--text-main); font-weight: 600;">Senior Full Stack & Blockchain Engineer</span> with <span style="color: var(--primary); font-weight: 600;">10+ years</span> of proven expertise delivering scalable web applications and innovative blockchain solutions. Passionate about leveraging cutting-edge technologies to architect high-performance systems that drive business value and innovation.
+      TECHNICAL SKILLS & KNOWLEDGE
     </p>
-  </div>
+    <div class="skills-grid">
+      <div class="skill-row">
+        <div class="skill-label">
+          <p class="s5">Knowledge</p>
+        </div>
+        <div class="skill-value">
+          <p class="s6">Deep expertise in consensus algorithms, cryptography, and decentralized finance (DeFi). Hands-on
+            experience integrating with major protocols (Pancake, Uniswap, Aave) and developing smart contract
+            interactions for frontend and backend systems.</p>
+        </div>
+      </div>
 
-  <div class="summary-grid">
-    <div class="summary-card">
-      <div class="summary-icon">🔗</div>
-      <div class="summary-title">Blockchain Expertise</div>
-      <div class="summary-text">
-        Expert in multi-chain development across Solana (Anchor), EVM (Hardhat & Truffle), and Cardano (Aiken). Specialized in DeFi protocols, NFT marketplaces, and smart contract security.
+      <div class="skill-row">
+        <div class="skill-label">
+          <p class="s5">Programming Language</p>
+        </div>
+        <div class="skill-value">
+          <div class="tag-list"><span class="skill-tag">Solidity</span><span class="skill-tag">Rust</span><span
+              class="skill-tag">JavaScript</span><span class="skill-tag">TypeScript</span><span
+              class="skill-tag">Haskell</span><span class="skill-tag">Golang</span><span
+              class="skill-tag">PHP</span><span class="skill-tag">HTML5</span><span class="skill-tag">CSS3</span></div>
+        </div>
+      </div>
+
+      <div class="skill-row">
+        <div class="skill-label">
+          <p class="s5">Blockchain on-chain</p>
+        </div>
+        <div class="skill-value">
+          <ul class="onchain-list">
+            <li>Solana: Anchor, @solana/web3.js, @solana/spl-token</li>
+            <li>EVM: Hardhat, Truffle, OpenZeppelin</li>
+            <li>Cardano: Aiken, Lucid</li>
+          </ul>
+        </div>
+      </div>
+
+      <div class="skill-row">
+        <div class="skill-label">
+          <p class="s5">Front-End</p>
+        </div>
+        <div class="skill-value">
+          <div class="tag-list"><span class="skill-tag">React</span><span class="skill-tag">React Native</span><span
+              class="skill-tag">Next.js</span><span class="skill-tag">Vue</span><span class="skill-tag">Nuxt</span><span
+              class="skill-tag">Angular</span></div>
+        </div>
+      </div>
+      <div class="skill-row">
+        <div class="skill-label">
+          <p class="s5">Mobile Development</p>
+        </div>
+        <div class="skill-value">
+          <ul class="onchain-list">
+            <li><strong>React Native Expert:</strong> Proven experience in performance optimization (re-render control,
+              memory usage, bundle size reduction).</li>
+            <li><strong>State Management:</strong> Strong skills with Redux Toolkit, Zustand, and similar libraries.
+            </li>
+            <li><strong>Profiling & Debugging:</strong> Proficient with Flipper, React Profiler, and diagnostic tools.
+            </li>
+            <li><strong>Testing:</strong> Experience with Jest, React Native Testing Library (RNTL), Detox, and Maestro.
+            </li>
+          </ul>
+        </div>
+      </div>
+      <div class="skill-row">
+        <div class="skill-label">
+          <p class="s5">Back-End</p>
+        </div>
+        <div class="skill-value">
+          <div class="tag-list"><span class="skill-tag">Node.js</span><span class="skill-tag">NestJS</span><span
+              class="skill-tag">Express</span></div>
+        </div>
+      </div>
+
+      <div class="skill-row">
+        <div class="skill-label">
+          <p class="s5">Database</p>
+        </div>
+        <div class="skill-value">
+          <div class="tag-list"><span class="skill-tag">PostgreSQL</span><span class="skill-tag">MySQL</span><span
+              class="skill-tag">MongoDB</span><span class="skill-tag">Redis</span><span class="skill-tag">LevelDB</span>
+          </div>
+        </div>
+      </div>
+
+      <div class="skill-row">
+        <div class="skill-label">
+          <p class="s5">Testing tools &amp; Frameworks</p>
+        </div>
+        <div class="skill-value">
+          <div class="tag-list"><span class="skill-tag">Jest</span><span class="skill-tag">Mocha</span><span
+              class="skill-tag">Chai</span><span class="skill-tag">Hardhat Testing</span></div>
+        </div>
+      </div>
+
+      <div class="skill-row">
+        <div class="skill-label"><p class="s5">DevOps & Infrastructure</p></div>
+        <div class="skill-value"><div class="tag-list"><span class="skill-tag">Docker</span><span class="skill-tag">Nginx</span><span class="skill-tag">Apache</span><span class="skill-tag">Load Balancing</span><span class="skill-tag">GitHub Actions</span><span class="skill-tag">CI/CD</span><span class="skill-tag">AWS</span><span class="skill-tag">Linux</span></div></div>
       </div>
     </div>
-
-    <div class="summary-card">
-      <div class="summary-icon">💻</div>
-      <div class="summary-title">Full Stack Mastery</div>
-      <div class="summary-text">
-        Proficient in modern web technologies including React, Next.js, Vue, Angular for frontend, and Node.js, NestJS for backend. Expert in building responsive, user-centric applications.
-      </div>
-    </div>
-
-    <div class="summary-card">
-      <div class="summary-icon">🛠️</div>
-      <div class="summary-title">Versatile Programming</div>
-      <div class="summary-text">
-        Deep proficiency across multiple languages: Solidity, Rust, Haskell for blockchain; JavaScript, TypeScript, Golang, PHP for application development.
-      </div>
-    </div>
-
-    <div class="summary-card">
-      <div class="summary-icon">🗄️</div>
-      <div class="summary-title">Database & Architecture</div>
-      <div class="summary-text">
-        Designing robust backend architectures with PostgreSQL, MongoDB, MySQL, Redis. Comprehensive expertise in microservices, API design, and database optimization.
-      </div>
-    </div>
-
-    <div class="summary-card">
-      <div class="summary-icon">🚀</div>
-      <div class="summary-title">DevOps & Performance</div>
-      <div class="summary-text">
-        Specialized in architecting high-performance, scalable systems with strong focus on DevOps practices, CI/CD pipelines, and cloud technologies.
-      </div>
-    </div>
-
-    <div class="summary-card">
-      <div class="summary-icon">👥</div>
-      <div class="summary-title">Leadership & Collaboration</div>
-      <div class="summary-text">
-        Strong technical leader with proven track record of mentoring teams, driving innovation, and delivering business-critical solutions across diverse industries.
-      </div>
-    </div>
-  </div>
-
-  <!-- Stats Section -->
-  <div class="stats-container">
-    <div class="stat-item">
-      <span class="stat-number">10+</span>
-      <span class="stat-label">Years Experience</span>
-    </div>
-    <div class="stat-item">
-      <span class="stat-number">50+</span>
-      <span class="stat-label">Projects Delivered</span>
-    </div>
-    <div class="stat-item">
-      <span class="stat-number">3</span>
-      <span class="stat-label">Blockchain Networks</span>
-    </div>
-    <div class="stat-item">
-      <span class="stat-number">15+</span>
-      <span class="stat-label">Technologies Mastered</span>
-    </div>
-  </div>
-
-  <p class="s3" style="
-        padding-left: 5pt;
-        text-indent: 0pt;
-        text-align: left;
-        margin-top: 40px;
-      ">
-   TECHNICAL SKILLS & KNOWLEDGE
-  </p>
-  <div class="skills-grid">
-    <div class="skill-row">
-      <div class="skill-label"><p class="s5">Knowledge</p></div>
-      <div class="skill-value"><p class="s6">Deep expertise in consensus algorithms, cryptography, and decentralized finance (DeFi). Hands-on experience integrating with major protocols (Pancake, Uniswap, Aave) and developing smart contract interactions for frontend and backend systems.</p></div>
-    </div>
-
-    <div class="skill-row">
-      <div class="skill-label"><p class="s5">Programming Language</p></div>
-      <div class="skill-value"><div class="tag-list"><span class="skill-tag">Solidity</span><span class="skill-tag">Rust</span><span class="skill-tag">JavaScript</span><span class="skill-tag">TypeScript</span><span class="skill-tag">Haskell</span><span class="skill-tag">Golang</span><span class="skill-tag">PHP</span><span class="skill-tag">HTML5</span><span class="skill-tag">CSS3</span></div></div>
-    </div>
-
-    <div class="skill-row">
-      <div class="skill-label"><p class="s5">Blockchain on-chain</p></div>
-      <div class="skill-value">
-        <ul class="onchain-list">
-          <li>Solana: Anchor, @solana/web3.js, @solana/spl-token</li>
-          <li>EVM: Hardhat, Truffle, OpenZeppelin</li>
-          <li>Cardano: Aiken, Lucid</li>
-        </ul>
-      </div>
-    </div>
-
-    <div class="skill-row">
-      <div class="skill-label"><p class="s5">Front-End</p></div>
-      <div class="skill-value"><div class="tag-list"><span class="skill-tag">React</span><span class="skill-tag">React Native</span><span class="skill-tag">Next.js</span><span class="skill-tag">Vue</span><span class="skill-tag">Nuxt</span><span class="skill-tag">Angular</span></div></div>
-    </div>
-
-    <div class="skill-row">
-      <div class="skill-label"><p class="s5">Back-End</p></div>
-      <div class="skill-value"><div class="tag-list"><span class="skill-tag">Node.js</span><span class="skill-tag">NestJS</span><span class="skill-tag">Express</span></div></div>
-    </div>
-
-    <div class="skill-row">
-      <div class="skill-label"><p class="s5">Database</p></div>
-      <div class="skill-value"><div class="tag-list"><span class="skill-tag">PostgreSQL</span><span class="skill-tag">MySQL</span><span class="skill-tag">MongoDB</span><span class="skill-tag">Redis</span><span class="skill-tag">LevelDB</span></div></div>
-    </div>
-
-    <div class="skill-row">
-      <div class="skill-label"><p class="s5">Testing tools &amp; Frameworks</p></div>
-      <div class="skill-value"><div class="tag-list"><span class="skill-tag">Jest</span><span class="skill-tag">Mocha</span><span class="skill-tag">Chai</span><span class="skill-tag">Hardhat Testing</span></div></div>
-    </div>
-  </div>
-  <p style="padding-top: 10pt; text-indent: 0pt; text-align: left"><br /></p>
-  <p class="s3" style="padding-left: 5pt; text-indent: 0pt; text-align: left">
-   WORK EXPERIENCE
-  </p>
-  <h1 style="
+    <p style="padding-top: 10pt; text-indent: 0pt; text-align: left"><br /></p>
+    <p class="s3" style="padding-left: 5pt; text-indent: 0pt; text-align: left">
+      WORK EXPERIENCE
+    </p>
+    <h1 style="
         padding-top: 2pt;
         padding-left: 5pt;
         text-indent: 0pt;
         text-align: left;
       ">
-    Ginar Solution <span class="p">(Nov 2023 - Now)</span>
-  </h1>
-  <div class="work-entry">
-    <div class="work-grid">
-      <div class="work-row">
-        <div class="work-label">Description</div>
-        <div class="work-value">Leading technology company specializing in Web3 infrastructure and AI-powered applications, developing cutting-edge solutions for DeFi, cryptocurrency trading, and blockchain integration.</div>
-      </div>
-      <div class="work-row">
-        <div class="work-label">Team size</div>
-        <div class="work-value">20</div>
-      </div>
-      <div class="work-row">
-        <div class="work-label">My position</div>
-        <div class="work-value">Senior Backend Engineer</div>
-      </div>
-      <div class="work-row">
-        <div class="work-label">My responsibilities</div>
-        <div class="work-value">
-          <ul>
-            <li>Architected and deployed gasless cryptocurrency deposit/withdrawal APIs supporting multiple tokens (USDT, USDC) with seamless frontend integration, improving user transaction experience.</li>
-            <li>Developed sophisticated DeFi trading APIs enabling automated liquidity management and token swapping across multiple decentralized exchanges (DEXs) for AI-driven trading operations.</li>
-            <li>Engineered real-time cryptocurrency pricing and DEX data pipelines, providing critical market intelligence to support AI team's automated trading bot development and strategy optimization.</li>
-            <li>Designed and implemented secure vault withdrawal processing APIs with multi-layer authentication, facilitating safe user fund extraction from platform reserves.</li>
-          </ul>
+      Ginar Solution <span class="p">(Nov 2023 - Now)</span>
+    </h1>
+    <div class="work-entry">
+      <div class="work-grid">
+        <div class="work-row">
+          <div class="work-label">Description</div>
+          <div class="work-value">Leading technology company specializing in Web3 infrastructure and AI-powered
+            applications, developing cutting-edge solutions for DeFi, cryptocurrency trading, and blockchain
+            integration.</div>
+        </div>
+        <div class="work-row">
+          <div class="work-label">Team size</div>
+          <div class="work-value">20</div>
+        </div>
+        <div class="work-row">
+          <div class="work-label">My position</div>
+          <div class="work-value">Senior Backend Engineer</div>
+        </div>
+        <div class="work-row">
+          <div class="work-label">My responsibilities</div>
+          <div class="work-value">
+            <ul>
+              <li>Architected and deployed gasless cryptocurrency deposit/withdrawal APIs supporting multiple tokens
+                (USDT, USDC) with seamless frontend integration, improving user transaction experience.</li>
+              <li>Developed sophisticated DeFi trading APIs enabling automated liquidity management and token swapping
+                across multiple decentralized exchanges (DEXs) for AI-driven trading operations.</li>
+              <li>Engineered real-time cryptocurrency pricing and DEX data pipelines, providing critical market
+                intelligence to support AI team's automated trading bot development and strategy optimization.</li>
+              <li>Designed and implemented secure vault withdrawal processing APIs with multi-layer authentication,
+                facilitating safe user fund extraction from platform reserves.</li>
+            </ul>
+          </div>
         </div>
       </div>
     </div>
-  </div>
-  <p style="padding-top: 6pt; text-indent: 0pt; text-align: left"><br /></p>
-  <h1 style="
+    <p style="padding-top: 6pt; text-indent: 0pt; text-align: left"><br /></p>
+    <h1 style="
         padding-bottom: 1pt;
         padding-left: 5pt;
         text-indent: 0pt;
         text-align: left;
       ">
-    Outsourcing <span class="p">(Aug 2021 - Now)</span>
-  </h1>
-  <div class="work-entry">
-    <div class="work-grid">
-      <div class="work-row">
-        <div class="work-label">Description</div>
-        <div class="work-value">Independent consulting and development work delivering end-to-end blockchain solutions for DeFi protocols, NFT marketplaces, and blockchain gaming platforms.</div>
-      </div>
-      <div class="work-row">
-        <div class="work-label">Team size</div>
-        <div class="work-value">14</div>
-      </div>
-      <div class="work-row">
-        <div class="work-label">My position</div>
-        <div class="work-value">Full-stack developer</div>
-      </div>
-      <div class="work-row">
-        <div class="work-label">My responsibilities</div>
-        <div class="work-value">
-          <ul>
-            <li>NFT Land (OpenSea-like marketplace): Developed comprehensive Solidity smart contracts using Hardhat and OpenZeppelin frameworks. Created TypeScript SDK and EVM event parser for efficient blockchain data indexing and database integration.</li>
-            <li>Hanabi (PancakeSwap-like DEX): Architected and implemented full-suite Solidity smart contracts for automated market maker (AMM) functionality, liquidity pools, and token swapping mechanisms.</li>
-            <li>DMTP (Digital Marketplace): Engineered secure smart contracts for peer-to-peer digital asset trading with robust escrow mechanisms and dispute resolution functionality.</li>
-            <li>Phoenix (NFT Gaming Platform): Developed Solidity smart contracts on the Defiverse network for NFT minting (LootBox), daily check-in rewards, lottery mechanics (spin-to-win), and staking functionality.</li>
-            <li>Capital DAO: Engineered complete DeFi ecosystem including ERC20 token contracts, staking mechanisms with reward distribution, and on-chain governance voting systems.</li>
-            <li>Sunrise Casino: Developed provably fair gaming smart contracts for multiple casino games (Jacks or Better, Blackjack, Baccarat) with transparent random number generation.</li>
-          </ul>
+      Outsourcing <span class="p">(Aug 2021 - Now)</span>
+    </h1>
+    <div class="work-entry">
+      <div class="work-grid">
+        <div class="work-row">
+          <div class="work-label">Description</div>
+          <div class="work-value">Independent consulting and development work delivering end-to-end blockchain solutions
+            for DeFi protocols, NFT marketplaces, and blockchain gaming platforms.</div>
+        </div>
+        <div class="work-row">
+          <div class="work-label">Team size</div>
+          <div class="work-value">14</div>
+        </div>
+        <div class="work-row">
+          <div class="work-label">My position</div>
+          <div class="work-value">Full-stack developer</div>
+        </div>
+        <div class="work-row">
+          <div class="work-label">My responsibilities</div>
+          <div class="work-value">
+            <ul>
+              <li>NFT Land (OpenSea-like marketplace): Developed comprehensive Solidity smart contracts using Hardhat
+                and OpenZeppelin frameworks. Created TypeScript SDK and EVM event parser for efficient blockchain data
+                indexing and database integration.</li>
+              <li>Hanabi (PancakeSwap-like DEX): Architected and implemented full-suite Solidity smart contracts for
+                automated market maker (AMM) functionality, liquidity pools, and token swapping mechanisms.</li>
+              <li>DMTP (Digital Marketplace): Engineered secure smart contracts for peer-to-peer digital asset trading
+                with robust escrow mechanisms and dispute resolution functionality.</li>
+              <li>Phoenix (NFT Gaming Platform): Developed Solidity smart contracts on the Defiverse network for NFT
+                minting (LootBox), daily check-in rewards, lottery mechanics (spin-to-win), and staking functionality.
+              </li>
+              <li>Capital DAO: Engineered complete DeFi ecosystem including ERC20 token contracts, staking mechanisms
+                with reward distribution, and on-chain governance voting systems.</li>
+              <li>Sunrise Casino: Developed provably fair gaming smart contracts for multiple casino games (Jacks or
+                Better, Blackjack, Baccarat) with transparent random number generation.</li>
+            </ul>
+          </div>
         </div>
       </div>
     </div>
-  </div>
-  <p style="padding-top: 6pt; text-indent: 0pt; text-align: left"><br /></p>
-  <h1 style="
+    <p style="padding-top: 6pt; text-indent: 0pt; text-align: left"><br /></p>
+    <h1 style="
         padding-bottom: 1pt;
         padding-left: 5pt;
         text-indent: 0pt;
         text-align: left;
       ">
-    Moonstake <span class="p">(Aug 2021 - Nov 2023)</span>
-  </h1>
-  <div class="work-entry">
-    <div class="work-grid">
-      <div class="work-row">
-        <div class="work-label">Description</div>
-        <div class="work-value">Leading blockchain infrastructure company focused on developing staking pool protocols and wallet solutions for institutional and retail investors across multiple blockchain networks in Asian and global markets.</div>
-      </div>
-      <div class="work-row">
-        <div class="work-label">Team size</div>
-        <div class="work-value">30</div>
-      </div>
-      <div class="work-row">
-        <div class="work-label">My position</div>
-        <div class="work-value">Full-stack developer</div>
-      </div>
-      <div class="work-row">
-        <div class="work-label">My responsibilities</div>
-        <div class="work-value">
-          <ul>
-            <li>World Peace Finance (AAVE-like DeFi Protocol): Architected and developed a lending/borrowing protocol on Solana using the Anchor framework. Built comprehensive TypeScript SDK to enable seamless frontend integration with Nuxt.js for on-chain data interactions.</li>
-            <li>Moonstake Wallet Extension: Developed browser extension for multi-chain cryptocurrency management using Nuxt.js and Solana Web3 libraries, enabling secure transaction signing and wallet operations.</li>
-            <li>MoonWealth (Educational Platform): Built RESTful APIs using Node.js and PostgreSQL for a cryptocurrency investment education platform, implementing user progress tracking and content management systems.</li>
-            <li>Moonstake Wallet (Web Application): Developed multi-chain wallet interface supporting cryptocurrency transactions across multiple blockchain networks including KAVA, AVAX, Fantom, and Cardano.</li>
-          </ul>
+      Moonstake <span class="p">(Aug 2021 - Nov 2023)</span>
+    </h1>
+    <div class="work-entry">
+      <div class="work-grid">
+        <div class="work-row">
+          <div class="work-label">Description</div>
+          <div class="work-value">Leading blockchain infrastructure company focused on developing staking pool protocols
+            and wallet solutions for institutional and retail investors across multiple blockchain networks in Asian and
+            global markets.</div>
+        </div>
+        <div class="work-row">
+          <div class="work-label">Team size</div>
+          <div class="work-value">30</div>
+        </div>
+        <div class="work-row">
+          <div class="work-label">My position</div>
+          <div class="work-value">Full-stack developer</div>
+        </div>
+        <div class="work-row">
+          <div class="work-label">My responsibilities</div>
+          <div class="work-value">
+            <ul>
+              <li>World Peace Finance (AAVE-like DeFi Protocol): Architected and developed a lending/borrowing protocol
+                on Solana using the Anchor framework. Built comprehensive TypeScript SDK to enable seamless frontend
+                integration with Nuxt.js for on-chain data interactions.</li>
+              <li>Moonstake Wallet Extension: Developed browser extension for multi-chain cryptocurrency management
+                using Nuxt.js and Solana Web3 libraries, enabling secure transaction signing and wallet operations.</li>
+              <li>MoonWealth (Educational Platform): Built RESTful APIs using Node.js and PostgreSQL for a
+                cryptocurrency investment education platform, implementing user progress tracking and content management
+                systems.</li>
+              <li>Moonstake Wallet (Web Application): Developed multi-chain wallet interface supporting cryptocurrency
+                transactions across multiple blockchain networks including KAVA, AVAX, Fantom, and Cardano.</li>
+            </ul>
+          </div>
         </div>
       </div>
     </div>
-  </div>
 
-  <p style="padding-top: 6pt; text-indent: 0pt; text-align: left"><br /></p>
-  <h1 style="
+    <p style="padding-top: 6pt; text-indent: 0pt; text-align: left"><br /></p>
+    <h1 style="
         padding-bottom: 1pt;
         padding-left: 5pt;
         text-indent: 0pt;
         text-align: left;
       ">
-    Infinity Blockchain Labs <span class="p">(Oct 2017 - Jan 2021)</span>
-  </h1>
-  <div class="work-entry">
-    <div class="work-grid">
-      <div class="work-row">
-        <div class="work-label">Description</div>
-        <div class="work-value">Leading blockchain research and development company specializing in FinTech and RegTech solutions, with a focus on building innovative blockchain applications and fostering developer communities.</div>
-      </div>
-      <div class="work-row">
-        <div class="work-label">Team size</div>
-        <div class="work-value">30</div>
-      </div>
-      <div class="work-row">
-        <div class="work-label">My position</div>
-        <div class="work-value">Full-stack developer</div>
-      </div>
-      <div class="work-row">
-        <div class="work-label">My responsibilities</div>
-        <div class="work-value">
-          <ul>
-            <li>Researched, designed, and maintained scalable APIs integrating with multiple blockchain networks, enabling cross-chain functionality and data synchronization.</li>
-            <li>Infinito Wallet (Mobile Application): Developed multi-currency cryptocurrency wallet using React Native, implementing features for portfolio management, custom token support, and transaction history.</li>
-            <li>Infinito Appsquare (DApp Marketplace): Engineered blockchain-based application marketplace using Solidity smart contracts (Hardhat/OpenZeppelin) for secure digital asset trading. Developed full-stack solution with Nuxt.js frontend and Node.js backend.</li>
-            <li>Quanta (Blockchain Lottery): Built decentralized lottery platform as full-stack developer, implementing React.js frontend and Node.js backend with smart contract integration for transparent prize distribution.</li>
-          </ul>
+      Infinity Blockchain Labs <span class="p">(Oct 2017 - Jan 2021)</span>
+    </h1>
+    <div class="work-entry">
+      <div class="work-grid">
+        <div class="work-row">
+          <div class="work-label">Description</div>
+          <div class="work-value">Leading blockchain research and development company specializing in FinTech and
+            RegTech solutions, with a focus on building innovative blockchain applications and fostering developer
+            communities.</div>
+        </div>
+        <div class="work-row">
+          <div class="work-label">Team size</div>
+          <div class="work-value">30</div>
+        </div>
+        <div class="work-row">
+          <div class="work-label">My position</div>
+          <div class="work-value">Full-stack developer</div>
+        </div>
+        <div class="work-row">
+          <div class="work-label">My responsibilities</div>
+          <div class="work-value">
+            <ul>
+              <li>Researched, designed, and maintained scalable APIs integrating with multiple blockchain networks,
+                enabling cross-chain functionality and data synchronization.</li>
+              <li>Infinito Wallet (Mobile Application): Developed multi-currency cryptocurrency wallet using React
+                Native, implementing features for portfolio management, custom token support, and transaction history.
+              </li>
+              <li>Infinito Appsquare (DApp Marketplace): Engineered blockchain-based application marketplace using
+                Solidity smart contracts (Hardhat/OpenZeppelin) for secure digital asset trading. Developed full-stack
+                solution with Nuxt.js frontend and Node.js backend.</li>
+              <li>Quanta (Blockchain Lottery): Built decentralized lottery platform as full-stack developer,
+                implementing React.js frontend and Node.js backend with smart contract integration for transparent prize
+                distribution.</li>
+            </ul>
+          </div>
         </div>
       </div>
     </div>
-  </div>
-  <p style="padding-top: 6pt; text-indent: 0pt; text-align: left"><br /></p>
-  <h1 style="
+    <p style="padding-top: 6pt; text-indent: 0pt; text-align: left"><br /></p>
+    <h1 style="
         padding-bottom: 1pt;
         padding-left: 5pt;
         text-indent: 0pt;
         text-align: left;
       ">
-    SystemEXE Việt Nam <span class="p">(Apr 2014 - Oct 2017)</span>
-  </h1>
-  <div class="work-entry">
-    <div class="work-grid">
-      <div class="work-row">
-        <div class="work-label">Description</div>
-        <div class="work-value">Vietnamese subsidiary of a leading Japanese IT consulting group, specializing in enterprise software development and digital transformation solutions for diverse industries.</div>
-      </div>
-      <div class="work-row">
-        <div class="work-label">Team size</div>
-        <div class="work-value">50</div>
-      </div>
-      <div class="work-row">
-        <div class="work-label">My position</div>
-        <div class="work-value">Full-stack developer</div>
-      </div>
-      <div class="work-row">
-        <div class="work-label">My responsibilities</div>
-        <div class="work-value">
-          <ul>
-            <li>PTSP (Online Accounting Platform): Developed enterprise accounting SaaS application with Java-based RESTful APIs and Angular frontend, implementing financial reporting and bookkeeping features.</li>
-            <li>IFoodGo (Food Delivery Platform): Built comprehensive food delivery ecosystem including Laravel-powered APIs, Angular web application, and Ionic mobile apps for iOS/Android with real-time order tracking.</li>
-            <li>Phu Tho Stadium Management System: Engineered facility management platform with Laravel backend and AngularJS frontend for staff administration, field booking, and scheduling operations.</li>
-            <li>Database Management Tool: Developed Java-based web application for enterprise database administration, featuring query builders, schema management, and data visualization capabilities.</li>
-            <li>Aolani (Hospital Management System): Built comprehensive healthcare management platform using Java and AngularJS, implementing patient records, appointment scheduling, and medical billing systems.</li>
-          </ul>
+      SystemEXE Việt Nam <span class="p">(Apr 2014 - Oct 2017)</span>
+    </h1>
+    <div class="work-entry">
+      <div class="work-grid">
+        <div class="work-row">
+          <div class="work-label">Description</div>
+          <div class="work-value">Vietnamese subsidiary of a leading Japanese IT consulting group, specializing in
+            enterprise software development and digital transformation solutions for diverse industries.</div>
+        </div>
+        <div class="work-row">
+          <div class="work-label">Team size</div>
+          <div class="work-value">50</div>
+        </div>
+        <div class="work-row">
+          <div class="work-label">My position</div>
+          <div class="work-value">Full-stack developer</div>
+        </div>
+        <div class="work-row">
+          <div class="work-label">My responsibilities</div>
+          <div class="work-value">
+            <ul>
+              <li>PTSP (Online Accounting Platform): Developed enterprise accounting SaaS application with Java-based
+                RESTful APIs and Angular frontend, implementing financial reporting and bookkeeping features.</li>
+              <li>IFoodGo (Food Delivery Platform): Built comprehensive food delivery ecosystem including
+                Laravel-powered APIs, Angular web application, and Ionic mobile apps for iOS/Android with real-time
+                order tracking.</li>
+              <li>Phu Tho Stadium Management System: Engineered facility management platform with Laravel backend and
+                AngularJS frontend for staff administration, field booking, and scheduling operations.</li>
+              <li>Database Management Tool: Developed Java-based web application for enterprise database administration,
+                featuring query builders, schema management, and data visualization capabilities.</li>
+              <li>Aolani (Hospital Management System): Built comprehensive healthcare management platform using Java and
+                AngularJS, implementing patient records, appointment scheduling, and medical billing systems.</li>
+            </ul>
+          </div>
         </div>
       </div>
     </div>
-  </div>
-  <p class="s3" style="
+    <p class="s3" style="
         padding-top: 6pt;
         padding-left: 5pt;
         text-indent: 0pt;
         text-align: left;
         margin-top: 40px;
       ">
-   EDUCATION &amp; ACHIEVEMENTS
-  </p>
-  <p style="
+      EDUCATION &amp; ACHIEVEMENTS
+    </p>
+    <p style="
         padding-top: 2pt;
         padding-left: 5pt;
         text-indent: 0pt;
         text-align: left;
       ">
-    2009 - 2014
-  </p>
-  <h1 style="
+      2009 - 2014
+    </p>
+    <h1 style="
         padding-top: 2pt;
         padding-left: 5pt;
         text-indent: 0pt;
         text-align: left;
       ">
-    HCMC University of Technology and Education
-  </h1>
-  <p class="s4" style="
+      HCMC University of Technology and Education
+    </h1>
+    <p class="s4" style="
         padding-top: 2pt;
         padding-left: 5pt;
         text-indent: 0pt;
         text-align: left;
       ">
-    Software Engineering
-  </p>
-  <p style="padding-top: 12pt; text-indent: 0pt; text-align: left"><br /></p>
-  <p class="s3" style="padding-left: 5pt; text-indent: 0pt; text-align: left">
-   PROFESSIONAL STATEMENT
-  </p>
-  <p style="
+      Software Engineering
+    </p>
+    <p style="padding-top: 12pt; text-indent: 0pt; text-align: left"><br /></p>
+    <p class="s3" style="padding-left: 5pt; text-indent: 0pt; text-align: left">
+      PROFESSIONAL STATEMENT
+    </p>
+    <p style="
         padding-left: 5pt;
         text-indent: 0pt;
         line-height: 125%;
         text-align: left;
       ">
-    I am passionate about leveraging cutting-edge technologies to solve complex problems and deliver innovative solutions. With over a decade of experience across blockchain, full-stack development, and enterprise systems, I bring a proven track record of technical excellence and collaborative leadership to every project.
-  </p>
-  <p style="padding-top: 3pt; text-indent: 0pt; text-align: left"><br /></p>
-  <p style="
+      I am passionate about leveraging cutting-edge technologies to solve complex problems and deliver innovative
+      solutions. With over a decade of experience across blockchain, full-stack development, and enterprise systems, I
+      bring a proven track record of technical excellence and collaborative leadership to every project.
+    </p>
+    <p style="padding-top: 3pt; text-indent: 0pt; text-align: left"><br /></p>
+    <p style="
         padding-left: 5pt;
         text-indent: 0pt;
         line-height: 125%;
         text-align: left;
       ">
-    I certify that all information provided in this CV is accurate and complete to the best of my knowledge.
-  </p>
-  <p style="padding-top: 10pt; text-indent: 0pt; text-align: left"><br /></p>
-  <p style="padding-left: 5pt; text-indent: 0pt; text-align: left">
-    Best regards,
-  </p>
-  <p style="padding-left: 5pt; text-indent: 0pt; text-align: left; padding-top: 5pt;">
-    <strong>Huynh Tan Ngoc</strong>
-  </p>
-  <p style="text-indent: 0pt; text-align: left"><br /></p>
-  
+      I certify that all information provided in this CV is accurate and complete to the best of my knowledge.
+    </p>
+    <p style="padding-top: 10pt; text-indent: 0pt; text-align: left"><br /></p>
+    <p style="padding-left: 5pt; text-indent: 0pt; text-align: left">
+      Best regards,
+    </p>
+    <p style="padding-left: 5pt; text-indent: 0pt; text-align: left; padding-top: 5pt;">
+      <strong>Huynh Tan Ngoc</strong>
+    </p>
+    <p style="text-indent: 0pt; text-align: left"><br /></p>
+
   </div> <!-- End of z-index wrapper -->
 </body>
 
