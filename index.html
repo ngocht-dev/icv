@@ -2106,7 +2106,7 @@
         </div>
         <div class="skill-value">
           <ul class="onchain-list">
-            <li>Solana: Anchor, @solana/web3.js, @solana/spl-token</li>
+            <li>Solana: Anchor, Native Rust (no-Anchor), @solana/web3.js, @solana/spl-token</li>
             <li>EVM: Hardhat, Truffle, OpenZeppelin</li>
             <li>Cardano: Aiken, Lucid</li>
           </ul>
@@ -2130,7 +2130,9 @@
         </div>
         <div class="skill-value">
           <div class="tag-list"><span class="skill-tag">Node.js</span><span class="skill-tag">NestJS</span><span
-              class="skill-tag">Express</span></div>
+              class="skill-tag">Express</span><span class="skill-tag">Rust / Actix-Web</span><span
+              class="skill-tag">SQLx</span><span class="skill-tag">Tokio</span><span class="skill-tag">JWT Auth</span>
+          </div>
         </div>
       </div>
       <div class="skill-row">
@@ -2187,10 +2189,104 @@
           <p class="s5">English</p>
         </div>
         <div class="skill-value">
-          <p class="s6">TOEIC: 650 — Upper-intermediate proficiency (reading &amp; listening).</p>
+          <p class="s6">Intermediate (B1)</p>
         </div>
       </div>
     </div>
+    <p class="s3" style="
+        padding-top: 6pt;
+        padding-left: 5pt;
+        text-indent: 0pt;
+        text-align: left;
+        margin-top: 40px;
+      ">
+      PERSONAL PROJECTS
+    </p>
+
+    <h1 style="
+        padding-top: 2pt;
+        padding-bottom: 1pt;
+        padding-left: 5pt;
+        text-indent: 0pt;
+        text-align: left;
+      ">
+      Rust REST API (my-rust-api)
+    </h1>
+    <div class="work-entry">
+      <div class="work-grid">
+        <div class="work-row">
+          <div class="work-label">Description</div>
+          <div class="work-value">A production-ready RESTful API backend built entirely in Rust, following a clean
+            modular architecture (auth, users, posts). Designed to demonstrate Rust backend engineering skills for
+            real-world web services.</div>
+        </div>
+        <div class="work-row">
+          <div class="work-label">Tech stack</div>
+          <div class="work-value">Rust · Actix-Web 4 · SQLx (async PostgreSQL) · Tokio · JWT (jsonwebtoken) · bcrypt ·
+            Serde · Utoipa (OpenAPI/Swagger) · Tracing · Docker · GitHub Actions CI/CD</div>
+        </div>
+        <div class="work-row">
+          <div class="work-label">Highlights</div>
+          <div class="work-value">
+            <ul>
+              <li>Architected layered module structure (controller → service → repository) mirroring NestJS conventions
+                in idiomatic Rust.</li>
+              <li>Implemented JWT-based authentication middleware with bcrypt password hashing and role-based access
+                control.</li>
+              <li>Integrated SQLx with compile-time verified queries and automated schema migrations against PostgreSQL.
+              </li>
+              <li>Generated interactive OpenAPI / Swagger UI documentation automatically via utoipa macros.</li>
+              <li>Containerised with Docker; configured structured logging via tracing-subscriber with environment-level
+                filtering.</li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <p style="padding-top: 6pt; text-indent: 0pt; text-align: left"><br /></p>
+    <h1 style="
+        padding-top: 2pt;
+        padding-bottom: 1pt;
+        padding-left: 5pt;
+        text-indent: 0pt;
+        text-align: left;
+      ">
+      Solana SPL Token Staking Program (spl-token-staking-native)
+    </h1>
+    <div class="work-entry">
+      <div class="work-grid">
+        <div class="work-row">
+          <div class="work-label">Description</div>
+          <div class="work-value">A pure-Rust Solana on-chain program implementing a full SPL token staking protocol —
+            built without the Anchor framework to demonstrate deep understanding of Solana's native programming model.
+          </div>
+        </div>
+        <div class="work-row">
+          <div class="work-label">Tech stack</div>
+          <div class="work-value">Rust · solana-program v2 · spl-token · Borsh serialization · PDA accounts ·
+            solana-program-test · solana-sdk</div>
+        </div>
+        <div class="work-row">
+          <div class="work-label">Highlights</div>
+          <div class="work-value">
+            <ul>
+              <li>Designed and implemented three core instructions — <code>InitializePool</code>, <code>Stake</code>,
+                and <code>Unstake</code> — with full account validation and PDA derivation.</li>
+              <li>Managed on-chain state (pool config &amp; per-user stake info) using Borsh-serialized PDA accounts
+                with deterministic seeds.</li>
+              <li>Secured the vault using a PDA vault authority, ensuring only the program can sign SPL token transfers.
+              </li>
+              <li>Wrote comprehensive unit and integration tests using <code>solana-program-test</code>, covering edge
+                cases such as invalid payloads and unauthorised unstakes.</li>
+              <li>Applied release-profile LTO and overflow-checks for optimised, safe BPF bytecode deployment.</li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </div>
+    <p style="padding-top: 6pt; text-indent: 0pt; text-align: left"><br /></p>
+
     <p style="padding-top: 10pt; text-indent: 0pt; text-align: left"><br /></p>
     <p class="s3" style="padding-left: 5pt; text-indent: 0pt; text-align: left">
       WORK EXPERIENCE
@@ -2201,7 +2297,7 @@
         text-indent: 0pt;
         text-align: left;
       ">
-      Ginar Solution <span class="p">(Nov 2023 - Now)</span>
+      Ginar Solution <span class="p">(Nov 2023 - Dec 2025)</span>
     </h1>
     <div class="work-entry">
       <div class="work-grid">
@@ -2417,6 +2513,7 @@
         </div>
       </div>
     </div>
+
     <p class="s3" style="
         padding-top: 6pt;
         padding-left: 5pt;
