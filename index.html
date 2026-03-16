@@ -722,6 +722,18 @@
       text-shadow: 0 0 10px rgba(14, 165, 233, 0.8);
     }
 
+    /* Primary skill highlight (Golang) */
+    .skill-tag.primary-skill {
+      background: linear-gradient(135deg, rgba(6, 182, 212, 0.25), rgba(14, 165, 233, 0.35));
+      border-color: rgba(6, 182, 212, 0.6);
+      color: #22d3ee;
+      font-weight: 700;
+      box-shadow:
+        0 2px 8px rgba(0, 0, 0, 0.3),
+        0 0 14px rgba(6, 182, 212, 0.4),
+        inset 0 1px 0 rgba(6, 182, 212, 0.2);
+    }
+
     /* Spinning animation for avatar border */
     @keyframes spin {
       0% {
@@ -1943,13 +1955,15 @@
         <div class="header__left__content">
           <p class="s1" style="text-align: left">Huynh Tan Ngoc</p>
           <p class="s2">Senior Full Stack & Blockchain Engineer</p>
-          <div style="display: flex; gap: 0.5rem; margin-top: 0.5rem;">
+          <div style="display: flex; gap: 0.5rem; margin-top: 0.5rem; flex-wrap: wrap;">
             <span
               style="background: linear-gradient(135deg, rgba(59, 130, 246, 0.2), rgba(139, 92, 246, 0.2)); padding: 0.25rem 0.75rem; border-radius: 20px; font-size: 0.75rem; color: #60a5fa; border: 1px solid rgba(59, 130, 246, 0.3);">10+
               Years</span>
             <span
               style="background: linear-gradient(135deg, rgba(139, 92, 246, 0.2), rgba(59, 130, 246, 0.2)); padding: 0.25rem 0.75rem; border-radius: 20px; font-size: 0.75rem; color: #a78bfa; border: 1px solid rgba(139, 92, 246, 0.3);">Blockchain
               Expert</span>
+            <span
+              style="background: linear-gradient(135deg, rgba(139, 92, 246, 0.2), rgba(59, 130, 246, 0.2)); padding: 0.25rem 0.75rem; border-radius: 20px; font-size: 0.75rem; color: #a78bfa; border: 1px solid rgba(139, 92, 246, 0.3);">Microservices</span>
           </div>
         </div>
       </div>
@@ -1994,7 +2008,16 @@
 
     <div class="summary-grid">
       <div class="summary-card">
-        <div class="summary-icon">🔗</div>
+        <div class="summary-icon">�</div>
+        <div class="summary-title">Golang Backend Mastery</div>
+        <div class="summary-text">
+          2+ years building production microservices in Go: REST & gRPC APIs with Gin, clean architecture,
+          JWT/OIDC auth, PostgreSQL (SQLBoiler & GORM), Redis, schema migrations, and service-to-service communication.
+        </div>
+      </div>
+
+      <div class="summary-card">
+        <div class="summary-icon">�🔗</div>
         <div class="summary-title">Blockchain Expertise</div>
         <div class="summary-text">
           Expert in multi-chain development across Solana (Anchor), EVM (Hardhat & Truffle), and Cardano (Aiken).
@@ -2079,6 +2102,28 @@
     <div class="skills-grid">
       <div class="skill-row">
         <div class="skill-label">
+          <p class="s5">Go (Golang) Backend</p>
+        </div>
+        <div class="skill-value">
+          <ul class="onchain-list">
+            <li><strong>Frameworks & HTTP:</strong> Gin, gRPC (google.golang.org/grpc), net/http</li>
+            <li><strong>ORM & DB:</strong> SQLBoiler (code-generation ORM), GORM, golang-migrate v4, lib/pq, PostgreSQL
+              driver</li>
+            <li><strong>Auth & Security:</strong> golang-jwt/v4, go-jose/v3, MicahParks/keyfunc (JWKS), OIDC
+              (coreos/go-oidc), bcrypt</li>
+            <li><strong>Rate Limiting & Caching:</strong> go-redis, go-redis/redis_rate, Redis</li>
+            <li><strong>Patterns:</strong> Clean Architecture, Microservices, Service Registry, Dependency Injection,
+              gRPC inter-service calls</li>
+            <li><strong>Testing:</strong> golang/mock, testify, unit & integration tests with mocks</li>
+            <li><strong>Config & DI:</strong> kelseyhightower/envconfig, cobra CLI, Uber FX</li>
+            <li><strong>External integrations:</strong> Twilio, Discord, Telegram, Twitter/LinkedIn OAuth, Cloudflare
+              Turnstile, Google App Script</li>
+          </ul>
+        </div>
+      </div>
+
+      <div class="skill-row">
+        <div class="skill-label">
           <p class="s5">Knowledge</p>
         </div>
         <div class="skill-value">
@@ -2129,7 +2174,8 @@
           <p class="s5">Back-End</p>
         </div>
         <div class="skill-value">
-          <div class="tag-list"><span class="skill-tag">Node.js</span><span class="skill-tag">NestJS</span><span
+          <div class="tag-list"><span class="skill-tag primary-skill">Go (Gin · gRPC · SQLBoiler · GORM)</span><span
+              class="skill-tag">Node.js</span><span class="skill-tag">NestJS</span><span
               class="skill-tag">Express</span><span class="skill-tag">Rust / Actix-Web</span><span
               class="skill-tag">SQLx</span><span class="skill-tag">Tokio</span><span class="skill-tag">JWT Auth</span>
           </div>
@@ -2168,8 +2214,9 @@
           <p class="s5">Testing tools &amp; Frameworks</p>
         </div>
         <div class="skill-value">
-          <div class="tag-list"><span class="skill-tag">Jest</span><span class="skill-tag">Mocha</span><span
-              class="skill-tag">Chai</span><span class="skill-tag">Hardhat Testing</span></div>
+          <div class="tag-list"><span class="skill-tag primary-skill">Go (testify · golang/mock · uber/mock)</span><span
+              class="skill-tag">Jest</span><span class="skill-tag">Mocha</span><span class="skill-tag">Chai</span><span
+              class="skill-tag">Hardhat Testing</span></div>
         </div>
       </div>
 
@@ -2210,87 +2257,130 @@
         text-indent: 0pt;
         text-align: left;
       ">
-      Rust REST API (my-rust-api)
+      Golang REST API — NestJS-like Modular Architecture <span class="p">(golang-rest-apis)</span>
     </h1>
     <div class="work-entry">
       <div class="work-grid">
         <div class="work-row">
           <div class="work-label">Description</div>
-          <div class="work-value">A production-ready RESTful API backend built entirely in Rust, following a clean
-            modular architecture (auth, users, posts). Designed to demonstrate Rust backend engineering skills for
-            real-world web services.</div>
+          <div class="work-value">A production-ready Go REST API scaffold implementing a NestJS-inspired modular
+            architecture with full Clean Architecture layering (domain → use-case → adapter). Demonstrates
+            idiomatic Go patterns for large-scale microservice projects, including dependency injection,
+            testable service layers, and auto-generated Swagger docs.
+          </div>
         </div>
         <div class="work-row">
           <div class="work-label">Tech stack</div>
-          <div class="work-value">Rust · Actix-Web 4 · SQLx (async PostgreSQL) · Tokio · JWT (jsonwebtoken) · bcrypt ·
-            Serde · Utoipa (OpenAPI/Swagger) · Tracing · Docker · GitHub Actions CI/CD</div>
+          <div class="work-value">Go 1.23 · Gin · GORM · PostgreSQL (pgx/v5) · golang-jwt/v4 · bcrypt
+            (golang.org/x/crypto)
+            · Uber FX (dependency injection) · Swagger (swaggo/swag) · godotenv · Docker Compose · Makefile</div>
+        </div>
+        <div class="work-row">
+          <div class="work-label">Repository</div>
+          <div class="work-value">
+            <a href="https://github.com/ngocht-dev/golang-rest-apis"
+              target="_blank">github.com/ngocht-dev/golang-rest-apis</a>
+          </div>
         </div>
         <div class="work-row">
           <div class="work-label">Highlights</div>
           <div class="work-value">
             <ul>
-              <li>Architected layered module structure (controller → service → repository) mirroring NestJS conventions
-                in idiomatic Rust.</li>
-              <li>Implemented JWT-based authentication middleware with bcrypt password hashing and role-based access
-                control.</li>
-              <li>Integrated SQLx with compile-time verified queries and automated schema migrations against PostgreSQL.
-              </li>
-              <li>Generated interactive OpenAPI / Swagger UI documentation automatically via utoipa macros.</li>
-              <li>Containerised with Docker; configured structured logging via tracing-subscriber with environment-level
-                filtering.</li>
+              <li>Designed a <strong>feature-module structure</strong> (domain / application / infrastructure /
+                presentation) mirroring NestJS conventions in idiomatic Go — making the codebase easy to scale
+                and navigate for any team size.</li>
+              <li>Implemented <strong>Uber FX dependency injection</strong> container to wire modules declaratively,
+                eliminating manual wiring and improving testability across service, repository, and handler layers.</li>
+              <li>Built <strong>JWT-based authentication middleware</strong> with bcrypt password hashing, request
+                validation, and role-based route protection using Gin middleware.</li>
+              <li>Integrated <strong>GORM with PostgreSQL</strong> (pgx/v5 driver) and auto-migration, providing a
+                clean repository pattern with interface-driven design for effortless mock injection in tests.</li>
+              <li>Auto-generated <strong>interactive OpenAPI / Swagger UI</strong> documentation via swaggo/swag
+                annotations on all handlers.</li>
+              <li>Configured structured <strong>request/response logging middleware</strong>, CORS, and
+                environment-based
+                configuration loading with godotenv.</li>
             </ul>
           </div>
         </div>
       </div>
     </div>
 
-    <p style="padding-top: 6pt; text-indent: 0pt; text-align: left"><br /></p>
-    <h1 style="
-        padding-top: 2pt;
-        padding-bottom: 1pt;
-        padding-left: 5pt;
-        text-indent: 0pt;
-        text-align: left;
-      ">
-      Solana SPL Token Staking Program (spl-token-staking-native)
-    </h1>
-    <div class="work-entry">
-      <div class="work-grid">
-        <div class="work-row">
-          <div class="work-label">Description</div>
-          <div class="work-value">A pure-Rust Solana on-chain program implementing a full SPL token staking protocol —
-            built without the Anchor framework to demonstrate deep understanding of Solana's native programming model.
-          </div>
-        </div>
-        <div class="work-row">
-          <div class="work-label">Tech stack</div>
-          <div class="work-value">Rust · solana-program v2 · spl-token · Borsh serialization · PDA accounts ·
-            solana-program-test · solana-sdk</div>
-        </div>
-        <div class="work-row">
-          <div class="work-label">Highlights</div>
-          <div class="work-value">
-            <ul>
-              <li>Designed and implemented three core instructions — <code>InitializePool</code>, <code>Stake</code>,
-                and <code>Unstake</code> — with full account validation and PDA derivation.</li>
-              <li>Managed on-chain state (pool config &amp; per-user stake info) using Borsh-serialized PDA accounts
-                with deterministic seeds.</li>
-              <li>Secured the vault using a PDA vault authority, ensuring only the program can sign SPL token transfers.
-              </li>
-              <li>Wrote comprehensive unit and integration tests using <code>solana-program-test</code>, covering edge
-                cases such as invalid payloads and unauthorised unstakes.</li>
-              <li>Applied release-profile LTO and overflow-checks for optimised, safe BPF bytecode deployment.</li>
-            </ul>
-          </div>
-        </div>
-      </div>
-    </div>
     <p style="padding-top: 6pt; text-indent: 0pt; text-align: left"><br /></p>
 
     <p style="padding-top: 10pt; text-indent: 0pt; text-align: left"><br /></p>
     <p class="s3" style="padding-left: 5pt; text-indent: 0pt; text-align: left">
       WORK EXPERIENCE
     </p>
+    <h1 style="
+        padding-top: 2pt;
+        padding-left: 5pt;
+        text-indent: 0pt;
+        text-align: left;
+      ">
+      Nodo <span class="p">(Nov 2023 - Dec 2025)</span>
+    </h1>
+    <div class="work-entry">
+      <div class="work-grid">
+        <div class="work-row">
+          <div class="work-label">Description</div>
+          <div class="work-value">Web3 social platform powering creator communities, NFT content discovery, and on-chain
+            user engagement. The backend is a Go-native microservices ecosystem — three independent services
+            (auth, account, content) communicating via gRPC and HTTP, all deployed on Docker with PostgreSQL.</div>
+        </div>
+        <div class="work-row">
+          <div class="work-label">Team size</div>
+          <div class="work-value">15</div>
+        </div>
+        <div class="work-row">
+          <div class="work-label">My position</div>
+          <div class="work-value">Senior Golang Backend Engineer</div>
+        </div>
+        <div class="work-row">
+          <div class="work-label">Tech stack</div>
+          <div class="work-value">Go (Gin · gRPC · golang-jwt · go-jose · SQLBoiler · golang-migrate) · PostgreSQL ·
+            Redis (go-redis · rate-limiting) · Docker · Makefile · GitLab CI/CD</div>
+        </div>
+        <div class="work-row">
+          <div class="work-label">Repositories</div>
+          <div class="work-value">
+            <ul>
+              <li><code>account-service</code> — git.nodo.xyz/nodo/backend/account-service</li>
+              <li><code>auth-service</code> — git.nodo.xyz/nodo/backend/auth-service</li>
+              <li><code>content-service</code> — git.nodo.xyz/nodo/backend/content-service</li>
+            </ul>
+          </div>
+        </div>
+        <div class="work-row">
+          <div class="work-label">My responsibilities</div>
+          <div class="work-value">
+            <ul>
+              <li><strong>auth-service:</strong> Architected a multi-strategy authentication microservice supporting
+                email/password, phone/OTP (Twilio), Web3 wallet signing (MetaMask, Coinbase, Sui), and OAuth social
+                login (Discord, Twitter, LinkedIn). Implemented JWT issuance &amp; JWKS-based token validation
+                (go-jose, MicahParks/keyfunc), OIDC (coreos/go-oidc), and Cloudflare Turnstile bot protection.
+                Integrated Redis rate limiting (go-redis-rate/v9) and scheduled token-cleanup jobs with robfig/cron.
+              </li>
+              <li><strong>account-service:</strong> Built user account, gamification, and community features — daily
+                check-in streaks, task submissions, badge awards, and product-community follow/follower graph.
+                Designed campaign management APIs (v1→v3) with PostgreSQL-backed migrations. Integrated multi-client
+                microservice calls (auth, file, discord, telegram, RapidAPI, Google App Script, NewMoneyAI) wired
+                through a typed service registry.</li>
+              <li><strong>content-service:</strong> Developed content management APIs for product posts, testimonials,
+                and Twilio-powered notifications. Implemented a Trie-based real-time word-filter for content
+                moderation (derekparker/trie). Designed clean MVC structure with layered error handling and
+                standardised JSON response envelopes.</li>
+              <li>Established <strong>clean architecture</strong> conventions across all services: controllers →
+                services → repositories, shared infra (pgsql, config, JWT, middlewares), typed error catalog,
+                and cobra-CLI-driven migration commands.</li>
+              <li>Wrote unit and integration tests with <code>golang/mock</code> and <code>testify</code>; maintained
+                GitLab CI/CD pipelines for automated build, test, and Docker image publishing.</li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </div>
+    <p style="padding-top: 6pt; text-indent: 0pt; text-align: left"><br /></p>
     <h1 style="
         padding-top: 2pt;
         padding-left: 5pt;
